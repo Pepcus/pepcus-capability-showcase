@@ -37,9 +37,9 @@
             
             {
                "_name": "Mailing Tool",
-               "_welcomePage": "/index.jsp",
+               "_welcomePage": "/mailingTool.html",
                "_parentApp": "Backend Utility",
-               "_applicationUrl": "/MailingTool",
+               "_applicationUrl": "ui-components/mailingTool",
                "_iconClass":"fa-envelope-o",
 			   "_appData":"Simple email tool to send emails with attachments and html formatted content. You can select a desired template, add related data to the template and send it as an email. You can also add files as attachment to the email."
             },

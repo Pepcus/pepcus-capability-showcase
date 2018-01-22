@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title></title>
+		<link href="../../css/include.css" rel="stylesheet" />
+		<style>
+			body{
+				/*float:left;*/
+                overflow: hidden;
+			}
+			#container{
+				/*width: 100%; */
+				margin-left: 10px;
+				margin-right: 10px;
+				text-align:left;
+			}
+            .section-container{
+                /*width: 100%;*/
+                margin: 20px;
+                /*overflow: hidden;*/
+            }
+		</style>
+		<script type="text/javascript" src="../../js/jquery/jquery-1.11.1.min.js"></script>
+		<script type="text/javascript">
+		$(function () {
+		    $('#container').highcharts({
+		        chart: {
+		            plotBackgroundColor: null,
+		            plotBorderWidth: 1,//null,
+		            plotShadow: false
+		        },
+		        title: {
+		            text: 'Browser market shares at a specific website, 2014',
+		            style: {
+		                color: 'black',
+					},
+		        },
+		        tooltip: {
+		    	    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+		        },
+		        plotOptions: {
+		            pie: {
+		                allowPointSelect: true,
+		                cursor: 'pointer',
+		                dataLabels: {
+		                    enabled: true,
+		                    format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+		                    style: {
+		                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+		                    }
+		                }
+		            }
+		        },
+		        series: [{
+		            type: 'pie',
+		            name: 'Browser share',
+		            data: [
+		                ['Firefox',   45.0],
+		                ['IE',       26.8],
+		                {
+		                    name: 'Chrome',
+		                    y: 12.8,
+		                    sliced: true,
+		                    selected: true
+		                },
+		                ['Safari',    8.5],
+		                ['Opera',     6.2],
+		                ['Others',   0.7]
+		            ]
+		        }]
+		    });
+		});
+		    
+    
+
+		</script>
+		<script src="../js/highcharts.js"></script>
+		<script src="../js/exporting.js"></script>
+	</head>
+	<body>
+		<section class="section-container border-green">
+	        <div class="content-heading green">
+	            <h2 class="h5 white-heading">Pie Chart</h2>
+	        </div>
+	        <div id="container"></div>
+    	</section>
+	</body>
+</html>

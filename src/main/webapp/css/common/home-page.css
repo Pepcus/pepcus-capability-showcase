@@ -1,0 +1,187 @@
+div#container {
+  text-align: left;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto; }
+
+div#content div#componentDisplay {
+    width: 90%;
+    height: 99%;
+    min-height: 99%;
+    margin-left: 10px;
+}
+
+div#header {
+  background-position: 0 -64px;
+  width: 100%;
+  display: table;
+  padding-bottom: 0px; }
+  div#header h1 {
+    margin: 0;
+    padding-left: 10px; }
+  div#header #logo {
+    margin-left: 56px;
+    margin-top: 7px;
+    float: left;
+    width: 20%; }
+
+/* Set height in % to expand height dynamically */
+div#navigation {
+  float: left;
+  width: 23%;
+  height: 545px; }
+
+div#footer {
+  height: 5%;
+  text-align: center;
+  padding: 0 0; }
+  div#footer p {
+    margin: 0;
+    padding: 5px 10px; }
+
+div#content {
+  float: right;
+  width: 77%;
+  height: 545px;
+  /* adjusting content height can displace footer */ }
+  div#content p {
+    line-height: 1.4; }
+  div#content div#component-menu-bar-container {
+    height: 8%;
+    padding: 5px;
+    /**  Menus */
+    /** Component description */ }
+    div#content div#component-menu-bar-container #component-menu-bar-left {
+      float: left;
+      /**** See bellow ****/ }
+    div#content div#component-menu-bar-container #component-menu-bar-right {
+      float: right;
+      position: relative;
+      display: none; }
+      div#content div#component-menu-bar-container #component-menu-bar-right div#main-showHide-description {
+        background-color: #EFEBDE;
+        opacity: 0.6;
+        filter: alpha(opacity=60);
+        width: 86px;
+        height: 16px; }
+      div#content div#component-menu-bar-container #component-menu-bar-right #descriptionDiv {
+        position: absolute;
+        left: -186px;
+        opacity: 0.95;
+        filter: alpha(opacity=90);
+        width: 267px; }
+        div#content div#component-menu-bar-container #component-menu-bar-right #descriptionDiv #description_slide {
+          background: #D0C8C8;
+          color: #412C2C;
+          padding: 10px;
+          border: 5px solid #F3F1F1;
+          font-weight: bold;
+          margin: -0.5%; }
+        div#content div#component-menu-bar-container #component-menu-bar-right #descriptionDiv #descriptionEspace {
+          opacity: 1;
+          filter: alpha(opacity=90); }
+
+    div#content div#componentDisplay #showUrl {
+      width: 100%;
+      height: 86.5%;
+      min-height: 86.5%;
+      padding-top: 15px;
+      border: white; }
+
+div.treeContent {
+  padding-left: 10px;
+  padding-right: 2px;
+  height: 545px;
+  position: relative;
+  /*	overflow:	auto;  */ }
+
+div#showHideNav {
+  position: absolute;
+  left: -1px;
+  top: 87px;
+  width: 14px;
+  height: 28px; }
+
+/**  Horizontal Menus */
+#component-menu-bar-left {
+  float: left;
+  min-width: 300px;
+  max-width: 90%; }
+  #component-menu-bar-left ul {
+    margin-left: 5px;
+    margin-top: 0px;
+    padding: 0; }
+  #component-menu-bar-left li {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    float: left;
+    margin-right: 0;
+    padding-bottom: 10px;
+    font-size: 13px;
+    line-height: 11px;
+    /** Hide url */ }
+	
+  /** Change by saiyam starts. */
+	
+  #component-menu-bar-left li a {
+  background-color: rgb(219,0,0);
+  color: white;
+  font-family: Arial, san-serif;
+  font-weight: bold;
+  font-size: 13px;
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+  border-radius:5px;
+  -webkit-tap-highlight-color: transparent;
+  box-shadow: 0px 0px 5px rgba(63, 63, 63, 0.6); 
+  }
+   #component-menu-bar-left li a:hover {
+	color: #FDF7F7;
+	position:relative;
+	top:-2px;
+	}
+  #component-menu-bar-left li a.nav-selected {
+	background-color: rgb(219,0,0);
+	color: #fff;
+	box-shadow:0px 0px 10px grey;        
+	margin:0px 5px;
+	position:relative;
+	top:-2px;
+	padding-top: 10px; 
+	}
+	#component-menu-bar-left li a.nav-selected:after {
+	content: '';
+	position: absolute;
+	left: 10px;
+	top: 100%;
+	border-top: 10px solid rgb(219,0,0);
+	border-right: 0px solid transparent;
+	border-left: 10px solid transparent;
+	}
+	
+	/** Change by saiyam ends. */
+	
+    #component-menu-bar-left li span {
+      display: none; }
+
+/** Default component view page css */
+#defaultCompView-minContent {
+  margin: 0 auto; }
+  #defaultCompView-minContent #welcomeText {
+    font-family: brush script mt;
+    font-size: 33px; }
+  #defaultCompView-minContent #hrLine {
+    width: 800px;
+    border: 0;
+    height: 1px;
+    background-image: -webkit-linear-gradient(left, rgba(255, 0, 0, 0), rgba(255, 0, 0, 0.75), rgba(255, 0, 0, 0));
+    background-image: -moz-linear-gradient(left, rgba(255, 0, 0, 0), rgba(255, 0, 0, 0.75), rgba(255, 0, 0, 0));
+    background-image: -ms-linear-gradient(left, rgba(255, 0, 0, 0), rgba(255, 0, 0, 0.75), rgba(255, 0, 0, 0));
+    background-image: -o-linear-gradient(left, rgba(255, 0, 0, 0), rgba(255, 0, 0, 0.75), rgba(255, 0, 0, 0)); }
+  #defaultCompView-minContent #redText {
+    color: #ff0000; }
+  #defaultCompView-minContent p {
+    font-family: comic sans ms;
+    font-size: 13px; }

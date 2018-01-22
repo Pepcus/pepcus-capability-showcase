@@ -1,0 +1,113 @@
+
+.overlay-layout{
+	/*z-index: 1;
+	display: none;
+	width: 100%;
+	height: auto;
+	position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+	opacity: 1;
+    background-color: rgba(0,0,0,0.8);*/
+}
+.child-container{
+	width:100%;
+    height: 100%;
+    background-color: rgba(195, 195, 195, 0.6);
+}
+.card-container {
+	padding-bottom: 30px;
+	overflow: hidden;
+	height: 100%;
+}
+.card-view-container {
+	height: 100%;
+    width: 100%;
+    margin: auto;
+    background-image: url(capabilities.jpg);
+    overflow-y: scroll;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.back-button{
+	
+}
+.back-button a{
+	text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #dadada;
+    color: #ef5350;
+    -webkit-box-shadow: -10px 10px 10px 0px rgba(0,0,0,0.1);
+	-moz-box-shadow: -10px 10px 10px 0px rgba(0,0,0,0.1);
+	box-shadow: -10px 10px 10px 0px rgba(0,0,0,0.1);
+}
+.back-button a:hover {
+    background-color: #ddd;
+    color: #000000;
+}
+.child-card-view{
+	/*font-family: 'Roboto', sans-serif;*/
+	cursor: pointer;
+	display: none;
+	min-height: 100px;
+	float: left;
+	width: 33.33%;
+}
+.child-card-container {
+	padding: 0 25px;
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    display: -webkit-box;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+    -webkit-box-orient: vertical;
+
+	background-color: #fdfdfd;
+	margin: 10px 3px 3px 10px;
+	height: 25%;
+	-webkit-box-shadow: -10px 10px 10px 0px rgba(0,0,0,0.1);
+	-moz-box-shadow: -10px 10px 10px 0px rgba(0,0,0,0.1);
+	box-shadow: -10px 10px 10px 0px rgba(0,0,0,0.1);
+}
+.child-card-container:hover {
+	-webkit-box-shadow: 0px 0px 10px 10px rgba(255,0,0,0.1);
+	-moz-box-shadow: 0px 0px 10px 10px rgba(255,0,0,0.1);
+	box-shadow: 0px 0px 10px 10px rgba(255,0,0,0.1);
+}
+.child-heading-container{
+	display: block;
+}
+.child-heading-container h1 {
+	margin-top: 0;
+}
+.child-item-no{
+	padding-right: 10px; 
+	color: #E53948;
+	display: inline-block;
+	text-align: left;
+}
+.child-item-name{
+	color: #131313;
+	display: inline-block;
+	text-align: left;
+}
+.child-item-details {
+	color: #494949;
+	text-align: center;
+	font-size: 14px;
+	font-family: inherit;
+	width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.child-item-details>p {
+	margin: 0;
+	width: 100%;
+	line-height: 1.5;
+}

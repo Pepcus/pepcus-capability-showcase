@@ -1,0 +1,24 @@
+/** 
+================================================================
+-------------- Main style for default theme --------------------
+================================================================
+*/
+/** ------------------------- Header -------------------------- */
+#header {
+  /*height:481px;*/
+  background: url("../../../images/themes/default//header-tail.gif") 0 0 repeat-x #f7f7f7;
+  background-color: #dddddd; }
+
+/** ------------------------- Navigation ---------------------- */
+#navigation {
+  background: #dddddd; }
+
+/** ------------------------- Footer -------------------------- */
+#footer {
+  background: url("../../../images/themes/default//footer-bg.gif") 0 0 repeat-x #f2f2f2; }
+
+#showHideNav {
+  background: url("../../../images/themes/default//hide-icon.png") no-repeat 0 0; }
+
+#horizontal-menus {
+  background-color: #CCC; }

@@ -1,0 +1,35 @@
+/** 
+================================================================
+-------------- Main style for default theme --------------------
+================================================================
+*/
+
+$path-to-images:"../../../images/themes/default/";
+$header-background-color:#DDDDDD;
+$navigation-background-color:#DDDDDD;
+
+/** ------------------------- Header -------------------------- */
+#header{
+	/*height:481px;*/
+	background:url($path-to-images+"/header-tail.gif") 0 0 repeat-x #f7f7f7;
+	background-color:$header-background-color;
+}
+
+/** ------------------------- Navigation ---------------------- */
+#navigation{
+	background:$navigation-background-color;
+}
+
+/** ------------------------- Footer -------------------------- */
+#footer {
+	background:url($path-to-images+"/footer-bg.gif") 0 0 repeat-x #f2f2f2;
+}
+
+#showHideNav {
+    background:url($path-to-images+"/hide-icon.png") no-repeat 0 0;
+}
+
+#horizontal-menus {
+ //   background:transparent url($path-to-images+"/bg_menu.png") repeat top left;
+ 	background-color: #CCC;
+}

@@ -1,0 +1,232 @@
+@import "bourbon";
+
+// ### Horizontal Menus Styles ###
+
+// width of drop down menus
+$menu-container-min-width: 300px;
+$menu-container-max-width: 90%;
+$menu-container-back-color: #9E2F16;
+
+$font-size: 13px;
+$line-height: 11px;
+$padding: 10px;
+
+// horizontal space between nav items
+$nav-spacing: 10px;
+
+$menu-item-text-color: #FFF;
+$menu-item-back-color: #FF0000;
+$menu-item-font: Arial, san-serif;
+
+$menu-item-text-hover-color: #000;
+$menu-item-back-hover-color: #CCC;
+
+$menu-item-text-color-selected: #000;
+$menu-item-back-color-selected: #FF0000;
+
+div#container{
+	text-align:left; 
+	width:100%; 
+	height:100%; 
+	margin:0 auto
+}
+
+div#header{
+	background-position: 0 -64px; 
+	width:100%; 
+	display:table; 
+	padding-bottom: 0px;
+	h1{ margin:0; padding-left:10px;}
+	#logo {margin-left: 56px; margin-top: 7px; float:left; width: 20%;}
+}
+
+/* Set height in % to expand height dynamically */
+div#navigation{
+	float:left;
+	width:23%; 
+	height: 545px; 
+}
+
+div#footer{ 
+	height: 5%;
+	text-align:center;
+    padding:18px 0 ;
+	p{ margin:0; padding:5px 10px}
+}
+
+div#content{
+	float:right;
+	width:77%; 
+	height: 545px; /* adjusting content height can displace footer */
+	p{line-height:1.4}
+
+	div#component-menu-bar-container{
+		height: 8%;
+		padding: 5px;
+	//	background-color:$menu-container-back-color;
+		
+		/**  Menus */
+		#component-menu-bar-left{
+			float:left;
+			/**** See bellow ****/
+		}
+		
+		/** Component description */
+		#component-menu-bar-right{
+			float:right;
+			position:relative;
+			display:none;
+			
+			div#main-showHide-description {
+			    background-color: #EFEBDE;
+			    opacity:0.6;
+			    filter:alpha(opacity=60);
+			   	width: 86px;
+			    height: 16px;
+			}
+			#descriptionDiv{
+				position:absolute; 
+				left: -186px; 
+				opacity:0.95;
+			    filter:alpha(opacity=90); 
+			    width: 267px;
+			    
+			    #description_slide{
+				    background: #D0C8C8;
+				    color: #412C2C;
+				    padding: 10px;
+				    border: 5px solid #F3F1F1;
+				    font-weight: bold;
+					margin: -0.5%;
+				}
+				#descriptionEspace{
+					opacity:1;
+				    filter:alpha(opacity=90); 
+				}
+		    }			
+		}
+	}
+	
+	div#componentDisplay{
+		width:99%; 
+		height: 99%; 
+		min-height: 99%;
+		margin-left: 10px;
+
+		/* Main content iframe */
+		#showUrl{ 
+			width:100%; 
+			height: 86.5%; 
+			min-height: 86.5%; 
+			padding-top: 15px; 
+			border: white;
+		}
+	}
+}// End of #content //
+
+div.treeContent{
+	padding-left: 10px; 
+	padding-right: 2px; 
+	height: 545px; 
+	position: relative;
+	/*	overflow:	auto;  */
+}
+
+div#showHideNav {
+    position:absolute;
+    left:-1px; top:87px;
+    width: 14px;
+    height: 28px;
+}
+
+/**  Horizontal Menus */
+#component-menu-bar-left{
+	float:left;
+	min-width:$menu-container-min-width;
+	max-width:$menu-container-max-width;
+	
+	ul {
+	   margin-left: 5px;
+	   margin-top:0px;
+	   padding: 0;
+	}
+	li {
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+		float: left;
+		margin-right: 0;
+		padding-bottom: $nav-spacing;
+		font-size: $font-size;
+    
+		line-height: $line-height;
+			 
+		a {
+			background-color: $menu-item-back-color;
+			color: $menu-item-text-color;
+      		font-family: $menu-item-font;
+      		font-weight: bolder;
+        	font-size: 15px;
+			text-decoration: none;
+			display: block; 
+			padding: $padding;
+			-webkit-tap-highlight-color: transparent;
+			
+			border-radius: 10px;
+			box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+		
+			
+     		&.nav-selected {
+				background-color: $menu-item-back-color-selected;
+				color: rgb(249, 244, 244);
+				border-style: solid;
+				border-color: #FEFEFE;
+				border-width: 2px;
+				line-height: 6px;
+				margin-top: 0.4px;
+				padding-top: 10px;
+			}
+			
+			&:hover {
+				color: rgb(249, 244, 244);
+				line-height: 6px;
+				margin-top: 0.4px;
+				padding-top: 10px;
+			}
+		}
+		/** Hide url */
+		span {
+			display: none;
+		}
+	}
+} // End of 'component-menu-bar-left' 
+
+/** Default component view page css */
+#defaultCompView-minContent{
+	margin: 0 auto;
+	#welcomeText{
+	    font-family: brush script mt;
+	    font-size: 33px;
+	}
+	
+	#hrLine {
+		width: 800px;
+		border: 0;
+		height: 1px;
+		background-image: -webkit-linear-gradient(left, rgba(255,0,0,0), rgba(255,0,0,0.75), rgba(255,0,0,0));
+		background-image: -moz-linear-gradient(left, rgba(255,0,0,0), rgba(255,0,0,0.75), rgba(255,0,0,0));
+		background-image: -ms-linear-gradient(left, rgba(255,0,0,0), rgba(255,0,0,0.75), rgba(255,0,0,0));
+		background-image: -o-linear-gradient(left, rgba(255,0,0,0), rgba(255,0,0,0.75), rgba(255,0,0,0));
+	
+	}
+	
+	#redText {
+		color: #ff0000;
+	}
+		
+	p {
+		font-family: comic sans ms;
+		font-size: 13px;
+	}
+}
+

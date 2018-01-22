@@ -1,0 +1,102 @@
+<html  ng-app="mailingTool">
+    <meta charset="utf-8"/>
+    <head>
+
+        <title>Pdf Generator</title>
+
+        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="js/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+        <script src="js/ngDialog-master/js/ngDialog.min.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="js/ngDialog-master/css/ngDialog.min.css">
+        <link rel="stylesheet" href="js/ngDialog-master/css/ngDialog-theme-default.min.css">
+
+        <link rel="stylesheet" type="text/css" href="css/global.css">
+
+    </head>
+
+    <body >
+  <table id="TemplateData" border="0" cellspacing="0" cellpadding="0" style="margin:auto;width:600px;background-color:#FFFFFF;padding-top: 15px;background-color:rgb(219,0,0);border-radius: 30px;">
+    <tr align="center" style="margin:auto;width:100%;padding-bottom:20px;">
+        <td >
+            <a href= "http://www.pepcus.com" target="_blank">
+            <img src="images/favicon.png" width="64"/><br>
+            <img src="images/pepcus.png" style="width:80px;padding-top:5px;"/>
+            </a>
+            <h3 style="color:white;margin-top: 5px;">Let's Grow Together!!</h3>
+        </td>
+    </tr>
+    
+    <tr style="background-color:white;">
+    <td align="left" style="font-family: Verdana, Geneva, sans-serif; color:#666766; font-size:13px; line-height:21px;padding-left: 25px;padding-right: 25px;text-align: justify;">
+    <br><br><hr>
+    <p>Dear <span id="reciverTemplate" style="font-size:15px"> Something Name</span>,</p>
+    <p>
+    With reference to your email regarding the job of senior sales manager, I am happy to inform you that your resume has been shortlisted for an interview with our manager.
+    </p>
+    <p>
+    We were highly pleased with your qualifications and experience and believes that you are an ideal candidate for this post. Our company is looking to expanding and wants a person who is not only good at field work but can also supervise and coordinated sales teams under him.
+    </p>
+    <p>
+    I am attaching the schedule of the interview and the documents that you need to bring along with you.
+    </p>
+    <p>
+    Regards and best wishes,
+    </p>
+    <p>
+    <span id="senderTemplate">senderName</span><br>
+    <span id="designationTemplate">designation</span>
+    </p>
+    <hr><br><br>
+    </td>
+    </tr>
+    
+    <tr >
+    <td style="color:#ddd;font-size: 12px;">
+    <p style="text-align:left;padding-left:20px;width:40%;float:left;">
+    <b>Corporate Office</b> <br>
+    Pepcus Software Services Pvt. Ltd.<br>
+    201, Balaji Corporate, New Palasia<br>
+    Indore, Madhya Pradesh<br>
+    452001, India.
+    </p>
+    
+    <p style="text-align:right;padding-right:20px;width:40%;float:right;">
+    <b>Contact us</b> <br>
+    You can call us at:<br>
+    Mobile : +91-9754550505<br>
+    Phone : +91-731-4218554<br>
+    Email: <a href="mailto:info@pepcus.com" style="color:black; text-decoration:none;">info@pepcus.com</a><br>
+    </p>
+    <p style="text-align:center;padding-bottom: 0px;margin-bottom: -12px;position: relative;top: -15px;">
+    <a href="http://www.pepcus.com" target="_blank" onMouseOver="this.style.color='#333'"   onMouseOut="this.style.color='#ddd'" style="color:#ddd; text-decoration:none;font-size:16px;">www.pepcus.com</a>
+    </p>
+    </td>
+    </tr>
+    
+</table>
+  <div id="details-form" style="display:none; text-align: center;">
+      <div>
+          <span></span><br>
+          <input type="text" placeholder="Reciever's name">
+      </div>
+      <div>
+          <span></span><br>
+          <input type="text" placeholder="Reciever's email">
+      </div>
+      <div>
+          <span></span><br>
+          <input type="text" placeholder="Reciever's designation">
+      </div>
+      <div>
+          <span></span><br>
+          <input type="text"placeholder="Sender's name">
+      </div>
+
+  </div>
+    <div style="text-align: center; padding: 11px;" ng-controller="templateController"><button class="btn select-send" ng-click="AddReciever()">Select</button></div>
+    </body>
+</html>

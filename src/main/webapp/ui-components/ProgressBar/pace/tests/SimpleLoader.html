@@ -1,0 +1,49 @@
+<head>
+	<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    <link rel="stylesheet" href="../themes/red/pace-theme-barber-shop.css" />
+	<style type="text/css">
+		.showLoadingMessage {
+			position: absolute;
+			left: 38%;
+			top:46%;
+		}
+	</style>
+  <script>
+    paceOptions = {
+      elements: true
+    };
+  </script>
+  <script src="../pace.js"></script>
+  <script>
+  var xmlhttp;
+    function load(time){
+		
+		if (window.XMLHttpRequest)  {// code for IE7+, Firefox, Chrome, Opera, Safari
+		  xmlhttp=new XMLHttpRequest();
+		} else {// code for IE6, IE5
+		  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+		}
+		xmlhttp.onreadystatechange=function() {
+		  if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+		    
+		  }
+		}
+		xmlhttp.open("GET","http://localhost:8181/webapps/ProgressBar/pace/data/medium-data.txt",true);
+		xmlhttp.send();
+	}
+
+    load(30000);
+
+    Pace.on('hide', function(){
+    //	document.getElementById("showPage").innerHTML=xmlhttp.responseText;
+       	document.getElementById("showPage").innerHTML="File loaded";
+        
+      console.log('done');
+    });
+
+  </script>
+ 
+</head>
+<body>
+	<div class="showLoadingMessage" id="showPage">Loading file</div>
+</body>

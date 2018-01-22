@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<link href="../../css/include.css" rel="stylesheet" />
+	<link href="css/styles.css" rel="stylesheet" />
+</head>
+<body>
+	<div class="container">
+		<section class="border-lightblue">
+	        <div class="content-heading lightblue">
+	            <h2 class="h5 white-heading">Client Side Search</h2>
+	        </div>
+			<div class="content">
+				<!-- <h2 class="content-heading">Client side search</h2> -->
+				<h4 class="h6">Search Countries</h4>
+				<div class="input-option">
+					<input type="text" name="country" id="autocomplete" placeholder="Type country name in english" />
+				</div>
+				<div id="selection"></div>
+			</div>
+		</section>
+	</div>
+	
+	<script type="text/javascript" src="../../js/jquery/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.mockjax.js"></script>
+	<script type="text/javascript" src="js/jquery.autocomplete.js"></script>
+	<script type="text/javascript" >
+		$(function () {
+			'use strict';
+
+				// Load countries then initialize plugin:
+				$.ajax({
+					url: 'content/countries.txt',
+					dataType: 'json'
+				}).done(function (source) {
+					var countriesArray = $.map(source, function (value, key) { return { value: value, data: key }; }),
+					countries = $.map(source, function (value) { return value; });
+						// Initialize autocomplete with local lookup:
+						$('#autocomplete').autocomplete({
+							lookup: countriesArray,
+							onSelect: function (suggestion) {
+								$('#selection').html('<b>You selected </b>- ' + suggestion.value + ', ' + suggestion.data);
+							}
+						});
+
+
+
+					});
+			});
+		</script>
+	</body>
+	</html>

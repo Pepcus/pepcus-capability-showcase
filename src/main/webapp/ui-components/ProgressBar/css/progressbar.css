@@ -1,0 +1,12 @@
+body{
+margin:0px;
+}
+#progressbar
+{
+width:400px; height: 20px;
+}
+input#btnProgress
+{
+margin-top:10px;
+min-width:15%
+}

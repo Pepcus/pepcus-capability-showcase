@@ -1,0 +1,67 @@
+<head>
+	
+<style type="text/css">
+		.frame{ width:300px; height: 200px; border: none;}
+		.showAgain{width:100px; height: 13px; cursor: pointer;}
+		.subContainer{width: 300px; height:216px; float: left; border: 2px solid #dddddd;
+			margin:5px; padding:2px; 
+		}
+	</style>
+	<link rel="stylesheet" href="../../css/include.css">
+	<script type="text/javascript" src="../../js/jquery/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript">
+		var pages = ["tests/CenterAtom.html", "tests/CenterCircle.html",
+				 "tests/BigCounter.html", "tests/SimpleLoader.html",
+				 "tests/CenterRadar.html", "tests/CornerIndicator.html"
+			]
+		$(document).ready(function(){
+			$(".subContainer").hide();
+			
+			$("#mainContainer").find("#f0").parent(".subContainer").show();
+			$("#mainContainer").find("#f0").attr("src", pages[0]);
+
+			showFrame(1);
+			
+		});
+		
+		var numberOfFrames = 6;
+		function showFrame(i) {
+			setTimeout(function(){
+				$("#mainContainer").find("#f"+i).parent(".subContainer").show();
+				$("#mainContainer").find("#f"+i).attr("src", pages[i]);
+				if (i<(numberOfFrames-1)) {
+					showFrame(i+1);
+				}
+			}	,1500);
+		}
+		
+		function loadFrame (ele) {
+			var frame = $(ele).parent(".subContainer").find("iframe");
+			var frameId = frame.attr("id");
+			var id = frameId.split("",2);
+			$(ele).parent(".subContainer").find("iframe").attr("src",pages[id[1]]);
+		}
+	</script>
+	</head>
+<body>
+	<div id="mainContainer">
+		<div class="subContainer">
+			<iframe id="f0" class="frame" src=""></iframe><br><div class="showAgain" onclick="loadFrame(this);">Show again</div>
+		</div>
+		<div class="subContainer">
+			 <iframe id="f1" class="frame" src=""></iframe><br><div class="showAgain" onclick="loadFrame(this);">Show again</div>
+		</div>
+		<div class="subContainer">
+			 <iframe id="f2" class="frame" src=""></iframe><br><div class="showAgain" onclick="loadFrame(this);">Show again</div>
+		</div> <br><br>
+		<div class="subContainer">
+			 <iframe id="f3" class="frame" src=""></iframe><br><div class="showAgain" onclick="loadFrame(this);">Show again</div>
+		</div>
+		<div class="subContainer">
+			 <iframe id="f4" class="frame" src=""></iframe><br><div class="showAgain" onclick="loadFrame(this);">Show again</div>
+		</div>
+		<div class="subContainer">
+			 <iframe id="f5" class="frame" src=""></iframe><br><div class="showAgain" onclick="loadFrame(this);">Show again</div>
+		</div>
+	</div>
+</body>

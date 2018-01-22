@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<link href="../../css/include.css" rel="stylesheet" />
+<link href="css/styles.css" rel="stylesheet" />
+</head>
+<body>
+	<div class="container">
+		<section class="border-blue">
+	        <div class="content-heading blue">
+	            <h2 class="h5 white-heading">Server Side Search</h2>
+	        </div>
+			<div class="content">
+				<!-- <h2 class="content-heading">Server side search</h2> -->
+				<h4 class="h6">Search Countries</h4>
+				<div class="input-option">
+					<div class="input-country">
+					<input type="text" name="country" id="autocomplete-ajax" class="autocomplete-ajax" placeholder="Type country name in english" />
+					<!-- <input type="text" name="country" id="autocomplete-ajax-x" class="autocomplete-ajax-x" disabled="disabled"/> -->
+					</div>
+					<div id="loader" ></div>
+				</div>
+				<div id="selction-ajax"></div>
+			</div>
+	</div>
+	<script type="text/javascript" src="../../js/jquery/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.mockjax.js"></script>
+	<script type="text/javascript" src="js/jquery.autocomplete.js"></script>
+	<script type="text/javascript" >
+	
+$("document").ready(function(){				
+	$(".autocomplete-ajax").keyup(function() {
+		$("#loader").css("display","inline-block");
+
+		setTimeout(function(){	
+		$("#loader").css("display","none");
+		},2900);
+	});
+});
+	$(function () {
+				'use strict';
+				// Load countries then initialize plugin:
+setTimeout(function(){	
+			$.ajax({
+					url: 'content/countries.txt',
+					dataType: 'json'
+				}).done(function (source) {
+					  var countriesArray = $.map(source, function (value, key) { return { value: value, data: key }; }),
+						countries = $.map(source, function (value) { return value; });
+						  // Setup jQuery ajax mock:
+							$.mockjax({
+								url: '*',
+								responseTime: 2000,
+								response: function (settings) {
+									var query = settings.data.query,
+										queryLowerCase = query.toLowerCase(),
+										re = new RegExp('\\b' + $.Autocomplete.utils.escapeRegExChars(queryLowerCase), 'gi'),
+										suggestions = $.grep(countriesArray, function (country) {
+											 // return country.value.toLowerCase().indexOf(queryLowerCase) === 0;
+											return re.test(country.value);
+										}),
+										response = {
+											query: query,
+											suggestions: suggestions
+										};
+
+									this.responseText = JSON.stringify(response);
+								}
+							});
+
+							// Initialize ajax autocomplete:
+							$('#autocomplete-ajax').autocomplete({
+								// serviceUrl: '/autosuggest/service/url',
+								lookup: countriesArray,
+								lookupFilter: function(suggestion, originalQuery, queryLowerCase) {
+									var re = new RegExp('\\b' + $.Autocomplete.utils.escapeRegExChars(queryLowerCase), 'gi');
+									return re.test(suggestion.value);
+								},
+								onSelect: function(suggestion) {
+									$('#selction-ajax').html('<b>You selected</b> - ' + suggestion.value + ', ' + suggestion.data);
+								},
+								onHint: function (hint) {
+									$('#autocomplete-ajax-x').val(hint);
+								},
+								onInvalidateSelection: function() {
+									$('#selction-ajax').html('<b>You selected </b>- none');
+								}
+							});
+
+						  
+					
+				});
+		}, 3000);
+		});
+	</script>
+</body>
+</html>

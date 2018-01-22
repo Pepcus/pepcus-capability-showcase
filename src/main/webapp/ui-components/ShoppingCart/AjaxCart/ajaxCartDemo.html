@@ -1,0 +1,347 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Ajax Shopping Cart Demo</title>
+<script type="text/javascript" src="../../js/jquery/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.livequery.js"></script>
+<script type="text/javascript" src="js/jquery.bpopup.min.js"></script>
+<script type="text/javascript" src="js/placeholders.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<link href="../../css/include.css" rel="stylesheet" />
+<link href="css/css.css" rel="stylesheet" />
+
+<script type="text/javascript">
+var checkOutCost = 0;
+var angleInc = 0;
+var Arrays=new Array();
+var currentQuantity = 0;
+
+$(document).ready(function() {
+	
+	$('#wrap li').mousemove(function(){
+		
+		var position = $(this).position();
+		
+		$('#cart').stop().animate({
+																									
+				left   : (position.left+25)+'px',
+				
+			},250,function(){
+			
+		});			
+	}).mouseout(function(){
+		
+	});
+
+	$('#wrap li').click(function(){
+		
+		
+		var thisID = $(this).attr('id');
+		
+		var itemname  = $(this).find('div .name').html();
+		var itemprice = $(this).find('div .price').html();
+			
+		if(include(Arrays,thisID))
+		{
+						
+			$('#each-'+thisID).animate({width:"+=0px"},0,function(){
+			$('#each-'+thisID).children("#animation").show();
+			$('#each-'+thisID).css("background-image","url('images/gradient.PNG')");
+			$('#each-'+thisID).children("#changeQuantity").css({"background-color":"red","color":"white","font-weight":"bold"});
+			});
+			
+			$('#each-'+thisID).animate({width:"-=0px"},250,function(){
+			$('#each-'+thisID).children("#animation").hide();
+			$('#each-'+thisID).css("background-image","none");
+			$('#each-'+thisID).children("#changeQuantity").css({"background-color":"white","color":"black","font-weight":"normal"});		
+			});
+			
+			var price 	 = $('#each-'+thisID).children(".shopp-price").find('em').html();
+			var quantity = $('#each-'+thisID).children(".shopp-quantity").val();
+			
+			quantity = parseInt(quantity)+parseInt(1);
+						
+			currentQuantity = quantity;
+			
+			var total = parseInt(itemprice)*parseInt(quantity);
+			
+			$('#each-'+thisID).children(".shopp-price").find('em').html(total);
+			$('#each-'+thisID).children(".shopp-quantity").val(quantity);
+			
+			
+			
+			var prev_charges = $('.cart-total span').html();
+			prev_charges = parseInt(prev_charges)-parseInt(price);
+			
+			prev_charges = parseInt(prev_charges)+parseInt(total);
+			$('.cart-total span').html(prev_charges);
+			
+			$('#total-hidden-charges').val(prev_charges);
+		}
+		else
+		{
+			Arrays.push(thisID);
+			var prev_charges = $('.cart-total span').html();
+			prev_charges = parseInt(prev_charges)+parseInt(itemprice);
+			
+			$('.cart-total span').html(prev_charges);
+			$('#total-hidden-charges').val(prev_charges);
+			$('#left_bar .cart-info').append('<div class="shopp" id="each-'+thisID+'"><div class="label">'+itemname+'</div><div class="shopp-price"> $<em>'+itemprice+'</em></div><input type="number" min="1" onchange="myFun(this)" class="shopp-quantity" id="changeQuantity" value="1"><img src="images/remove.png" class="remove" /><b id="animation">+1</b> <br class="all" /></div>');
+			$('#cart').css({'-webkit-transform' : 'rotate(30deg)','-moz-transform' : 'rotate(30deg)','-ms-transform' : 'rotate(30deg)' });
+			
+
+		}
+		myTotal();
+		disableCheckout($(".cart-total span").html());
+		setTimeout('angle()',600);
+	});	
+	
+	
+	$('.remove').livequery('click', function() {
+		
+		var deduct = $(this).parent().children(".shopp-price").find('em').html();
+		var prev_charges = $('.cart-total span').html();
+		
+		var thisID = $(this).parent().attr('id').replace('each-','');
+		
+		var pos = getpos(Arrays,thisID);
+		Arrays.splice(pos,1,"0")
+		
+		prev_charges = parseInt(prev_charges)-parseInt(deduct);
+		$('.cart-total span').html(prev_charges);
+		$('#total-hidden-charges').val(prev_charges);
+		$(this).parent().remove();
+		disableCheckout($(".cart-total span").html());
+	});	
+	
+	$('#Submit').livequery('click', function() {
+		
+		var totalCharge = $('#total-hidden-charges').val();
+		
+		checkOutCost = totalCharge;	
+		$('#left_bar').html();
+		
+		return false;
+		
+	});	
+	
+	$('#Submit').hide();	
+	
+});
+
+function disableCheckout(e)
+{
+	if(parseInt(e) > 0)	
+	$('#Submit').show();	
+	else
+	$('#Submit').hide();	
+}
+
+function include(arr, obj) {
+  for(var i=0; i<arr.length; i++) {
+    if (arr[i] == obj) return true;
+  }
+}
+function getpos(arr, obj) {
+  for(var i=0; i<arr.length; i++) {
+    if (arr[i] == obj) return i;
+  }
+}
+function angle(){
+$('#cart').css({'-webkit-transform' : 'rotate('+angleInc+'deg)','-moz-transform' : 'rotate('+angleInc+'deg)','-ms-transform' : 'rotate('+angleInc+'deg)' });
+angleInc+=0.5;
+}
+
+
+function myFun(e)
+{	
+
+		$('#each-'+$(e).parent().attr('id').charAt(5)).animate({width:"+=0px"},0,function(){
+		$('#each-'+$(e).parent().attr('id').charAt(5)).css("background-image","url('images/gradient.PNG')");
+		$('#each-'+$(e).parent().attr('id').charAt(5)).children("#changeQuantity").css({"background-color":"red","color":"white","font-weight":"bold"});
+		});
+
+		$('#each-'+$(e).parent().attr('id').charAt(5)).animate({width:"-=0px"},200,function(){
+		$('#each-'+$(e).parent().attr('id').charAt(5)).css("background-image","none");
+		$('#each-'+$(e).parent().attr('id').charAt(5)).children("#changeQuantity").css({"background-color":"white","color":"black","font-weight":"normal"});		
+		});
+
+var tempId = "#"+$(e).parent().attr('id').charAt(5);
+
+changePrice = $(tempId).children().children(".price").html();
+changeQuantity = $(e).val();
+changeTotal = parseInt(changePrice)*parseInt(changeQuantity);	
+$(e).parent().children(".shopp-price").find('em').html(changeTotal);
+myTotal();
+disableCheckout($(".cart-total span").html());
+}
+
+function myTotal()
+{
+		var prev_charges = 0;
+		for(var i=1; i<=9; i++) {
+		temp = "#each-"+i;
+		if($(temp).children().find('em').html() != null)
+		{
+		prev_charges = prev_charges + parseInt($(temp).children().find('em').html());
+		}
+		$('.cart-total span').html(prev_charges);
+		$('#total-hidden-charges').val(prev_charges);
+		}
+}
+
+</script>
+</head>
+
+<body>
+
+<div >
+	
+	<div id="wrap" >
+		
+		<ul>
+			<li id="1">
+				<img src="images/a1.jpg" class="items"  alt="" />
+				
+				<br clear="all" />
+				<div><span class="name">Mac/OS X</span><br><span >Price :&nbsp;$</span><span class="price">800</span> </div>
+			</li>
+			<li id="2">
+				<img src="images/5.jpg" class="items"  alt="" />
+				
+				<br clear="all" />
+				<div><span class="name">IPhone 3GS</span><br><span >Price :&nbsp;$</span><span class="price">500</span> </div>
+			</li>
+			<li id="3">
+				<img src="images/1.jpg" class="items"  alt="" />
+				
+				<br clear="all" />
+				<div><span class="name">Apple IPad </span><br><span >Price :&nbsp;$</span><span class="price">400</span> </div>
+			</li>
+			
+			<li id="4">
+				<img src="images/6.jpg" class="items"  alt="" />
+				
+				<br clear="all" />
+				<div><span class="name">Mac NoteBook </span><br><span >Price :&nbsp;$</span><span class="price">1200</span> </div>
+			</li>
+			
+			<li id="6">
+				<img src="images/4.jpg" class="items"  alt="" />
+				
+				<br clear="all" />
+				<div><span class="name">IPhone 4GS </span><br><span >Price :&nbsp;$</span><span class="price">800</span> </div>
+			</li>
+			
+			<li id="7">
+				<img src="images/7.jpg" class="items"  alt="" />
+				
+				<br clear="all" />
+				<div><span class="name"> Bag</span><br><span >Price :&nbsp;$</span><span class="price">45</span> </div>
+			</li>
+			<li id="8">
+				<img src="images/3.jpg" class="items"  alt="" />
+				
+				<br clear="all" />
+				<div><span class="name">Mac NoteBook </span><br><span >Price :&nbsp;$</span><span class="price">900</span> </span></div>
+			</li>
+			
+			<li id="9">
+				<img src="images/8.jpeg" class="items"  alt="" />
+				
+				<br clear="all" />
+				<div><span class="name">Sony Ear Phone </span><br><span >Price :&nbsp;$</span><span class="price">20</span> </div>
+			</li>
+			
+		</ul>
+		
+		<br clear="all" />
+		
+		<div id="bottomBar" ><img src="images/carts.png" id="cart" /></div>
+	
+	</div>
+	
+	<div id="left_bar"> 
+		
+		<form action="#" id="cart_form" name="cart_form">
+		
+		<div class="cart-info"></div>
+		
+		<div class="cart-total" >
+		
+			<b>Total Charges :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $<span>0</span></b>
+			
+			<input type="hidden" name="total-hidden-charges" id="total-hidden-charges" value="0" />
+		</div>
+		
+		<button type="submit" id="Submit">CheckOut</button>
+		
+		</form>
+		
+	</div> 
+	
+</div>
+<div id="description" style="display:none">Description for Ajax shopping cart</div>
+	
+	<!-- Element to pop up -->
+	<div id="element_to_pop_up"></div>
+
+	
+	<div style="display:none" id="cCard">
+            	<div class="paymentMode" ><input type="radio" name="paymentType"><img src="images/payment/amex_logo.jpg" border="0" alt="American Express"></div>
+                <div class="paymentMode" ><input type="radio" name="paymentType"><img src="images/payment/amexezeclick_logo.jpg" border="0" alt="eZeClick"></div>
+                <div class="paymentMode" ><input type="radio" name="paymentType"><img src="images/payment/dinersclub_logo.jpg" border="0" alt="Diners Club International"></div>
+                <div class="paymentMode" ><input type="radio" name="paymentType"><img src="images/payment/discover_logo.jpg" border="0" alt="Discover"></div>
+                <div class="paymentMode" ><input type="radio" name="paymentType"><img src="images/payment/jcb_logo.jpg" border="0" alt="JCB"></div>
+                <div class="paymentMode" ><input type="radio" name="paymentType"><img src="images/payment/mastercard_logo.jpg" border="0" alt="Master Card"></div>
+                <div class="paymentMode" ><input type="radio" name="paymentType"><img src="images/payment/visa_logo.jpg" border="0" alt="Visa"></div>
+	</div>
+	
+
+	<div style="display:none" id="dCard">
+            	<div class="paymentMode" ><input type="radio" name="paymentType"><img src="images/payment/mastercardall_logo.jpg" border="0" alt="American Express"></div>
+                <div class="paymentMode" ><input type="radio" name="paymentType"><img src="images/payment/rupay_logo.jpg" border="0" alt="eZeClick"></div>
+                <div class="paymentMode" ><input type="radio" name="paymentType"><img src="images/payment/visadebitcardall_logo.jpg" border="0" alt="Diners Club International"></div>
+                <div class="paymentMode" ><input type="radio" name="paymentType"><img src="images/payment/mastercard_logo.jpg" border="0" alt="Master Card"></div>
+                <div class="paymentMode" ><input type="radio" name="paymentType"><img src="images/payment/visa_logo.jpg" border="0" alt="Visa"></div>
+	</div>
+	
+	<div style="display:none" id="atmCard">
+            	<div class="paymentMode" ><input type="radio" name="paymentType"><img src="images/payment/canarabank_logo.jpg" border="0" alt="American Express"></div>
+                <div class="paymentMode" ><input type="radio" name="paymentType"><img src="images/payment/iob_logo.jpg" border="0" alt="eZeClick"></div>
+                <div class="paymentMode" ><input type="radio" name="paymentType"><img src="images/payment/sbi_logo.jpg" border="0" alt="Diners Club International"></div>
+                <div class="paymentMode" ><input type="radio" name="paymentType"><img src="images/payment/andhrabandk_logo.jpg" border="0" alt="Discover"></div>
+                <div class="paymentMode" ><input type="radio" name="paymentType"><img src="images/payment/citibank_logo.jpg" border="0" alt="JCB"></div>
+                <div class="paymentMode" ><input type="radio" name="paymentType"><img src="images/payment/pnb_logo.jpg" border="0" alt="Master Card"></div>
+                <div class="paymentMode" ><input type="radio" name="paymentType"><img src="images/payment/uninonbank_logo.jpg" border="0" alt="Visa"></div>
+	</div>
+	
+	<div style="display:none" id="cshCard">
+            	<div class="paymentMode" ><input type="radio" name="paymentType"><img src="images/payment/itzcash_logo.jpg" border="0" alt="American Express"></div>
+                <div class="paymentMode" ><input type="radio" name="paymentType"><img src="images/payment/oxigen_wallet.jpg" border="0" alt="eZeClick"></div>
+                <div class="paymentMode" ><input type="radio" name="paymentType"><img src="images/payment/icashcard_logo.jpg" border="0" alt="Diners Club International"></div>
+                <div class="paymentMode" ><input type="radio" name="paymentType"><img src="images/payment/noq24x7_logo.jpg" border="0" alt="Discover"></div>
+                <div class="paymentMode" ><input type="radio" name="paymentType"><img src="images/payment/paycash_logo.jpg" border="0" alt="JCB"></div>
+               
+	</div>
+	
+	<div style="display:none" id="netBank">
+            	<div class="paymentMode" ><input type="radio" name="paymentType"><img src="images/payment/axisbank_logo.jpg" border="0" alt="American Express"></div>
+                <div class="paymentMode" ><input type="radio" name="paymentType"><img src="images/payment/bankofindia_logo.jpg" border="0" alt="eZeClick"></div>
+                <div class="paymentMode" ><input type="radio" name="paymentType"><img src="images/payment/bbk_logo.jpg" border="0" alt="Diners Club International"></div>
+                <div class="paymentMode" ><input type="radio" name="paymentType"><img src="images/payment/cboi_logo.jpg" border="0" alt="Discover"></div>
+                <div class="paymentMode" ><input type="radio" name="paymentType"><img src="images/payment/andhrabandk_logo.jpg" border="0" alt="JCB"></div>
+                <div class="paymentMode" ><input type="radio" name="paymentType"><img src="images/payment/corporationbank_logo.jpg" border="0" alt="Master Card"></div>
+                <div class="paymentMode" ><input type="radio" name="paymentType"><img src="images/payment/bankofbaroda_logo.jpg" border="0" alt="Visa"></div>
+				<div class="paymentMode" ><input type="radio" name="paymentType"><img src="images/payment/bankofmaharashtra_logo.jpg" border="0" alt="Visa"></div>
+				<div class="paymentMode" ><input type="radio" name="paymentType"><img src="images/payment/canarabank_logo.jpg" border="0" alt="Visa"></div>
+				<div class="paymentMode" ><input type="radio" name="paymentType"><img src="images/payment/citibank_logo.jpg" border="0" alt="Visa"></div>
+				<div class="paymentMode" ><input type="radio" name="paymentType"><img src="images/payment/csb_logo.jpg" border="0" alt="Visa"></div>
+				
+	</div>
+
+<script type="text/javascript" src="js/ajaxShoppingCart.js"></script>
+</body>
+</html>
+

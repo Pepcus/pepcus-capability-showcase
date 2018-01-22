@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+  <title>Horizontal sliding tabs</title>
+
+    <!-- include the Tools -->
+  <script src="js/jquery.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/tabs-accordion-horizontal.css">
+</head>
+<body><!-- accordion root -->
+<div id="accordion">
+
+  <!-- accordion header #1 -->
+  <img class="current" src="images/One.png">
+
+  <div style="width: 200px; display: block;">
+    <h3>First pane</h3>
+    <p>
+      First pane content
+    </p>
+  </div>
+
+  <img src="images/Two.png">
+
+  <div style="display: none;">
+    <h3>Second pane</h3>
+    <p>
+      Second pane content
+    </p>
+  </div>
+
+  <img src="images/Three.png">
+
+  <div style="display: none;">
+    <h3>Third pane</h3>
+    <p>
+      Third pane content
+    </p>
+  </div>
+</div>
+
+<script>
+  $(function() {
+      $("#accordion").tabs("#accordion div", {
+      tabs: 'img',
+      effect: 'horizontal'
+    });
+  });
+</script>
+
+</body></html>

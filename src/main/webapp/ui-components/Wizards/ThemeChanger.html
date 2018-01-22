@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link href="css/dark.css" rel="stylesheet" type="text/css" />
+<link href="css/red.css" rel="stylesheet" type="text/css" />
+<link href="css/gray.css" rel="stylesheet" type="text/css" />
+<link href="css/royal.css" rel="stylesheet" type="text/css" />
+<script>
+	$(function() {
+		$('div#eg-dark-theme').editable({
+			// Set dark theme name.
+			theme : 'dark',
+
+			// Set basic mode.
+			inlineMode : false
+		})
+
+		$('div#eg-red-theme').editable({
+			// Set red theme name.
+			theme : 'red',
+
+			// Set basic mode.
+			inlineMode : false
+		})
+
+		$('div#eg-gray-theme').editable({
+			// Set gray theme name.
+			theme : 'gray',
+
+			// Set basic mode.
+			inlineMode : false
+		})
+
+		$('div#eg-royal-theme').editable({
+			// Set royal theme name.
+			theme : 'royal',
+
+			// Set basic mode.
+			inlineMode : false
+		})
+	});
+</script>
+</head>
+<body>
+	<div id="eg-dark-theme" class="text-small">Dark Theme</div>
+	<br />
+
+	<div id="eg-red-theme" class="text-small">Red Theme</div>
+	<br />
+
+	<div id="eg-gray-theme" class="text-small">Gray Theme</div>
+	<br />
+
+	<div id="eg-royal-theme" class="text-small">Royal Theme</div>
+</body>
+</html>

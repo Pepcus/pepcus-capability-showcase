@@ -1,0 +1,110 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <link href="../../css/include.css" rel="stylesheet" type="text/css"/>
+	<link rel="stylesheet" type="text/css" href="css/css.css">
+
+	<script type="text/javascript" src="../../js/jquery/jquery-1.11.1.min.js"></script>
+</head>
+
+<body onload="selectModel()" >
+	<section class="section-container border-lightblue">
+		<div class="content-heading lightblue">
+            <h2 class="h5 white-heading">Radios</h2>
+        </div>
+		<form class="riskToleranceForm">
+			<div>	
+				<input name="riskTolerance" value="risk1" style="display:none;" type="radio">
+				<input name="riskTolerance" value="risk2" style="display:none;" type="radio">
+				<input name="riskTolerance" value="risk3" style="display:none;" type="radio">
+				<input name="riskTolerance" value="risk4" style="display:none;" type="radio">
+				<input name="riskTolerance" value="risk5" style="display:none;" type="radio">
+			</div>
+		</form>
+		
+		<div class="selectModel">
+			<div class="model" id="model1"></div>
+			<div class="model" id="model2"></div>
+			<div class="model" id="model3"></div>
+			<div class="model" id="model4"></div>
+			<div class="model" id="model5"></div>
+		</div>
+	</section>
+
+	
+	<script>
+		$(".model").click(function(){
+			$("div.model").removeClass("selected");
+		});
+		
+		$("#model1").click(function(){
+			$("div#model1").addClass("selected");	
+			var radios = document.getElementsByName("riskTolerance");	
+			radios[0].checked = true;		
+		});
+		
+		$("#model2").click(function(){
+			$("div#model2").addClass("selected");
+			var radios = document.getElementsByName("riskTolerance");	
+			radios[1].checked = true;
+		});
+		
+		$("#model3").click(function(){
+			$("div#model3").addClass("selected");
+			var radios = document.getElementsByName("riskTolerance");	
+			radios[2].checked = true;
+		}); 
+		
+		$("#model4").click(function(){
+			$("div#model4").addClass("selected");
+			var radios = document.getElementsByName("riskTolerance");	
+			radios[3].checked = true;
+		}); 
+		
+		$("#model5").click(function(){
+			$("div#model5").addClass("selected");
+			var radios = document.getElementsByName("riskTolerance");	
+			radios[4].checked = true;
+		});
+	</script>
+
+	<script>
+		<!-- Select Model highlighted when return to this page. -->
+		window.onload = function()
+		{
+			var radios = document.getElementsByName("riskTolerance");
+			for (var loop=0; loop < radios.length; loop++)
+			{
+				if (radios[loop].checked == true) {
+					var modelName = "model"+(loop+1);
+					var modelDivName = "div#"+modelName;
+					$(modelDivName).addClass("selected");
+				}
+			}
+		};
+
+		function selectModel()
+		{
+			if ("") {
+				document.getElementById("").checked = true;
+			}
+		}
+
+		function isSelected (radios)
+		{
+			for (var loop=0; loop < radios.length; loop++)
+			{
+				if (radios[loop].checked == true) {
+					return true;
+				}
+			}
+			return false;
+		}
+
+	</script>
+
+
+</body>
+</html>

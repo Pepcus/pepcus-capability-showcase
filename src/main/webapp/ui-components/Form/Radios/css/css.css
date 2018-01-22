@@ -1,0 +1,99 @@
+div.selectModel {
+	float: left;
+	background: url("../images/selectModelRiskReturn.png") no-repeat 0 25px;
+	padding: 0 0 25px 18px;
+	margin-left: 15px;
+}
+
+div.model {
+	float: left;
+	cursor: pointer;
+	height: 165px;
+	width: 165px;
+}
+.riskToleranceForm {
+    display: none;
+}
+.section-container {
+    margin: 20px;
+    overflow: hidden;
+}
+#model1 {
+	margin-top: 175px;
+	background: url("../images/select_model_piechart_sprite.png")
+		no-repeat 0 -160px;
+}
+
+#model1:hover {
+	background: url("../images/select_model_piechart_sprite.png")
+		no-repeat 0 -484px;
+}
+
+.selected#model1 {
+	background: url("../images/select_model_piechart_sprite.png")
+		no-repeat 0 -809px;
+}
+
+#model2 {
+	margin-top: 85px;
+	background: url("../images/select_model_piechart_sprite.png")
+		no-repeat -165px -70px;
+}
+
+#model2:hover {
+	background: url("../images/select_model_piechart_sprite.png")
+		no-repeat -165px -394px;
+}
+
+.selected#model2 {
+	background: url("../images/select_model_piechart_sprite.png")
+		no-repeat -165px -719px;
+}
+
+#model3 {
+	margin-top: 43px;
+	background: url("../images/select_model_piechart_sprite.png")
+		no-repeat -330px -28px;
+}
+
+#model3:hover {
+	background: url("../images/select_model_piechart_sprite.png")
+		no-repeat -330px -352px;
+}
+
+.selected#model3 {
+	background: url("../images/select_model_piechart_sprite.png")
+		no-repeat -330px -677px;
+}
+
+#model4 {
+	margin-top: 25px;
+	background: url("../images/select_model_piechart_sprite.png")
+		no-repeat -495px -10px;
+}
+
+#model4:hover {
+	background: url("../images/select_model_piechart_sprite.png")
+		no-repeat -495px -334px;
+}
+
+.selected#model4 {
+	background: url("../images/select_model_piechart_sprite.png")
+		no-repeat -495px -659px;
+}
+
+#model5 {
+	margin-top: 20px;
+	background: url("../images/select_model_piechart_sprite.png")
+		no-repeat -660px -5px;
+}
+
+#model5:hover {
+	background: url("../images/select_model_piechart_sprite.png")
+		no-repeat -660px -329px;
+}
+
+.selected#model5 {
+	background: url("../images/select_model_piechart_sprite.png")
+		no-repeat -660px -654px;
+}

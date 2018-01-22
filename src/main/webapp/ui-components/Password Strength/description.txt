@@ -1,0 +1,1 @@
+This is a password strength checker widget which tells you how secure your password is with the help of cool emoticons.

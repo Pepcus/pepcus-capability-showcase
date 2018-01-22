@@ -1,0 +1,96 @@
+body{
+margin:auto;
+}
+
+#mainContainer {
+	margin-top: 27px;
+	height: 267px;
+    background-image:url("../images/background.PNG");
+	background: -webkit-linear-gradient(white,rgb(160, 160, 160),rgb(255, 255, 255));
+	background: -moz-linear-gradient(white,rgb(160, 160, 160),rgb(255, 255, 255));
+	background: -o-linear-gradient(white,rgb(160, 160, 160),rgb(255, 255, 255));
+	background: -ms-linear-gradient(white,rgb(160, 160, 160),rgb(255, 255, 255));
+	background: linear-gradient(white,rgb(160, 160, 160),rgb(255, 255, 255));
+	background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+#menuContainer {
+	margin-top: 27px;
+	height: 267px;
+	width: 66%;
+}
+#menuContainer .menu {
+background-image:url("../images/grey.PNG");
+background: -webkit-radial-gradient(rgb(190, 190, 190),rgb(255, 255, 255),black);
+background: -moz-radial-gradient(rgb(190, 190, 190),rgb(255, 255, 255),black);
+background: -o-radial-gradient(rgb(190, 190, 190),rgb(255, 255, 255),black);
+background: -ms-radial-gradient(rgb(190, 190, 190),rgb(255, 255, 255),black);
+background: radial-gradient(rgb(190, 190, 190),rgb(255, 255, 255),black);
+float: left;
+position:relative;
+margin: 27px 0 0 0;
+border: 0;
+border-radius: 100px 100px 100px 0px;
+width: 172px;
+height: 174px;
+box-shadow: 0px 0px 17px 5px red;
+opacity: 0.9;
+-webkit-transform: rotate(314deg);
+-moz-transform: rotate(314deg);
+-o-transform: rotate(314deg);
+-ms-transform: rotate(314deg);
+transform: rotate(314deg);
+}
+
+#transparentSlate {
+	width: 91%;
+	height: 56px;
+	background-color: rgb(43, 154, 249);
+	position:absolute;
+	top:153px;
+	left:41px;
+	opacity:0;
+}
+
+.right-pad{
+	float: right;
+width: 90%;
+height: 100%;
+position: relative;
+/* top: -10px; */
+bottom: -8px;
+right: 17px;
+-webkit-transform: rotate(-314deg);
+-moz-transform: rotate(-314deg);
+-o-transform: rotate(-314deg);
+-ms-transform: rotate(-314deg);
+transform: rotate(-314deg);
+text-align: center;
+}
+.right-pad h1{ 
+color: black;
+margin-left: 0px;
+margin-top: 60px;
+font-family: Lucida Grande,Lucida Sans,Arial,Helvetica,sans-serif;
+font-size: 23px;
+}
+
+#dataOnClick
+{
+position: relative;
+top: 10px;
+left: 200px;
+width: 58.5%;
+}
+h3{
+color:red;
+}
+
+p{
+color:black;
+}
+
+a{
+text-decoration:none;
+}

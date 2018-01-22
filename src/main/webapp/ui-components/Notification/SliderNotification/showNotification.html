@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="../../js/jquery/jquery-1.11.1.min.js"></script>
+<style>
+
+div{
+position:fixed;
+top:0px;
+left:0px;
+right:10px;
+height:40px;
+font-size:15px;
+background-color:red;
+color:white;
+text-align:center;
+padding-top:20px;
+padding-right:20px
+}
+
+.hide{
+cursor:pointer;
+float: right;
+height: 20px;
+width: 20px;
+background: url('images/close.png') no-repeat center center;
+margin-right:5px;
+}
+
+#show{
+display:inline;
+cursor:pointer;
+position:fixed;
+top:-60px;
+left: 94%;
+height:40px;
+width:20px;
+background: url('images/show.png') no-repeat center center;
+background-color: red;
+border-radius: 0px 0px 10px 10px;
+}
+</style>
+<script>
+$(document).ready(function(){
+  
+  
+  
+  $("#hide").click(function(){
+  $("#notification").animate({top:"-60px"},300);
+  $("#show").animate({top:"0px"},500);
+  });
+
+  $("#show").click(function(){
+  $("#notification").animate({top:"0px"},300);
+  $("#show").animate({top:"-60px"},500);
+  });
+
+});
+
+
+</script>
+</head>
+<body>
+
+<div id="notification">
+You can hide this notification by clicking the close button.
+<span class="hide" id="hide"><span>
+</div>
+
+<div id="show">
+</div>
+
+
+</body>
+</html>

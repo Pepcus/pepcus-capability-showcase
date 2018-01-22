@@ -1,0 +1,50 @@
+#accordion{
+		width:98%;
+		}
+		.ui-state-default{
+		color: #FFFFFF;
+		background-image:url("../images/flipBack.png");
+		background: -webkit-linear-gradient(90deg,red, #FFFFFF);
+		background: -moz-linear-gradient(90deg,red, #FFFFFF);
+		background: -o-linear-gradient(90deg,red, #FFFFFF);
+		
+		font-weight:bold;
+		font-size:12pt;
+		}
+		.ui-state-active{
+		color: #000000;
+		background-image:url("../images/back.png");
+		background: -webkit-linear-gradient(90deg, #FFFFFF, red);
+		background: -moz-linear-gradient(90deg, #FFFFFF, red);
+		background: -o-linear-gradient(90deg, #FFFFFF, red);
+		
+		font-weight:bold;
+		font-size:13pt;
+		}
+		h4.h{
+		color:red;
+		}
+		p,ul,li,a{
+		text-align:justify;
+		font-size:10pt;
+		font-weight:normal;
+		}
+		.barImg{
+		height:50px;
+		width:50px;
+		float:left;
+		}
+		td {
+		height: 50px;
+		vertical-align: middle;
+		text-align:justify;
+		}
+		.barText{
+		font-weight:bold;
+		color:red;
+		vertical-align:text-bottom;
+		}
+		.contImg{
+		height:10px;
+		width:10px;
+		}

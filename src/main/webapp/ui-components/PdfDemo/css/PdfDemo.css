@@ -1,0 +1,188 @@
+.wrapper {
+	border: 1px solid #f2f2f2;
+}
+#pdf-input-div {
+    display: block;
+}
+.wrapper-heading {
+	padding: 10px;
+	background-color: #f2f2f2;
+	font-size: 16px;
+	color: #777;
+	font-weight: 600;
+	font-family: "Open Sans", sans-serif;
+}
+.wrapper-content {
+	margin: 10px;
+
+}
+.content-heading {
+	margin-bottom: 15px;
+}
+.text_contents {
+	margin-bottom: 10px;
+}
+textarea {
+	width:450px;
+}
+.input_contents {
+	margin-bottom: 10px;
+}
+.small_font {
+	margin: 20px 0 10px 0;
+}
+.button_contents {
+	height: 30px;
+}
+.emp-data {
+    //display: inline-grid;
+}
+.emp-data div {
+    display: inline-block;
+}
+/*.emp-data input {
+    float: right;
+    margin: 10px;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #e7e7e7;
+    padding: 5px;
+    border-radius: 0 0 10px 10px;
+    width: 200px;
+}*/
+.emp-data span {
+    float: left;
+    margin: 10px;
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 12px;
+}
+
+th {
+    background-color: #f2f2f2;
+    color: #777;
+}
+.ngdialog.ngdialog-theme-default .ngdialog-content {
+    -webkit-animation: ngdialog-flyin .5s;
+    animation: ngdialog-flyin .5s;
+    background: #f0f0f0;
+    border-radius: 5px;
+    color: #444;
+    font-family: Helvetica, sans-serif;
+    font-size: 1.1em;
+    line-height: 1.5em;
+    margin: 0 auto;
+    max-width: 100%;
+    padding: 50px;
+    position: relative;
+    width: 35%;
+}
+#pdf-image {
+    width: 150px;
+    height: 150px;
+}
+.pdf-div {
+    padding: 20px;
+    display: none;
+}
+form {
+    margin: 0;
+}
+.pdf-form {
+    max-width: none;
+    width: 1005px;
+}
+.pdf-heading {
+    text-align: center;
+}
+.pdf-logo {
+    text-align: center;
+}
+.pdf-logo-img {
+    padding: 7px;
+}
+.pdf-logo img {
+    width:70px;
+    height:70px;
+}
+.profile-pic {
+    margin-top: 15px;
+}
+
+.pdf-div  h2 {
+    color: #0094ff;
+    padding-left: 15px;
+    text-transform: uppercase;
+}
+.pdf-div  h3 {
+    padding-left: 15px;
+    text-transform: uppercase;
+}
+
+.clk {
+
+}
+.hascls {
+    width: 50px;
+    background-color: #39771d;
+    height: 10px;
+
+}
+.slide {
+    background-color: #777777;
+    width: 30px;
+    height: 30px;
+}
+section {
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    margin: 10px 0 10px 0;
+}
+h1 {
+    margin: 10px;
+}
+section img {
+    margin: 5px 0 -5px 5px;
+    height: 20px;
+}
+input {
+    border: 0;
+    border-left: 1px solid #ccc;
+    flex-grow: 1;
+    font-size: 1.1rem;
+    outline: none;
+    font-weight: 300;
+    padding: .35em .5em;
+}
+.form-buttons button {
+    margin-left: 16px;
+}
+.form-buttons {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1em 0 0 0;
+}
+.a-btn, .a-btn--filled {
+    padding: .35em 1em;
+    box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    border: 1px solid #3498db;
+    background-color: #fff;
+    transition: all 146ms ease;
+    font-size: 1.2rem;
+    border-radius: 3px;
+    color: #333;
+}
+.a-btn--filled {
+    background-color: #3498db;
+    border-color: #3498db;
+    color: #fff;
+}

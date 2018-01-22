@@ -1,0 +1,108 @@
+<html  ng-app="PdfDemo">
+    <meta charset="utf-8"/>
+    <head>
+
+        <title>Pdf Generator</title>
+
+        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="js/angular.min.js"></script>
+        <script src="js/ngDialog-master/js/ngDialog.min.js"></script>
+        <script type="text/javascript" src="js/jspdf.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
+        <script type="text/javascript" src="js/pdfgenerator.js"></script>
+        <script type="text/javascript" src="js/angular-sanitize.js"></script>
+       
+
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="js/ngDialog-master/css/ngDialog.min.css">
+        <link rel="stylesheet" href="js/ngDialog-master/css/ngDialog-theme-default.min.css">
+        <link rel="stylesheet" type="text/css" href="css/global.css">
+        <link rel="stylesheet" type="text/css" href="css/PdfDemo.css">
+ <script src="js/jquery.nicescroll.min.js"></script>
+    </head>
+
+    <body>
+       <div class="wrapper" id="pdf-input-div">
+            <div class="wrapper-heading"><span class="h5">Pdf Generator</span></div>
+            <div class="wrapper-content">
+                <div class="content-heading">
+                    <span class="h6">Add data here to generate pdf for employee details</span>
+                </div>
+                <div class="image-uploader">
+                    <span class="h5">Profile Image</span>
+                    <div class="input_contents">
+                        <form action="" method="post" enctype="multipart/form-data" id="uploadForm">
+                            <label class="btn" for="imageUpload"  style=" margin-top: 10px;">
+                                <input type="file" style="display: none; margin-top: 10px;" onChange="previewFile()" name="imageUpload" class="imageUpload" id="imageUpload"  multiple>Upload files
+                            </label>
+                            <div class="imagePreview" style="display:none ;margin-top: 10px;">
+                            <img src="" height="200" alt="Image preview..." ng-model="image">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="data-content">
+                    <form action="getPdf" method="post" enctype="multipart/form-data" id="form1" novalidate="novalidate" ng-controller="EmployeeData">
+                            <div class="text_contents">
+                                <span class="h5" ng-model="text">About Employee</span>
+                            </div>
+                            <div class="input_contents">
+                                <textarea placeholder="Enter some text" id="description" ng-blur="empInfo(EmpData)" name="description"  rows="8"  ng-model="EmpData.employeeInfo"  cols="20" required> </textarea>
+                            </div>
+                            <div id="hint" class="small_font">
+                                <span class="h6">Click 'Employee Details' to add to table</span>
+                            </div>
+                            <div class="button_contents">
+                                <div class="left">
+                                    <input type="button" class="btn" ng-click="showPopup();" value="Employee Details">
+                                </div>
+                                <div class="right" ng-controller="DownloadAndPreviewController">
+                                        <div id="content" >
+                                        </div>
+                                        <div id="editor"></div>
+                                    <input  type="button" class="btn" ng-click="showPreview()" value="showPreview">
+                                </div>
+                            </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="pdf-div wrapper " ng-controller="EmployeeData">
+
+            <form class="form pdf-form"  >
+                <div class="pdf-logo" >
+                    <div class="pdf-logo-img" ><img src="images/logo.png"   ></div>
+                    <div width="40%"><font size="+2">LET'S <font color="red">GROW</font>TOGETHER
+                    </font></div>
+                </div>
+                <hr>
+                <div class="profile-pic" style="margin-top: 15px">
+                <img id='pdf-image' src="" height="200" alt="Image preview..." >
+                </div>
+                <h2>{{firstname}} &nbsp;{{lastname}}</h2>
+
+                <table>
+                    <tbody>
+                    <tr>
+                        <th>Employees Name</th>
+                        <th>Employee Id</th>
+                        <th>Address</th>
+                    </tr>
+                    <tr>
+                        <td>{{firstname}}  {{lastname}}</td>
+                        <td>{{employeeId}}</td>
+                        <td>{{address}}</td>
+                    </tr>
+                   </tbody>
+                </table>
+                <div class="wrapper" style="margin-top: 20px">
+                    <div class="wrapper-heading">About Employee</div>
+                    <p style="margin: 10px;" ng-bind-html="employeeInfo"></p>
+                </div>
+            </form>
+            <input  type="button" class="btn" id="create_pdf" value="Generate PDF">
+
+        </div>
+    </body>
+</html>

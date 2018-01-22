@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	
+	<!--<script src="../../js/common.js" type="text/javascript"></script>-->
+	<script type="text/javascript" src="../../js/jquery/jquery-1.11.1.min.js"></script>
+	<script>
+	var hiddenData = null;
+		
+		$( document ).ready(function() {
+			$('#menuContainer').css("margin-left",($('#mainContainer').width()-800)/2+'px');
+		});	  
+		
+		$('#mainContainer').ready(function(){
+			
+			// Reset the menus to overlap each other.
+			  var leftMargin = 0;
+			  var menuWidth = 172;
+			  
+			  $('#menuContainer .menu').each(function(){
+				this.style.left = leftMargin+'px';
+				leftMargin -=menuWidth;	 
+			  });
+			  
+			  // Animate the menus
+			  var x=142; 
+			  var leftMargin = 0;
+			  $('#menuContainer .menu').each(function(){
+				  $(this).animate({'left': leftMargin+'px'}, 2000);
+				  leftMargin = leftMargin + x;
+			  });
+			  
+			  $(window).resize(function(){
+							if($(window).width() > 1100)
+							$('#menuContainer').css("margin-left",($('#mainContainer').width()-800)/2+'px');
+							else
+							$('#menuContainer').css("margin-left",($('#mainContainer').width()-($(window).width()*.88))/2+'px');
+							
+							$('#menuContainer').css("width",($(window).width()*.66)+'px');
+							// Reset the menus to overlap each other.
+							var leftMargin = 0;
+							var menuWidth = 172;
+
+							$('#menuContainer .menu').each(function(){
+							this.style.left = leftMargin+'px';
+							leftMargin -=menuWidth;	 
+							});
+
+							// Animate the menus
+							var x=($(window).width()*.66)*.18; 
+							var leftMargin = 0;
+							$('#menuContainer .menu').each(function(){
+							$(this).animate({'left': leftMargin+'px'}, 500);
+							leftMargin = leftMargin + x;
+				
+			  });
+			  });
+				
+		});
+		
+		function showData(e){
+			if(""+$(e).attr('id') == "contact"){
+			$("#contact .right-pad").html("<h3>Contact Us</h3><p>Interested in knowing more about us and our business..<a href='http://www.pepcus.com/contact.html'>Read More</a></p>");
+			
+			$("#join .menu").css("box-shadow","0px 0px 17px 5px #BE0000");
+			$("#why .menu").css("box-shadow","0px 0px 17px 5px #BE0000");
+			$("#contact .menu").css("box-shadow","0px 0px 17px 5px gold");
+			
+			$("#join .right-pad").html('<h1>Join Us</h1>');
+			$("#why .right-pad").html('<h1>Why Us</h1>');
+			}
+			else if(""+$(e).attr('id') == "join")
+			{
+			$("#join .right-pad").html("<h3>Join Us</h3><p>Join our vibrant team to learn and grow along with us..<a href='http://www.pepcus.com/career.html'>Read More</a></p>");
+			
+			$("#why .menu").css("box-shadow","0px 0px 17px 5px #BE0000");
+			$("#contact .menu").css("box-shadow","0px 0px 17px 5px #BE0000");
+			$("#join .menu").css("box-shadow","0px 0px 17px 5px gold");
+			
+			$("#contact .right-pad").html('<h1>Contact Us</h1>');
+			$("#why .right-pad").html('<h1>Why Us</h1>');
+			}
+			else
+			{
+			$("#why .right-pad").html("<h3>Why Us</h3><p>Provide best-in-class software development services..<a href='http://www.pepcus.com/about.html'>Read More</a></p>");
+			
+			$("#join .menu").css("box-shadow","0px 0px 17px 5px #BE0000");
+			$("#why .menu").css("box-shadow","0px 0px 17px 5px gold");
+			$("#contact .menu").css("box-shadow","0px 0px 17px 5px #BE0000");
+			
+			
+			$("#contact .right-pad").html('<h1>Contact Us</h1>');
+			$("#join .right-pad").html('<h1>Join Us</h1>');
+			}
+		}
+		
+	</script>
+	<!-- <link rel="stylesheet" type="text/css" href="../../css/include.css"></link> -->
+	<link rel="stylesheet" type="text/css" href="css/slidingMenus.css"></link>
+</head>
+<body>
+<div id="mainContainer">
+<div id="menuContainer">
+
+	<a id="contact" href="#" onclick="showData(this);"><!-- onclick="message();"-->
+		<div id="menu" class="menu">
+			<div class="right-pad">
+				<h1>Contact Us</h1>
+			</div>
+		</div>
+	</a>
+			
+	<a id="join" href="#" onclick="showData(this);">
+		<div id="menu" class="menu">
+			<div class="right-pad">
+				<h1>Join Us</h1>
+			</div>
+		</div>
+	</a>
+	
+	<a id="why" href="#" onclick="showData(this);">
+		<div id="menu" class="menu">
+			<div class="right-pad">
+				<h1>Why Us</h1>
+			</div>
+		</div>
+	</a>
+
+</div>
+</div>
+<div id="dataOnClick"></div>	
+<div id="transparentSlate">  </div>
+
+</body>
+</html>

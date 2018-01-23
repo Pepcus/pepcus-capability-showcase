@@ -1,0 +1,100 @@
+[
+	{
+		"catagories":"Smartphone",
+		"uid":"p1",
+		"name":"Mi Mix 2 (Black, 128 GB)",
+		"price":35999,
+		"description":"6 GB RAM | 128 GB ROM",
+		"image":"images/product1.jpeg",
+		"canPurchase":"true",
+		"soldOut":"false"
+	},
+	{
+		"catagories":"Smartphone",
+		"uid":"p2",
+		"name":"VIVO V7+",
+		"price":21999,
+		"description":"16MP| 24MP Camera",
+		"image":"images/product2.jpeg",
+		"canPurchase":"true",
+		"soldOut":"false"
+		
+	},
+	{
+		"catagories":"Smartphone",
+		"uid":"p3",
+		"name":"Apple iPhone 6S (32 GB)",
+		"price":37999,
+		"description":"12MP | 5MP Camera",
+		"image":"images/product6.jpeg",
+		"canPurchase":"false",
+		"soldOut":"true"
+		
+	},
+	{
+		"catagories":"Smartphone",
+		"uid":"p4",
+		"name":"Pixel (Silver, 32 GB)",
+		"price":43900,
+		"description":"12.3MP | 8MP Camera",
+		"image":"images/product7.jpeg",
+		"canPurchase":"true",
+		"soldOut":"false"
+		
+
+	},
+	{
+		"catagories":"laptop",
+		"uid":"p5",
+		"name":"Hp",
+		"price":35999,
+		"description":"6 GB RAM | 128 GB ROM",
+		"image":"images/laptop1.jpeg",
+		"canPurchase":"true",
+		"soldOut":"false"
+	},
+	{
+		"catagories":"laptop",
+		"uid":"p6",
+		"name":"Hp",
+		"price":21999,
+		"description":"16MP| 24MP Camera",
+		"image":"images/laptop2.jpeg",
+		"canPurchase":"true",
+		"soldOut":"false"
+		
+	},
+	{
+		"catagories":"laptop",
+		"uid":"p7",
+		"name":"Dell",
+		"price":37999,
+		"description":"12MP | 5MP Camera",
+		"image":"images/laptop3.jpeg",
+		"canPurchase":"false",
+		"soldOut":"true"
+		
+	},
+	{
+		"catagories":"laptop",
+		"uid":"p8",
+		"name":"Lenovo",
+		"price":37999,
+		"description":"12MP | 5MP Camera",
+		"image":"images/laptop4.jpeg",
+		"canPurchase":"true",
+		"soldOut":"false"
+		
+	},
+	{
+		"catagories":"laptop",
+		"uid":"p9",
+		"name":"Apple MacBook Pro",
+		"price":37999,
+		"description":"12MP | 5MP Camera",
+		"image":"images/laptop5.jpeg",
+		"canPurchase":"false",
+		"soldOut":"false"
+		
+	}
+]

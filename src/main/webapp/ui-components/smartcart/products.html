@@ -1,0 +1,117 @@
+ 
+<div ng-app="store" >
+<div class="product-container" ng-controller="StoreController as store">
+	<div class="filters">
+		<section class="filterText"><h3>Filters</h3></section>
+		<section class="filter-container">
+			<div class="filter-heading">Product Search</div>
+			<div>
+				<input class="form-control" type="text" name="search" ng-model="searchProduct" />
+			</div>
+		</section>
+		<section class="filter-container">
+			<div  class="filter-heading">Select catagory</div>
+			<div>
+				<select ng-model="category"     ng-change="selectedItemChanged($event)" class="form-control" ng-options="x for x in categories">
+					  <option value="" ng-if="false"></option>
+				</select>
+			</div>
+			<div  class="filter-heading">Search by Brand</div>
+			<div>
+				<form name="form">
+					<select name="form" id="form" ng-model="Brand" class="form-control" ng-options="x for x in name">
+						  <option value="" ng-if="false"></option>
+					</select>
+				</form>
+			</div>
+			<input  type="text" value="apple" hidden>
+		</section>
+		<form method="get" name="price-filters">
+		<section class="filter-container">
+        	<header  class="filter-heading">Select price range</header>
+            <main class="values group">
+            	<div class="price-range">
+            		<div class="min-price">
+	                	&#x20B9;
+		                	<input class="form-control minValInput" name="minVal" id="minVal" type="text" ng-model="price_slider.start[0]"/>
+	            	</div>
+            		<div class="to-price">to</div>
+                	<div class="max-price">
+                		&#x20B9;
+                		<input class="form-control maxValInput" name="maxVal" id="maxVal" type="text" ng-model="price_slider.start[1]"/>
+                	</div>
+            	</div>
+            </main>
+		</section>
+		<section class="filter-container">
+			<main>
+				<span>
+					<button ng-click="price_slider.start = [0, 1000000]; clearPrice()" class="clear btn" id="clearPrice"  >	Clear
+           			</button>
+				</span>
+				<span>
+					<input class="submit-price FilterButton btn" style="width: 65%" type="submit" ng-click="priceFiltering('filter')" value="Filter">
+				</span>
+			</main>
+		</section>
+		</form>
+	</div>
+	<div class="tab1">
+		<div   class="product" ng-class="{'soldOut': product.soldOut == 'true'}" ng-repeat='product in store.products | filter:category:catagories |filter:Brand:name | filter:pricefilter | filter:searchProduct:name' ng-click="productDetails()">
+		   	<div class="sold-out-tag" ng-show="{{product.soldOut}}">
+		   	sold out
+		   	</div>
+		    <div class="product-image" style="">
+				<img src="{{product.image}}">
+			</div>
+
+			<div class="product-name">{{product.uid}}
+			</div>
+			<div class="product-feature">{{product.description}}
+			</div>
+			<div class="product-price">{{product.price |  currency:'&#8377;'}}
+			</div>
+		</div>
+	</div>
+	<div ng-show="store.showPreview"  class="product-preview-popup" id="checkoutPopupOuterDiv">
+		<div class="product-view-block">
+			<div  class="product-details"  ng-repeat='product in store.productDetailsArray' >
+			   	<div class="productDetails-image">
+						<img  src="{{product.image}}">
+				</div>
+				<div class="product-detail-specs">
+					<div  >
+						<div class="product-detail-name">{{product.name}}
+						</div>
+						<div class="product-detail-price">{{product.price | currency:'&#8377;'}}
+						</div>
+						<div class="product-detail-feature">{{product.description}}
+						</div>
+					</div>
+					<h2 ng-show="{{product.soldOut}}">Sold Out</h2>
+					<h2 ng-hide="{{product.canPurchase}}">Currently Unavailable</h2>
+					<div class="add-to-cart">
+					<button class="btn" ng-show="{{product.canPurchase}}" ng-click="addToCart()"><i class="material-icons">shopping_cart </i> Add to Cart</button>
+					</div>
+			    </div>
+		  	</div>
+		</div>
+		
+		<div id="checkoutPopup" class="checkout-popup" >
+			
+		</div>
+		<div class="close-preview"  ng-click="closePreview()">
+		 <span>&#x2716;</span>
+		</div>
+	</div>
+	<div ng-show="store.showAddedToCart" id="AddedToCart" class="Added-to-cart" >
+				ITEM ADDED
+	</div>
+	<div ng-show="store.alreadyAdded" id="AddedToCart" class="Added-to-cart" >
+				ALREADY ADDED
+	</div>
+</div>
+</div>
+
+
+

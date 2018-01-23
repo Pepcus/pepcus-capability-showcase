@@ -1,0 +1,42 @@
+<div ng-controller="MycartController as mycart">
+	<div class="cart-product-container" >
+		<div class="mycart-heading"><span>My Cart ({{mycart.cartCount}}) </span></div>
+		
+		<div class="added-products">
+			<div class="cart-product"  ng-repeat='product in mycart.products'  >
+			   <div class="product-detials-wrapper">
+			    <div class="product-image">
+						<img src="{{product.image}}">
+				</div>
+
+				<div class="cart-product-specs">
+					<div class="cart-product-name">{{product.name}}
+						</div>
+					<div class="cart-product-feature">{{product.description}}
+						</div>
+					<div class="cart-product-price">{{product.price | currency:'&#8377;'}}
+						</div>
+			    </div>
+			    </div>	
+			  <div class="remove-from-cart">
+			  		<a href="" ng-click="deleteFromCart($index)" ><i class="material-icons">delete</i></a>
+			  </div>
+			</div>	
+		</div>	 
+	</div>
+	<div class="total-amount">
+		<div class="mycart-price-heading"><span>Price Details </span></div>
+		<div class="items-count">
+			<div> Items ({{mycart.cartCount}}) </div>
+			<div>{{mycart.totalAmount | currency:'&#8377;'}}</div>
+		</div>
+		<div class="delivery-charges">
+			<div> Delivery Charges </div>
+			<div><span>Free</span></div>
+		</div>
+		<div class="amount-payable">Amount Payable</div>
+		<div class="amount-rupees">{{mycart.totalAmount | currency:'&#8377;'}}</div>	
+		<!-- <div class="checkout" >	<button type="submit" name="submit" class="btn" ng-click="Checkout()" >Checkout</button> </div> -->
+		<div id="paypal-button"></div>
+	</div>
+</div>

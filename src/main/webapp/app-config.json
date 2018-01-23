@@ -142,7 +142,7 @@
                "_name": "Shopping Cart",
                "_welcomePage": "/smartCartDemo.html",
                "_parentApp": "User Interface",
-               "_applicationUrl": "ui-components/ShoppingCart/SmartCart",
+               "_applicationUrl": "ui-components/smartcart",
                "_iconClass":"fa-shopping-cart",
 			   "_appData":"A basic product purchase and checkout process demo with a categoried product layout. "
             },

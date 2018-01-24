@@ -154,34 +154,26 @@
                "_iconClass":"fa-key",
             "_appData":"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
             },
-             {
-               "_name": "Angular-components",
+            {
+               "_name": "Tooltip",
                "_welcomePage": "",
                "_parentApp": "User Interface",
                "_applicationUrl": "ui-components/Angular2/tooltip/dist/index.html",
                "_iconClass":"fa-key",
             "_appData":"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
             },
-            {
-               "_name": "Tooltip-component",
+             {
+               "_name": "News Letter",
                "_welcomePage": "",
-               "_parentApp": "Angular-components",
-               "_applicationUrl": "ui-components/Angular2/tooltip/dist/index.html",
+               "_parentApp": "User Interface",
+               "_applicationUrl": "ui-components/Angular2/news-letter/dist/index.html",
                "_iconClass":"fa-key",
             "_appData":"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
             },
              {
-               "_name": "Email-component",
+               "_name": "Notification",
                "_welcomePage": "",
-               "_parentApp": "Angular-components",
-               "_applicationUrl": "ui-components/Angular2/Email Template/dist/index.html",
-               "_iconClass":"fa-key",
-            "_appData":"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-            },
-             {
-               "_name": "Notification-component",
-               "_welcomePage": "",
-               "_parentApp": "Angular-components",
+               "_parentApp": "User Interface",
                "_applicationUrl": "ui-components/Angular2/notification/dist/index.html",
                "_iconClass":"fa-key",
             "_appData":"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
@@ -189,7 +181,7 @@
              {
                "_name": "Notification-Module",
                "_welcomePage": "",
-               "_parentApp": "Angular-components",
+               "_parentApp": "User Interface",
                "_applicationUrl": "ui-components/Angular2/notification-module/dist/index.html",
                "_iconClass":"fa-key",
             "_appData":"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
@@ -201,14 +193,6 @@
                "_applicationUrl": "ui-components/File Uploader",
                "_iconClass":"fa-cloud-upload",
             "_appData":"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-            },
-            {
-               "_name": "Demo 1",
-               "_welcomePage": "/smartCartDemo.html",
-               "_parentApp": "Shopping Cart",
-               "_applicationUrl": "ui-components/ShoppingCart/SmartCart",
-               "_iconClass":"fa-microchip",
-			   "_appData":"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
             },
             {
                "_name": "Charts",
@@ -259,7 +243,7 @@
 			   "_appData":"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
             },
             {
-               "_name": "Notification",
+               "_name": "Notification-slider",
                "_welcomePage": "/showNotification.html",
                "_parentApp": "Coming Soon",
                "_applicationUrl": "ui-components/Notification/SliderNotification",
@@ -281,14 +265,6 @@
                "_applicationUrl": "ui-components/CsvUploader",
                "_iconClass":"fa-exchange",
 			   "_appData":"Generate PDF files. File generator utility which wraps text, data and image into Pdf file."
-            },
-            {
-               "_name": "Notification Bar",
-               "_welcomePage": "/showNotification.html",
-               "_parentApp": "Notification",
-               "_applicationUrl": "ui-components/Notification/SliderNotification",
-               "_iconClass":"fa-microchip",
-			   "_appData":"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
             },
             {
                "_name": "Popup",

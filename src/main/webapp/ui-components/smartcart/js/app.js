@@ -129,9 +129,12 @@ app.controller ('StoreController',['$scope','$http' ,'$rootScope','$timeout',fun
 		$scope.form.$setPristine();
 		$scope.priceFiltering();
 	};
+	
+	$(".filters").niceScroll({cursorborder:"",cursorcolor:"#A9A9A9"});
+	$(".tab1").niceScroll({cursorborder:"",cursorcolor:"#A9A9A9"});
+	//$(".main-content").niceScroll({cursorborder:"",cursorcolor:"#fff"});
 
-/*	$(".main-content").niceScroll({cursorborder:"",cursorcolor:"#00F",boxzoom:true});
-*/
+
 }]);
 
 

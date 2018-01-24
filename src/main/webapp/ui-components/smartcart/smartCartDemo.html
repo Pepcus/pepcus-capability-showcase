@@ -5,25 +5,30 @@
 
 <head>
 <title>Smart Cart 2 - a javascript jQuery shopping cart plugin</title>
-<!-- <script type=" ../../js/jquery/jquery-3.2.1.min.js"></script>
- --><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
+<script  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+
+ <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
 <script src="https://www.paypalobjects.com/api/checkout.js"></script>
 <script type="text/javascript" src="js/app.js"></script>
-<script type="js/jquery/jquery.nicescroll-3.7.6/jquery.nicescroll.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script>
+
 <!-- <script type="text/javascript" src="http://localhost/SmartCart/js/paypalCheckout.js"></script>
  -->
 <!-- <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
  --><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
  <link rel="stylesheet" type="text/css" href="css/smartcart.css">
 <link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/global.css">
 
 <!-- Smart Cart Files Include -->
 </head>
 <body>
 <div class="body">
 	<div ng-app="store" class="items" ng-init="cart=1"  > 
-	   <ul ng-controller="headerNavController"> 
+	   <ul ng-controller="headerNavController" ng-init="tab=1"> 
 	    	<li id="products" ng-class="{active:tab === 1}" ng-click="clickedOnHeaderNav($event)"><a id="1" href="#!products" ng-click="tab=1">Products</a><div class="active-arrow" ng-show="tab == 1"></div></li>
 	    	
 	    	<!-- <li id="SignUp" ng-class="{active:tab === 2}" ng-click=""><a  href="#!signup" ng-click="tab=2">SignUp</a><div class="active-arrow" ng-show="tab == 2"></div></li>
@@ -40,7 +45,6 @@
 	</div>
 
 </div>
-	<div class="footer"></div>
 
 </body>
 </html>

@@ -57,19 +57,21 @@
 		</form>
 	</div>
 	<div class="tab1">
-		<div   class="product" ng-class="{'soldOut': product.soldOut == 'true'}" ng-repeat='product in store.products | filter:category:catagories |filter:Brand:name | filter:pricefilter | filter:searchProduct:name' ng-click="productDetails()">
+		<div   class="product"  ng-repeat='product in store.products | filter:category:catagories |filter:Brand:name | filter:pricefilter | filter:searchProduct:name' ng-click="productDetails()">
 		   	<div class="sold-out-tag" ng-show="{{product.soldOut}}">
 		   	sold out
 		   	</div>
-		    <div class="product-image" style="">
-				<img src="{{product.image}}">
-			</div>
+		    <div ng-class="{'soldOut': product.soldOut == 'true'}" >
+			    <div class="product-image" style="">
+					<img src="{{product.image}}">
+				</div>
 
-			<div class="product-name">{{product.uid}}
-			</div>
-			<div class="product-feature">{{product.description}}
-			</div>
-			<div class="product-price">{{product.price |  currency:'&#8377;'}}
+				<div class="product-name">{{product.uid}}
+				</div>
+				<div class="product-feature">{{product.description}}
+				</div>
+				<div class="product-price">{{product.price |  currency:'&#8377;'}}
+				</div>
 			</div>
 		</div>
 	</div>

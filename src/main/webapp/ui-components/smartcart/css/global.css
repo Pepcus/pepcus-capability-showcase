@@ -1,4 +1,4 @@
-/*html {
+html {
 	font-family: "Open Sans", sans-serif, verdana;
 	font-size: normal;
 }
@@ -52,6 +52,7 @@
     background-color: #fc443e;
     border-color: #fc3b34;
 	text-decoration: none !important;
+    cursor: pointer;
 }
 
 .label {
@@ -79,4 +80,3 @@
 	background-color: #eceeef;
     opacity: 1;
 }
-*/

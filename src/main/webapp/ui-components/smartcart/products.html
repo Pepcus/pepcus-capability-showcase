@@ -50,7 +50,7 @@
            			</button>
 				</span>
 				<span>
-					<input class="submit-price FilterButton btn" style="width: 65%" type="submit" ng-click="priceFiltering('filter')" value="Filter">
+					<input class="submit-price FilterButton btn" style="width: 64%; height: 34px" type="submit" ng-click="priceFiltering('filter')" value="Filter">
 				</span>
 			</main>
 		</section>
@@ -63,12 +63,12 @@
 		   	</div>
 		    <div ng-class="{'soldOut': product.soldOut == 'true'}" >
 			    <div class="product-image" style="">
-					<img src="{{product.image}}">
+					<img src="{{product.image.image1}}">
 				</div>
 
-				<div class="product-name">{{product.uid}}
+				<div class="product-name">{{product.name}}
 				</div>
-				<div class="product-feature">{{product.description}}
+				<div class="product-feature"><span>{{product.description.index}}</span>
 				</div>
 				<div class="product-price">{{product.price |  currency:'&#8377;'}}
 				</div>
@@ -76,10 +76,16 @@
 		</div>
 	</div>
 	<div ng-show="store.showPreview"  class="product-preview-popup" id="checkoutPopupOuterDiv">
-		<div class="product-view-block">
+		<div class="product-view-block" >
 			<div  class="product-details"  ng-repeat='product in store.productDetailsArray' >
-			   	<div class="productDetails-image">
-						<img  src="{{product.image}}">
+			   	<div class="productDetails-image" >
+						<img  src="{{product.image.image1}}">
+						<!--<div class="product-detailed-images">
+							<div><img src="{{imageUrl}}"></div>
+							<div><img src="{{product.image.image3}}"></div>
+							<div><img src="{{product.image.image4}}"></div>
+							<div><img src="{{product.image.image5}}"></div>
+						</div>-->
 				</div>
 				<div class="product-detail-specs">
 					<div  >
@@ -87,7 +93,19 @@
 						</div>
 						<div class="product-detail-price">{{product.price | currency:'&#8377;'}}
 						</div>
-						<div class="product-detail-feature">{{product.description}}
+						<div class="product-detail-feature">{{product.description.index}}
+						</div>
+						<div class="product-detailed-feature">
+							<ul style="list-style: none;padding-left: 10px;">Highlights
+								<li class="product-detailed-feature">{{product.description.a}}
+								</li>
+								<li class="product-detailed-feature">{{product.description.b}}
+								</li>
+								<li class="product-detailed-feature">{{product.description.c}}
+								</li>
+								<li class="product-detailed-feature">{{product.description.d}}
+								</li>
+							</ul>
 						</div>
 					</div>
 					<h2 ng-show="{{product.soldOut}}">Sold Out</h2>
@@ -96,22 +114,24 @@
 					<button class="btn" ng-show="{{product.canPurchase}}" ng-click="addToCart()"><i class="material-icons">shopping_cart </i> Add to Cart</button>
 					</div>
 			    </div>
+			    <div ng-show="store.showAddedToCart" id="AddedToCart" class="Added-to-cart" >
+					ITEM ADDED
+				</div>
+				<div ng-show="store.alreadyAdded" id="AddedToCart" class="Added-to-cart" >
+					ALREADY ADDED
+				</div>
+                <div class="close-preview"  ng-click="closePreview()">
+                    <span>&#x2716;</span>
+                </div>
 		  	</div>
 		</div>
 		
 		<div id="checkoutPopup" class="checkout-popup" >
 			
 		</div>
-		<div class="close-preview"  ng-click="closePreview()">
-		 <span>&#x2716;</span>
-		</div>
+
 	</div>
-	<div ng-show="store.showAddedToCart" id="AddedToCart" class="Added-to-cart" >
-				ITEM ADDED
-	</div>
-	<div ng-show="store.alreadyAdded" id="AddedToCart" class="Added-to-cart" >
-				ALREADY ADDED
-	</div>
+	
 </div>
 </div>
 

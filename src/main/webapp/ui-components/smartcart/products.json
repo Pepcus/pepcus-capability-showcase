@@ -4,8 +4,20 @@
 		"uid":"p1",
 		"name":"Mi Mix 2 (Black, 128 GB)",
 		"price":35999,
-		"description":"6 GB RAM | 128 GB ROM",
-		"image":"images/product1.jpeg",
+		"description":{
+			"index":"6 GB RAM | 128 GB ROM",
+			"a":"5.99 inch Full HD+ Display",
+			"b":"12MP Rear Camera | 5MP Front Camera",
+			"c":"3000 mAh Li-Ion Polymer Battery",
+			"d":"Qualcomm Snapdragon 835 Octa Core 2.5 GHz Processor"
+			},
+		"image":{
+			"image1":"images/product1.jpeg",
+			"image2":"images/product2.jpeg",
+			"image3":"images/product3.jpeg",
+			"image4":"images/product4.jpeg",
+			"image5":"images/product5.jpeg"
+			},
 		"canPurchase":"true",
 		"soldOut":"false"
 	},
@@ -14,8 +26,20 @@
 		"uid":"p2",
 		"name":"VIVO V7+",
 		"price":21999,
-		"description":"16MP| 24MP Camera",
-		"image":"images/product2.jpeg",
+		"description":{
+			"index":"4 GB RAM | 32 GB ROM ",
+			"a":"5.7 inch HD Display",
+			"b":"16MP Rear Camera | 24MP Front Camera",
+			"c":"3000 mAh Li-Ion Polymer Battery",
+			"d":"Qualcomm Snapdragon 450 Octa Core 1.8 GHz Processor"
+			},
+		"image":{
+			"image1":"images/product2.jpeg",
+			"image2":"images/product2.jpeg",
+			"image3":"images/product3.jpeg",
+			"image4":"images/product4.jpeg",
+			"image5":"images/product5.jpeg"
+			},
 		"canPurchase":"true",
 		"soldOut":"false"
 		
@@ -25,8 +49,20 @@
 		"uid":"p3",
 		"name":"Apple iPhone 6S (32 GB)",
 		"price":37999,
-		"description":"12MP | 5MP Camera",
-		"image":"images/product6.jpeg",
+		"description":{
+			"index":"4 GB RAM | 64 GB ROM",
+			"a":"5.5 inch Full HD Display",
+			"b":"12MP + 12MP Dual Rear Camera | 5MP Front Camera",
+			"c":"3080 mAh Li-polymer Battery",
+			"d":"Qualcomm Snapdragon 625 64 bit Octa Core 2GHz Processor"
+			},
+		"image":{
+			"image1":"images/product3.jpeg",
+			"image2":"images/product2.jpeg",
+			"image3":"images/product3.jpeg",
+			"image4":"images/product4.jpeg",
+			"image5":"images/product5.jpeg"
+			},
 		"canPurchase":"false",
 		"soldOut":"true"
 		
@@ -36,20 +72,42 @@
 		"uid":"p4",
 		"name":"Pixel (Silver, 32 GB)",
 		"price":43900,
-		"description":"12.3MP | 8MP Camera",
-		"image":"images/product7.jpeg",
+		"description":{
+			"index":"4 GB RAM | 64 GB ROM ",
+			"a":"5.0 inch Full HD Display",
+			"b":"12.2MP Rear Camera | 8MP Front Camera",
+			"c":"2700 mAh Battery",
+			"d":"Qualcomm Snapdragon 835 64-bit Octa Core Processor"
+			},
+		"image":{
+			"image1":"images/product4.jpeg",
+			"image2":"images/product2.jpeg",
+			"image3":"images/product3.jpeg",
+			"image4":"images/product4.jpeg",
+			"image5":"images/product5.jpeg"
+			},
 		"canPurchase":"true",
 		"soldOut":"false"
-		
-
 	},
 	{
 		"catagories":"laptop",
 		"uid":"p5",
 		"name":"Hp",
 		"price":35999,
-		"description":"6 GB RAM | 128 GB ROM",
-		"image":"images/laptop1.jpeg",
+		"description":{
+			"index":"Intel Core i3 Processor (6th Gen)",
+			"a":"4 GB DDR4 RAM",
+			"b":"64 bit Windows 10 Operating System",
+			"c":"1 TB HDD",
+			"d":"15.6 inch Display"
+			},
+		"image":{
+			"image1":"images/laptop5.jpeg",
+			"image2":"images/product2.jpeg",
+			"image3":"images/product3.jpeg",
+			"image4":"images/product4.jpeg",
+			"image5":"images/product5.jpeg"
+			},
 		"canPurchase":"true",
 		"soldOut":"false"
 	},
@@ -58,8 +116,20 @@
 		"uid":"p6",
 		"name":"Hp",
 		"price":21999,
-		"description":"16MP| 24MP Camera",
-		"image":"images/laptop2.jpeg",
+		"description":{
+			"index":"Intel Core i3 Processor (6th Gen)",
+			"a":"4 GB DDR4 RAM",
+			"b":"64 bit Windows 10 Operating System",
+			"c":"1 TB HDD",
+			"d":"15.6 inch Display"
+			},
+		"image":{
+			"image1":"images/laptop1.jpeg",
+			"image2":"images/product2.jpeg",
+			"image3":"images/product3.jpeg",
+			"image4":"images/product4.jpeg",
+			"image5":"images/product5.jpeg"
+			},
 		"canPurchase":"true",
 		"soldOut":"false"
 		
@@ -68,9 +138,21 @@
 		"catagories":"laptop",
 		"uid":"p7",
 		"name":"Dell",
-		"price":37999,
-		"description":"12MP | 5MP Camera",
-		"image":"images/laptop3.jpeg",
+		"price":33229,
+		"description":{
+			"index":"Intel Core i3 Processor (6th Gen)",
+			"a":"6 GB DDR4 RAM",
+			"b":"64 bit Windows 10 Operating System",
+			"c":"1 TB HDD",
+			"d":"15.6 inch Display"
+			},
+		"image":{
+			"image1":"images/laptop2.jpeg",
+			"image2":"images/product2.jpeg",
+			"image3":"images/product3.jpeg",
+			"image4":"images/product4.jpeg",
+			"image5":"images/product5.jpeg"
+			},
 		"canPurchase":"false",
 		"soldOut":"true"
 		
@@ -79,9 +161,21 @@
 		"catagories":"laptop",
 		"uid":"p8",
 		"name":"Lenovo",
-		"price":37999,
-		"description":"12MP | 5MP Camera",
-		"image":"images/laptop4.jpeg",
+		"price":27999,
+		"description":{
+			"index":"Intel Core i3 Processor (6th Gen)",
+			"a":"4 GB DDR4 RAM",
+			"b":"64 bit Windows 10 Operating System",
+			"c":"1 TB HDD",
+			"d":"15.6 inch Display"
+			},
+		"image":{
+			"image1":"images/laptop3.jpeg",
+			"image2":"images/product2.jpeg",
+			"image3":"images/product3.jpeg",
+			"image4":"images/product4.jpeg",
+			"image5":"images/product5.jpeg"
+			},
 		"canPurchase":"true",
 		"soldOut":"false"
 		
@@ -90,9 +184,21 @@
 		"catagories":"laptop",
 		"uid":"p9",
 		"name":"Apple MacBook Pro",
-		"price":37999,
-		"description":"12MP | 5MP Camera",
-		"image":"images/laptop5.jpeg",
+		"price":57999,
+		"description":{
+			"index":"Intel Core i5 Processor (5th Gen)",
+			"a":"8 GB DDR3 RAM",
+			"b":"64 bit Mac OS Operating System",
+			"c":"128 gb SSD",
+			"d":"13.3 inch Display"
+			},
+		"image":{
+			"image1":"images/laptop4.jpeg",
+			"image2":"images/laptop.jpeg",
+			"image3":"images/laptop.jpeg",
+			"image4":"images/laptop.jpeg",
+			"image5":"images/laptop.jpeg"
+			},
 		"canPurchase":"false",
 		"soldOut":"false"
 		

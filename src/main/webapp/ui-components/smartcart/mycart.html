@@ -6,21 +6,24 @@
 			<div class="cart-product"  ng-repeat='product in mycart.products'  >
 			   <div class="product-detials-wrapper">
 			    <div class="product-image">
-						<img src="{{product.image}}">
+						<img src="{{product.image.image1}}">
 				</div>
 
 				<div class="cart-product-specs">
 					<div class="cart-product-name">{{product.name}}
 						</div>
-					<div class="cart-product-feature">{{product.description}}
+					<div class="cart-product-feature">{{product.description.index}}
 						</div>
 					<div class="cart-product-price">{{product.price | currency:'&#8377;'}}
 						</div>
 			    </div>
 			    </div>	
 			  <div class="remove-from-cart">
-			  		<a href="" ng-click="deleteFromCart($index)" ><i class="material-icons">delete</i></a>
+			  	<button class="btn" ng-click="deleteFromCart($index)">Remove
+			  		<a href=""  ><i class="material-icons">delete</i></a>
+			  	</button>
 			  </div>
+
 			</div>	
 		</div>	 
 	</div>

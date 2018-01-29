@@ -28,7 +28,7 @@
 <body>
 <div class="body">
 	<div ng-app="store" class="items" ng-init="cart=1"  > 
-	   <ul ng-controller="headerNavController" ng-init="tab=1"> 
+	   <ul ng-controller="headerNavController" ng-init="tab=1" class="header"> 
 	    	<li id="products" ng-class="{active:tab === 1}" ng-click="clickedOnHeaderNav($event)"><a id="1" href="#!products" ng-click="tab=1">Products</a><div class="active-arrow" ng-show="tab == 1"></div></li>
 	    	
 	    	<!-- <li id="SignUp" ng-class="{active:tab === 2}" ng-click=""><a  href="#!signup" ng-click="tab=2">SignUp</a><div class="active-arrow" ng-show="tab == 2"></div></li>

@@ -23,6 +23,10 @@ app.run(function($rootScope) {
     $rootScope.cartCount = 0 ;
     $rootScope.payment = 0 ;
 });
+  app.controller('PopupController',['$scope','$rootScope',function ($scope,$rootScope) {
+
+
+  }]);
 
 app.controller('headerNavController',['$scope','$rootScope',function ($scope,$rootScope) {
 	$scope.mycartCount = $rootScope.cartCount; 
@@ -78,7 +82,7 @@ app.controller ('StoreController',['$scope','$http' ,'$rootScope','$timeout',fun
                 isDuplicate = true ;
                 console.log(element.uid);
                 alert("Product already added to cart");
-                thisVar.alreadyAdded = true; 
+                //thisVar.alreadyAdded = true; 
 	    		$timeout( function(){
 		      		thisVar.alreadyAdded = false;
 		        }, 800 );
@@ -88,13 +92,15 @@ app.controller ('StoreController',['$scope','$http' ,'$rootScope','$timeout',fun
 	    	$rootScope.cartProduct.push({
 	    		uid:this.product.uid, 
 	    		name:this.product.name, 
+	    		description:this.product.description, 
 	    		image:this.product.image, 
 	    		price:this.product.price
 	    	});
+	    	alert("Product added to cart");
         };
     	
     	$rootScope.cartCount =	$rootScope.cartProduct.length;
-    	thisVar.showAddedToCart = true; 
+    	//thisVar.showAddedToCart = true; 
     	$timeout( function(){
     		$scope.closePreview();
     		thisVar.showAddedToCart = false;
@@ -115,6 +121,9 @@ app.controller ('StoreController',['$scope','$http' ,'$rootScope','$timeout',fun
     		price:this.product.price
     	});
        	thisVar.showPreview = true;
+       	$(".product-detail-specs").niceScroll({cursorborder:"",cursorcolor:"#A9A9A9"});
+
+       	
 	};
   
     $scope.closePreview = function() {
@@ -187,6 +196,9 @@ app.controller("MycartController",["$rootScope","$scope",function($rootScope,$sc
         }
 
     }, '#paypal-button');
+	$(".added-products").niceScroll({cursorborder:"",cursorcolor:"#A9A9A9"});
+
+
 }]);
 
 

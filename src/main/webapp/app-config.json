@@ -156,35 +156,35 @@
             },
             {
                "_name": "Tooltip",
-               "_welcomePage": "",
+               "_welcomePage": "/index.html",
                "_parentApp": "User Interface",
-               "_applicationUrl": "ui-components/Angular2/tooltip/dist/index.html",
+               "_applicationUrl": "ui-components/tooltip",
                "_iconClass":"fa-key",
-            "_appData":"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+               "_appData":"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
             },
-             {
-               "_name": "News Letter",
-               "_welcomePage": "",
+            {
+               "_name": "Notifications",
+               "_welcomePage": "/index.html",
                "_parentApp": "User Interface",
-               "_applicationUrl": "ui-components/Angular2/news-letter/dist/index.html",
+               "_applicationUrl": "ui-components/notification",
                "_iconClass":"fa-key",
-            "_appData":"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+               "_appData":"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
             },
-             {
-               "_name": "Notification",
-               "_welcomePage": "",
-               "_parentApp": "User Interface",
-               "_applicationUrl": "ui-components/Angular2/notification/dist/index.html",
-               "_iconClass":"fa-key",
-            "_appData":"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-            },
-             {
+            {
                "_name": "Notification-Module",
-               "_welcomePage": "",
+               "_welcomePage": "/index.html",
                "_parentApp": "User Interface",
-               "_applicationUrl": "ui-components/Angular2/notification-module/dist/index.html",
+               "_applicationUrl": "ui-components/notification-module",
                "_iconClass":"fa-key",
-            "_appData":"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+               "_appData":"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+            },
+            {
+               "_name": "Newsletter",
+               "_welcomePage": "/index.html",
+               "_parentApp": "User Interface",
+               "_applicationUrl": "ui-components/newsletter",
+               "_iconClass":"fa-key",
+               "_appData":"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
             },
              {
                "_name": "File Uploader",

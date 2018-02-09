@@ -1,0 +1,149 @@
+/* CSS only for media queries */
+
+@media (max-width: 1280px) {
+	#logoContainer {
+		width: 100%;
+	}
+	.pepcus-logo {
+		margin-left: 20px;
+	}
+	.parents-block3 {
+		background-position: center 60px;
+		background-size: 65% 65%;
+	}
+	.parents-block1, .parents-block2, .parents-block3 {
+		min-height: 200px;
+		margin: 20px;
+	}
+	.child-heading-container h1{
+		font-size: 17px;
+	}
+	.child-item-details {
+		font-size: 13px;
+	}
+	.card-view-container {
+		width: 98%;
+		padding: 0 20px 0 10px;
+	}
+	.iframe-container{
+		padding: 20px 10px;
+	}
+	.fixed-menu{
+		width: 210px;
+	}
+	.right-rendering-container {
+		width: calc(100% - 210px);
+		margin-left: 210px;
+	}
+	.right-rendering-container.shift-contents{
+		width: 100%;
+		margin-left: 0;
+	}
+	.rendering-container{
+		padding: 0;
+	}
+	.component-list-item{
+		padding: 10px 12px;
+	}
+	.component-list-item a{
+		font-size: 12px;
+	}
+	.child-card-container{
+		max-height: 120px;
+	}
+	.component-ul-heading{
+		color: #6b6b6b;
+		font-size: 10px;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+}
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+
+}
+
+@media (max-device-width: 768px) {
+	.parent-block-container{
+		display: block;
+	}
+	.parents-block1, .parents-block2, .parents-block3{
+		display: inline-block;
+		width: 44%;
+		float: left;
+		min-height: 300px;
+	}
+	.parents-block3{
+		background-size: 65% 80%;
+	}
+	.child-card-container {
+		max-height: 150px;
+	}
+	.child-card-view{
+		width: 50%;
+	}
+	.parent-block-container > div:hover{
+		transform: scale(1.09);
+	}
+	.child-card-container{
+		max-height: 120px;
+	}
+	.header-list{
+		padding-right: 20px;
+	}
+}
+
+@media (max-device-width: 767px) {
+	.right-rendering-container.shift-contents, .right-rendering-container {
+		width: 100%;
+		margin-left: 0;
+	}
+	.parent-block-container {
+		max-height: 90%;
+		overflow-y: auto;
+		margin-top: 55px;
+	}
+	.parents-block1, .parents-block2, .parents-block3{
+		margin: 20px 20px 20px 30px;
+		width: 80%;
+	}
+	footer .two span {
+		font-size: 9px;
+	}
+	.pepcus-logo {
+		width: 70px;
+		height: 70px;
+	}
+	footer{
+		bottom: auto;
+	}
+	body {
+		padding-top: 70px;
+		padding-bottom: 22px;
+	}
+	.showcase-image-header{
+		height: 40px;
+	}
+	.showcase-image-header span, .showcase-image-header h2{
+		font-size: 16px;
+	}
+	.child-card-view {
+		width: 90%;
+	}
+	.card-view-container {
+		width: 100%;
+		padding: 0 20px 0 15px;
+	}
+	.header-elements .header-list > li{
+		display: none;
+	}
+	.header-elements .header-list > li:first-child{
+		display: block;
+	}
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+
+}

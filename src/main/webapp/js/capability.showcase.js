@@ -89,12 +89,12 @@ var onClickMoreInfoBtn = function(e) {
 		}else{
 			$(".disable-overlay").css("display","none");
 		}
-	$('#parents-block1').removeClass('animated fadeInLeft');
-	$('#parents-block1').addClass('animated fadeOutLeft');
+	$('#parents-block1').removeClass('animated fadeIn');
+	$('#parents-block1').addClass('animated fadeOut');
 	$('#parents-block2').removeClass('animated fadeIn');
 	$('#parents-block2').addClass('animated fadeOut');
-	$('#parents-block3').removeClass('animated fadeInRight');
-	$('#parents-block3').addClass('animated fadeOutRight');
+	$('#parents-block3').removeClass('animated fadeIn');
+	$('#parents-block3').addClass('animated fadeOut');
 	
 	setTimeout(	function(){
 		$(".parent-block-layout").hide();
@@ -120,12 +120,12 @@ onClickMoreInfoOnHeader = function(e) {
 		}else{
 			$(".disable-overlay").css("display","none");
 		}
-	$('#parents-block1').removeClass('animated fadeInLeft');
-	$('#parents-block1').addClass('animated fadeOutLeft');
+	$('#parents-block1').removeClass('animated fadeIn');
+	$('#parents-block1').addClass('animated fadeOut');
 	$('#parents-block2').removeClass('animated fadeIn');
 	$('#parents-block2').addClass('animated fadeOut');
-	$('#parents-block3').removeClass('animated fadeInRight');
-	$('#parents-block3').addClass('animated fadeOutRight');
+	$('#parents-block3').removeClass('animated fadeIn');
+	$('#parents-block3').addClass('animated fadeOut');
 	setTimeout(	function(){
 		$(".parent-block-layout").fadeOut();
 		$(".wallpaper-overlay").fadeOut();
@@ -218,8 +218,11 @@ var onClickBackendlist = function(e) {
 	$(e.currentTarget).addClass("selected-item");
 	renderIframe(selectedItemName);
 	$(".iframe-heading").html($(".active").text());
-
-
+if ($(window).width() < 767) {
+    if (!($(".fixed-menu").hasClass("inactive"))) {
+        $(".fixed-menu").addClass("inactive");
+    }
+}
 }
 var onClickMiscellaneouslist = function(e) {
 	$(".disable-overlay").css({"display":"flex","display":"-webkit-box"});
@@ -240,7 +243,11 @@ var onClickMiscellaneouslist = function(e) {
 	renderIframe(selectedItemName);
 	$(".iframe-heading").html($(".active").text());
 
-
+    if ($(window).width() < 767) {
+    if (!($(".fixed-menu").hasClass("inactive"))) {
+        $(".fixed-menu").addClass("inactive");
+    }
+}
 }
 var onClickSubChilds = function(e) {
  	$(".iframe-heading").html('');
@@ -270,14 +277,14 @@ var onClickBackButton = function(e) {
 	$('.showcase-image-header').show();
 	$("#popupContainer").hide();
 	$(".child-block-layout").hide();
-	$('#parents-block1').removeClass('animated fadeOutLeft');
-	$('#parents-block1').addClass('animated fadeInLeft');
+	$('#parents-block1').removeClass('animated fadeOut');
+	$('#parents-block1').addClass('animated fadeIn');
 
 	$('#parents-block2').removeClass('animated fadeOut');
 	$('#parents-block2').addClass('animated fadeIn');
 
-	$('#parents-block3').removeClass('animated fadeOutRight');
-	$('#parents-block3').addClass('animated fadeInRight');
+	$('#parents-block3').removeClass('animated fadeOut');
+	$('#parents-block3').addClass('animated fadeIn');
 	$(".parent-block-layout").show();
 	$(".wallpaper-overlay").show();
 	$(".showcase-wallpaper").show();
@@ -459,7 +466,7 @@ function componentPopupLayout(selectedItemName){
 
 }
 function onClickUIlistItem(selectedItemName,targetId, target) {
-	var listring = '';
+  	var listring = '';
 	var removedSpaceId = targetId.replace(/\s/g,'');
 	var Id ='#'+removedSpaceId ;
 	$("#uiChilds").css("transition","height 2s");
@@ -487,17 +494,24 @@ if($(target).hasClass("opened")){
 		$("#uiChilds li:first").addClass("active");
 		$("#uiElementsList div").removeClass("opened");
 	$(target).addClass("opened");
-		
 
-	
 	}
 }
 	$(".fixedDiv").getNiceScroll().resize();
+if ($(window).width() < 767) {
+    if (!($(".fixed-menu").hasClass("inactive"))) {
+        $(".fixed-menu").addClass("inactive");
+    }
+}
 }
 
 function onClickBackendlistItem() {
 	$("#backendElementsList").on("click","li",onClickBackendSubChilds);
-
+    if ($(window).width() < 767) {
+    if (!($(".fixed-menu").hasClass("inactive"))) {
+        $(".fixed-menu").addClass("inactive");
+    }
+}
 }
 function renderIframe(selectedItemName){
 	$.each(window.appData.CapacityShowcase.WebApps.StaticWebapp , function(key, item) {

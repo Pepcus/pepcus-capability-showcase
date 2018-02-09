@@ -3,6 +3,7 @@
 -------------- Main style for default theme --------------------
 ================================================================
 */
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 /** ------------------------- Header -------------------------- */
 
 body {
@@ -39,6 +40,7 @@ header {
 }
 .logoPepcus{
 	width: 75%;
+	margin-top: 5px;
 }
 .showcase-header {
 	display: flex;
@@ -68,7 +70,7 @@ header {
 }
 .header-list>li>a {
 	text-decoration: none;
-	color: #e80000;
+	color: #E53948;
 	padding: 10px 0;
 	position: relative;
 	font-size: 14px;
@@ -81,7 +83,7 @@ header {
   height: 1px;
   bottom: 0;
   left: 0;
-  background-color: rgba(255, 0, 0, 0.7);
+  background-color: rgba(229, 57, 72, 0.7);
   visibility: hidden;
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
@@ -102,7 +104,7 @@ header {
 .showcase-wallpaper{
 	width: 100%;
 	height: 100%;
-	background-color: rgba(140, 140, 140, 0.4);
+	background-color: rgba(250, 250, 250, 0.4);
 	position: absolute;
     top: 0;
     left: 0;
@@ -110,7 +112,7 @@ header {
 }
 .wallpaper-overlay {
 	position: relative;
-	background-image: url(capabilities.jpg);
+	background-image: url(capabilitiesnew.jpg);
 	background-size: cover;
 	top: 0;
 	width: 100%;
@@ -151,6 +153,7 @@ header {
 	margin: 0 2px;
 }*/
 .showcase-image-header{
+	font-family: 'Roboto', sans-serif;
 	display: flex;  /*Animate after loading the page*/
 	align-items: center;
 	justify-content: center;
@@ -163,13 +166,14 @@ header {
 	-webkit-box-pack: center;
 	-webkit-justify-content: center;
 	-webkit-box-align: center;
-	font-size: 15pt;
-    background: #fff;
+	font-size: 20px;
+    background: #efefef;
     overflow: hidden;
 
 }
 .showcase-image-header span , .showcase-image-header h2{
-	margin: 0 2px;
+	margin: 0 5px;
+	font-size: 22px;
 }
 
 .parent-block-container{
@@ -184,7 +188,7 @@ header {
 } 
 .parents-block1{
 	background-image: url('../../../images/UI.gif');
-	background-size: contain;
+	background-size: 100% 100%;
 	background-repeat: no-repeat;
 	background-position-y:50px; 
 	color: #000000;
@@ -202,9 +206,9 @@ header {
 }
 .parents-block2{
 	background-image: url('../../../images/backend.gif');
-	background-size: contain;
+	background-size: 100% 100%;
 	background-repeat: no-repeat;
-	background-position-y:50px; 
+	background-position: center;
 	color: #000000;
 	position: relative;
 	min-height: 300px;
@@ -222,9 +226,8 @@ header {
 
 .parents-block3{
 	background-image: url('../../../images/hourGlass.gif');
-	background-size: contain;
 	background-repeat: no-repeat;
-	background-position-y:35px; 
+	background-position: center 50px;
 	color: #000000;
 	position: relative;
 	min-height: 300px;
@@ -233,20 +236,29 @@ header {
 	padding: 0;
 	margin:30px;
 	transition: 0.5s ease;
-	//background-color: rgba(255, 255, 255, 0.9);
+	background-color: #111f44;
 	-webkit-box-shadow: -10px 10px 20px 0px rgba(0,0,0,0.3);
 	-moz-box-shadow: -10px 10px 20px 0px rgba(0,0,0,0.3);
 	box-shadow: -10px 10px 20px 0px rgba(0,0,0,0.3);
 }
+.parent-block-container > div:hover {
+	transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-ms-transition: all 0.5s ease;
+	-webkit-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transform: scale(1.2);
+}
 .parent-heading{
 	/*TODO: change color as per requirement*/
-	font-weight: 500;
+	font-weight: 700;
+	background: #fff;
 	padding-left:5px;
 	padding-right:5px;
-	padding-top:10px;
-	padding-bottom:5px;
+	padding-top:13px;
+	padding-bottom:13px;
 	text-transform: uppercase;
-	font-size: 20px;	
+	font-size: 17px;
 }
 
 .parent-content{

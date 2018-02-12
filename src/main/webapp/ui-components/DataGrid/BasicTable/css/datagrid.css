@@ -1,0 +1,15 @@
+.grid {
+    width: 900px;
+    height: 500px;
+}
+
+.header-filtered {
+    //color: blue;
+}
+
+.ui-grid-pager-control input {
+    height: 14px;
+}
+.ui-grid-footer-info ui-grid-grid-footer {
+    font-size: 20px;
+}

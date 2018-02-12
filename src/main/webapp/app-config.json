@@ -124,17 +124,17 @@
             },
             {
                "_name": "Data Grid",
-               "_welcomePage": "/dataTable.html",
+               "_welcomePage": "",
                "_parentApp": "User Interface",
-               "_applicationUrl": "ui-components/DataGrid/BasicTable",
+               "_applicationUrl": "ui-components/DataGrid/BasicTable/wrapper.html",
                "_iconClass":"fa-table",
 			   "_appData":"Fully featured table widget which accomodates almost all general purpose needs for a tabular data representation. It includes search, sort and paginate data."
             },
             {
                "_name": "Basic Table",
-               "_welcomePage": "/dataTable.html",
+               "_welcomePage": "",
                "_parentApp": "Data Grid",
-               "_applicationUrl": "ui-components/DataGrid/BasicTable",
+               "_applicationUrl": "ui-components/DataGrid/BasicTable/wrapper.html",
                "_iconClass":"fa-microchip",
 			   "_appData":"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
             },

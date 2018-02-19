@@ -192,6 +192,7 @@ app.controller("MycartController",["$rootScope","$scope",function($rootScope,$sc
             return actions.payment.execute().then(function() {
 				alert("Payment Successfull");
 			   // Show a success page to the buyer
+            
             });
         }
 

@@ -17508,7 +17508,7 @@ wrapperApp.controller('directiveController', [
     $scope.config = [
       {
         "field": "id",
-        "width": 100
+        "width": "10%"
       },
       {
         "field": "name",
@@ -17516,7 +17516,7 @@ wrapperApp.controller('directiveController', [
       },
       {
         "field": "gender",
-        "width": 100
+        "width": "10%"
       },
       {
         "field": "company",
@@ -17524,7 +17524,7 @@ wrapperApp.controller('directiveController', [
       },
       {
         "field": "age",
-        "width": 70
+        "width": "10%"
       },
       {
         "field": "phone",

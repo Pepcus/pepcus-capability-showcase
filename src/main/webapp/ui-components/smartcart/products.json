@@ -199,7 +199,7 @@
 			"image4":"images/laptop.jpeg",
 			"image5":"images/laptop.jpeg"
 			},
-		"canPurchase":"false",
+		"canPurchase":"true",
 		"soldOut":"false"
 		
 	}

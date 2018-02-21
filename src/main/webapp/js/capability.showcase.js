@@ -218,7 +218,7 @@ var onClickBackendlist = function (e) {
     $(e.currentTarget).addClass("selected-item");
     renderIframe(selectedItemName);
     $(".iframe-heading").html($(".active").text());
-    if ($(window).width() < 767) {
+    if ($(window).width() < 769) {
         if (!($(".fixed-menu").hasClass("inactive"))) {
             $(".fixed-menu").addClass("inactive");
         }
@@ -243,7 +243,7 @@ var onClickMiscellaneouslist = function (e) {
     renderIframe(selectedItemName);
     $(".iframe-heading").html($(".active").text());
 
-    if ($(window).width() < 767) {
+    if ($(window).width() < 769) {
         if (!($(".fixed-menu").hasClass("inactive"))) {
             $(".fixed-menu").addClass("inactive");
         }
@@ -506,16 +506,18 @@ function onClickUIlistItem(selectedItemName, targetId, target) {
         }
     }
     $(".fixedDiv").getNiceScroll().resize();
-    if ($(window).width() < 767) {
+    if ($(window).width() < 769) {
         if (!($(".fixed-menu").hasClass("inactive"))) {
             $(".fixed-menu").addClass("inactive");
+            $(".popup-header-left").css("margin-left", "0px");
         }
+
     }
 }
 
 function onClickBackendlistItem() {
     $("#backendElementsList").on("click", "li", onClickBackendSubChilds);
-    if ($(window).width() < 767) {
+    if ($(window).width() < 769) {
         if (!($(".fixed-menu").hasClass("inactive"))) {
             $(".fixed-menu").addClass("inactive");
         }
@@ -547,8 +549,16 @@ function renderIframe(selectedItemName) {
 
 function hamburgerIconPress() {
     $(".fixed-menu").toggleClass('inactive');
-    $(".right-rendering-container").toggleClass("shift-contents")
+    $(".right-rendering-container").toggleClass("shift-contents");
+    if ($(window).width() < 769) {
 
+        if (($(".right-rendering-container").hasClass("shift-contents"))) {
+            $(".popup-header-left").css("margin-left", "210px");
+        } else {
+            $(".popup-header-left").css("margin-left", "0px");
+
+        }
+    }
     //  $(navClose).click(function(){
     //     console.log('unclicked');
     // $('.sidebar').toggleClass('active');

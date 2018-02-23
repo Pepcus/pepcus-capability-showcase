@@ -1,0 +1,27 @@
+[
+  {
+    "field":"id",
+    "width":"*"
+  },
+  {
+    "field":"name",
+    "width":150
+  },
+  {
+    "field":"gender",
+    "width":150
+  },
+  {
+    "field":"company",
+    "width":150
+  },
+  {
+    "field":"age",
+    "width":"*"
+  },
+  {
+    "field":"phone",
+    "width":150
+  }
+
+]

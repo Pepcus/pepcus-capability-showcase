@@ -49,7 +49,6 @@ app.controller ('StoreController',['$scope','$http' ,'$rootScope','$timeout',fun
 	$http.get("products.json").then(function(prod) {
 		thisVar.products = prod.data;
 	});
-
 	$scope.selectedItemChanged = function(event){
 		if($scope.category === "Smartphone"){
 	 		$scope.name = ["Mi", "Apple", "Vivo"];
@@ -61,7 +60,9 @@ app.controller ('StoreController',['$scope','$http' ,'$rootScope','$timeout',fun
 	};
 
 	$scope.priceFiltering = function(){
-	    $scope.minPrice = $scope.price_slider.start[0];
+        $scope.showFilters();
+
+        $scope.minPrice = $scope.price_slider.start[0];
 	    $scope.maxPrice = $scope.price_slider.start[1];
 
 	    $scope.pricefilter = function (product) {
@@ -70,7 +71,7 @@ app.controller ('StoreController',['$scope','$http' ,'$rootScope','$timeout',fun
        	 }
        		$scope.form.$setPristine();
     	};
-	}
+	};
 	 	$scope.categories = ["Smartphone", "Laptop"];
 	
 	$scope.addToCart = function() {
@@ -80,12 +81,10 @@ app.controller ('StoreController',['$scope','$http' ,'$rootScope','$timeout',fun
     	$rootScope.cartProduct.forEach(function (element) {
             if (element.uid == thisID) {
                 isDuplicate = true ;
-                console.log(element.uid);
-                alert("Product already added to cart");
-                //thisVar.alreadyAdded = true; 
+                thisVar.alreadyAdded = true;
 	    		$timeout( function(){
 		      		thisVar.alreadyAdded = false;
-		        }, 800 );
+		        }, 1000 );
 	        }
 	    });
         if (!isDuplicate) {
@@ -96,16 +95,15 @@ app.controller ('StoreController',['$scope','$http' ,'$rootScope','$timeout',fun
 	    		image:this.product.image, 
 	    		price:this.product.price
 	    	});
-	    	alert("Product added to cart");
         };
     	
     	$rootScope.cartCount =	$rootScope.cartProduct.length;
-    	//thisVar.showAddedToCart = true; 
+    	thisVar.showAddedToCart = true;
     	$timeout( function(){
     		$scope.closePreview();
     		thisVar.showAddedToCart = false;
        		
-        }, 800 );
+        }, 1000 );
 
 	};
 
@@ -138,7 +136,14 @@ app.controller ('StoreController',['$scope','$http' ,'$rootScope','$timeout',fun
 		$scope.form.$setPristine();
 		$scope.priceFiltering();
 	};
-	
+	$scope.visible = true;
+	$scope.close = false;
+    $scope.showFilters = function () {
+		$scope.visible = !$scope.visible;
+        $scope.close = 	!$scope.close ;
+        // $(".filters").css("display","block");
+        console.log("filters");
+    };
 	$(".filters").niceScroll({cursorborder:"",cursorcolor:"#A9A9A9"});
 	$(".tab1").niceScroll({cursorborder:"",cursorcolor:"#A9A9A9"});
 	//$(".main-content").niceScroll({cursorborder:"",cursorcolor:"#fff"});
@@ -161,11 +166,12 @@ app.controller("MycartController",["$rootScope","$scope",function($rootScope,$sc
 		for (var i=0;i<this.cartCount;i++){
 		thisVar.totalAmount += thisVar.products[i].price;
 	}
-	}
+	};
 
 	for (var i=0;i<this.cartCount;i++){
 		thisVar.totalAmount += thisVar.products[i].price;
 	}
+
 	paypal.Button.render({
         env: 'sandbox', // Optional: specify 'sandbox' environment
 		//nik.autospace@gmail.com paypal account id's of shoppingcart@angular.com
@@ -192,12 +198,13 @@ app.controller("MycartController",["$rootScope","$scope",function($rootScope,$sc
             return actions.payment.execute().then(function() {
 				alert("Payment Successfull");
 			   // Show a success page to the buyer
+            
             });
         }
 
     }, '#paypal-button');
 	$(".added-products").niceScroll({cursorborder:"",cursorcolor:"#A9A9A9"});
-
+$(".paypal-button .paypal-button-logo").css({'display':'none'});
 
 }]);
 

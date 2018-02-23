@@ -57,7 +57,7 @@
 			"d":"Qualcomm Snapdragon 625 64 bit Octa Core 2GHz Processor"
 			},
 		"image":{
-			"image1":"images/product3.jpeg",
+			"image1":"images/product6.jpeg",
 			"image2":"images/product2.jpeg",
 			"image3":"images/product3.jpeg",
 			"image4":"images/product4.jpeg",
@@ -199,7 +199,7 @@
 			"image4":"images/laptop.jpeg",
 			"image5":"images/laptop.jpeg"
 			},
-		"canPurchase":"false",
+		"canPurchase":"true",
 		"soldOut":"false"
 		
 	}

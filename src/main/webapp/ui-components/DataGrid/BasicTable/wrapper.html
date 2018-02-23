@@ -1,6 +1,9 @@
 <!doctype html>
 <html>
 <head>
+    <script type="text/javascript" src="../../../js/jquery/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="../../../js/jquery/jquery.nicescroll-3.7.6/jquery.nicescroll.min.js"></script>
+
     <script src="js/angular.min.js"></script>
     <script src="js/csv.js"></script>
     <script src="js/pdfmake.js"></script>
@@ -10,15 +13,19 @@
     <script src="js/excel-builder.dist.js"></script>
     <script src="release/ui-grid.js"></script>
     <link rel="stylesheet" href="release/ui-grid.css" type="text/css">
+    <link rel="stylesheet" href="css/ui-grid-custom.css" type="text/css">
+
     <link rel="stylesheet" href="css/datagrid.css" type="text/css">
 </head>
 <body ng-app="wrapperApp" ng-controller="directiveController">
 
-<div>
+<div class="wrapper">
+    <div class="heading"><h2 class="h5">Basic Table</h2></div>
     <test-directive data="{{data}}" config="{{config}}">element directive</test-directive>
 </div>
 <script src="js/DataGrid.js"></script>
 <script src="wrapper.js"></script>
+
 
 </body>
 </html>

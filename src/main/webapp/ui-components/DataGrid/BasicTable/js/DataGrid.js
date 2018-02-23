@@ -28,13 +28,13 @@ ngDataGrid.controller('ngDataGridCtrl', function ($http, $scope, uiGridConstants
     });
     thisVar.gridOptions = {
       //Enables total items footer..
-      showGridFooter: true,
+      showGridFooter: false,
       //Enable column total footer...
-      showColumnFooter: true,
+      showColumnFooter: false,
       //dropdown to shows No.of entries per pages...
-      paginationPageSizes: [25, 50, 75, 100],
+      paginationPageSizes: [15,25, 50, 75, 100],
       //no.of entry in 1 page.....
-      paginationPageSize: 50,
+      paginationPageSize: 15,
       //Enable filters for search input tag ....
       enableFiltering: false,
       //Hamburger icon for export files......

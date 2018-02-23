@@ -17516,7 +17516,7 @@ wrapperApp.controller('directiveController', [
       },
       {
         "field": "gender",
-        "width": "10%"
+        "width": "*"
       },
       {
         "field": "company",
@@ -17524,7 +17524,7 @@ wrapperApp.controller('directiveController', [
       },
       {
         "field": "age",
-        "width": "10%"
+        "width": "*"
       },
       {
         "field": "phone",
@@ -17532,5 +17532,6 @@ wrapperApp.controller('directiveController', [
       }
 
     ];
+
   }]);
 

@@ -159,7 +159,7 @@
                "_welcomePage": "/index.html",
                "_parentApp": "User Interface",
                "_applicationUrl": "ui-components/tooltip",
-               "_iconClass":"fa-key",
+               "_iconClass":"fa-map-pin",
                "_appData":"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
             },
             {
@@ -167,7 +167,7 @@
                "_welcomePage": "/index.html",
                "_parentApp": "User Interface",
                "_applicationUrl": "ui-components/notification",
-               "_iconClass":"fa-key",
+               "_iconClass":"fa-bell-o",
                "_appData":"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
             },
             {
@@ -175,7 +175,7 @@
                "_welcomePage": "/index.html",
                "_parentApp": "User Interface",
                "_applicationUrl": "ui-components/notification-module",
-               "_iconClass":"fa-key",
+               "_iconClass":"fa-exclamation-circle",
                "_appData":"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
             },
             {
@@ -183,7 +183,7 @@
                "_welcomePage": "/index.html",
                "_parentApp": "User Interface",
                "_applicationUrl": "ui-components/newsletter",
-               "_iconClass":"fa-key",
+               "_iconClass":"fa-pencil-square-o",
                "_appData":"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
             },
              {

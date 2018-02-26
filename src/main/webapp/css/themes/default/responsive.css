@@ -131,6 +131,9 @@
         width: 100%;
         margin-left: 0;
     }
+    .components-list li#Newsletter{
+        display: none;
+    }
 
     .parent-block-container {
         max-height: 90%;

@@ -97,3 +97,9 @@ div.model {
 	background: url("../images/select_model_piechart_sprite.png")
 		no-repeat -660px -654px;
 }
+@media (max-width: 480px) {
+	.section-container{
+		width: 863px;
+
+	}
+}

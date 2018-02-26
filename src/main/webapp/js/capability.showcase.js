@@ -21,6 +21,7 @@ var onClickKnowMoreBtn = function (e) {
 }
 
 var bindEvents = function () {
+  //  $(window).resize(function(){location.reload();});
     $(".parent-block-layout").on("click", "#knowMoreBtn", onClickKnowMoreBtn);
     $(".parent-block-layout").on("click", ".more-info-btn", onClickMoreInfoBtn);
     $(".header-list").on("click", ".more-info", onClickMoreInfoOnHeader);
@@ -219,8 +220,15 @@ var onClickBackendlist = function (e) {
     renderIframe(selectedItemName);
     $(".iframe-heading").html($(".active").text());
     if ($(window).width() < 769) {
+
         if (!($(".fixed-menu").hasClass("inactive"))) {
             $(".fixed-menu").addClass("inactive");
+        }
+        if (($(".fixed-menu").hasClass("inactive"))) {
+            $(".popup-header-left").css("margin-left", "0px");
+        } else {
+            $(".popup-header-left").css("margin-left", "210px");
+
         }
     }
 }
@@ -247,6 +255,12 @@ var onClickMiscellaneouslist = function (e) {
         if (!($(".fixed-menu").hasClass("inactive"))) {
             $(".fixed-menu").addClass("inactive");
         }
+        if (($(".fixed-menu").hasClass("inactive"))) {
+            $(".popup-header-left").css("margin-left", "0px");
+        } else {
+            $(".popup-header-left").css("margin-left", "210px");
+
+        }
     }
 }
 var onClickSubChilds = function (e) {
@@ -257,6 +271,17 @@ var onClickSubChilds = function (e) {
     renderIframe(selectedItemName);
     $(e.currentTarget).addClass("active");
     $(".iframe-heading").html($(".active").text());
+    if ($(window).width() < 769) {
+        if (!($(".fixed-menu").hasClass("inactive"))) {
+            $(".fixed-menu").addClass("inactive");
+        }
+        if (($(".fixed-menu").hasClass("inactive"))) {
+            $(".popup-header-left").css("margin-left", "0px");
+        } else {
+            $(".popup-header-left").css("margin-left", "210px");
+
+        }
+    }
 
 }
 
@@ -552,10 +577,10 @@ function hamburgerIconPress() {
     $(".right-rendering-container").toggleClass("shift-contents");
     if ($(window).width() < 769) {
 
-        if (($(".right-rendering-container").hasClass("shift-contents"))) {
-            $(".popup-header-left").css("margin-left", "210px");
-        } else {
+        if (($(".fixed-menu").hasClass("inactive"))) {
             $(".popup-header-left").css("margin-left", "0px");
+        } else {
+            $(".popup-header-left").css("margin-left", "210px");
 
         }
     }

@@ -1,226 +1,229 @@
 <html>
-	
-	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Pepcus Capability Showcase</title>
-<style>
-	/* Logo Animation */
-</style>
-<!-- Include the required JavaScript libraries: -->
-<script type="text/javascript" src="js/mootools-core-1.4.5-full-compat.js"></script>
-<script type="text/javascript" src="js/mootools-more-1.4.0.1.js"></script>
-<script type="text/javascript" src="js/jquery/jquery-3.2.1.min.js"></script>
 
-<script type="text/javascript" src='js/jquery/jquery.cookie.js' ></script>
-<script type="text/javascript" src="js/jquery/jquery-ui-latest.js"></script>
-<script type="text/javascript" src='js/jquery/jquery.dynatree.js'></script>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pepcus Capability Showcase</title>
+    <style>
+        /* Logo Animation */
+    </style>
+    <!-- Include the required JavaScript libraries: -->
+    <script type="text/javascript" src="js/mootools-core-1.4.5-full-compat.js"></script>
+    <script type="text/javascript" src="js/mootools-more-1.4.0.1.js"></script>
+    <script type="text/javascript" src="js/jquery/jquery-3.2.1.min.js"></script>
 
-<!-- Improve animation -->
-<script type="text/javascript" src='js/jquery/jquery.velocity.min.js'></script>
-<script type="text/javascript" src="js/debug.js"></script>
-<script type="text/javascript" src="js/ga.js"></script>
-<script type="text/javascript" src="js/capability.showcase.js"></script>
-<script type="text/javascript" src="js/jquery/jquery.nicescroll-3.7.6/jquery.nicescroll.min.js"></script>
+    <script type="text/javascript" src='js/jquery/jquery.cookie.js'></script>
+    <script type="text/javascript" src="js/jquery/jquery-ui-latest.js"></script>
+    <script type="text/javascript" src='js/jquery/jquery.dynatree.js'></script>
 
-<!--script type="text/javascript" src="css/bootstrap-4.0.0-beta/assets/js/vendor/popper.min.js"></script>
-<script type="text/javascript" src="css/bootstrap-4.0.0-beta/dist/js/bootstrap.min.js"></script-->
+    <!-- Improve animation -->
+    <script type="text/javascript" src='js/jquery/jquery.velocity.min.js'></script>
+    <script type="text/javascript" src="js/debug.js"></script>
+    <script type="text/javascript" src="js/ga.js"></script>
+    <script type="text/javascript" src="js/capability.showcase.js"></script>
+    <script type="text/javascript" src="js/jquery/jquery.nicescroll-3.7.6/jquery.nicescroll.min.js"></script>
 
- 
-
-<!-- Use global.css for globally defined css. Other css should override the global css -->
-<link rel="stylesheet" type="text/css" href="css/common/global.css" />
-<link rel="stylesheet" type="text/css" href="css/common/home-page.css"/>
-<!-- <link rel="stylesheet" type="text/css" href="css/bootstrap-4.0.0-beta/dist/css/bootstrap.min.css"/> -->
-<link rel="stylesheet" type="text/css" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
-<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <!--script type="text/javascript" src="css/bootstrap-4.0.0-beta/assets/js/vendor/popper.min.js"></script>
+    <script type="text/javascript" src="css/bootstrap-4.0.0-beta/dist/js/bootstrap.min.js"></script-->
 
 
-		<!-- (Apply the theme) Include this after all other css -->
-<!-- <link rel="stylesheet" type="text/css" href="css/themes/default/global.css"/> -->
-<link rel="stylesheet" type="text/css" href="css/themes/default/theme.css"/>
-<link rel="stylesheet" type="text/css" href="css/themes/default/parentLayout.css"/>
-<link rel="stylesheet" type="text/css" href="css/themes/default/childLayout.css"/>
-<link rel="stylesheet" type="text/css" href="css/themes/default/componentPopup.css"/>
-<link rel="stylesheet" type="text/css" href="css/animate.css"/>
-		<link rel="stylesheet" type="text/css" href="css/themes/default/responsive.css"/>
+    <!-- Use global.css for globally defined css. Other css should override the global css -->
+    <link rel="stylesheet" type="text/css" href="css/common/global.css"/>
+    <link rel="stylesheet" type="text/css" href="css/common/home-page.css"/>
+    <!-- <link rel="stylesheet" type="text/css" href="css/bootstrap-4.0.0-beta/dist/css/bootstrap.min.css"/> -->
+    <link rel="stylesheet" type="text/css" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
 
-  <link rel="icon" href="./images/favicon.png" type="image/png"  sizes="16x16">
+
+    <!-- (Apply the theme) Include this after all other css -->
+    <!-- <link rel="stylesheet" type="text/css" href="css/themes/default/global.css"/> -->
+    <link rel="stylesheet" type="text/css" href="css/themes/default/theme.css"/>
+    <link rel="stylesheet" type="text/css" href="css/themes/default/parentLayout.css"/>
+    <link rel="stylesheet" type="text/css" href="css/themes/default/childLayout.css"/>
+    <link rel="stylesheet" type="text/css" href="css/themes/default/componentPopup.css"/>
+    <link rel="stylesheet" type="text/css" href="css/animate.css"/>
+    <link rel="stylesheet" type="text/css" href="css/themes/default/responsive.css"/>
+
+    <link rel="icon" href="./images/favicon.png" type="image/png" sizes="16x16">
 
 </head>
 
 <body>
-	<!--Top LOGO-->
-	<header>
-		<div id="logoContainer">
-			<img alt="image not load"  class="topShadow" src="images/shadow.png"  style="border: none;width:100%;height: 10px;">	
-			<div class="showcase-header">
-				<div class="pepcus-logo">
-					<div class="logoPepcusFigure" title='Home'>
-						<a class="logoPepcusLink" href='http://www.pepcus.com/' target="_blank">
-							<img alt="image not load" class="logoPepcus" src="images/logo.png"/>
-						</a>
-					</div>	
-				</div>
-				<div class="header-elements">
-					<ul class="header-list">
-						<li class="" data-name="Home"><a href="#" id="backB" class="backB">HOME</a></li>
-						<li class="more-info" data-name="User Interface"><a href="#">USER INTERFACE</a></li>
-						<li class="more-info" data-name="Backend Utility"><a href="#">BACKEND UTILITY</a></li>
-						<li class="more-info" data-name="Coming Soon"><a href="#">COMING SOON</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</header>
-    <div class="showcase-image-header">
-        <span>KNOW OUR</span>
-        <h2>CAPABILITIES</h2>
+<!--Top LOGO-->
+<header>
+    <div id="logoContainer">
+        <img alt="image not load" class="topShadow" src="images/shadow.png"
+             style="border: none;width:100%;height: 10px;">
+        <div class="showcase-header">
+            <div class="pepcus-logo">
+                <div class="logoPepcusFigure" title='Home'>
+                    <a class="logoPepcusLink" href='http://www.pepcus.com/' target="_blank">
+                        <img alt="image not load" class="logoPepcus" src="images/logo.png"/>
+                    </a>
+                </div>
+            </div>
+            <div class="header-elements">
+                <ul class="header-list">
+                    <li class="" data-name="Home"><a href="#" id="backB" class="backB">HOME</a></li>
+                    <li class="more-info" data-name="User Interface"><a href="#">USER INTERFACE</a></li>
+                    <li class="more-info" data-name="Backend Utility"><a href="#">BACKEND UTILITY</a></li>
+                    <li class="more-info" data-name="Coming Soon"><a href="#">COMING SOON</a></li>
+                </ul>
+            </div>
+        </div>
     </div>
-	<div class="showcase-container" id="showcase-container">
-		<div class="wallpaper-overlay" id="wallpaper-overlay"></div>
-		<div class="showcase-wallpaper"></div>
-		<div class="parent-block-layout" id="parent-block-layout">
+</header>
+<div class="showcase-image-header">
+    <span>KNOW OUR</span>
+    <h2>CAPABILITIES</h2>
+</div>
+<div class="showcase-container" id="showcase-container">
+    <div class="wallpaper-overlay" id="wallpaper-overlay"></div>
+    <div class="showcase-wallpaper"></div>
+    <div class="parent-block-layout" id="parent-block-layout">
 
-			<div class=parent-block-container id="parentBlockContainer"></div>
-		</div>
+        <div class=parent-block-container id="parentBlockContainer"></div>
+    </div>
 
 
-		<div id="childBlockLayout" class="child-block-layout animated fadeIn">
-			<div class="overlay-layout"></div>  
-			<div class = "child-container" >
-				<!--div id="back-button" class="back-button">
-					<a href="#" id="backB" class="backB">
-						<i class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp;Previous
-					</a>
-				</div-->
-				<div class="card-container">
-					<div class = "card-view-container row text-center" id="cardViewContainer">
-					</div>
-				</div>
-			</div>		
-		</div><div id="descriptionData" class="description-data"></div>
+    <div id="childBlockLayout" class="child-block-layout animated fadeIn">
+        <div class="overlay-layout"></div>
+        <div class="child-container">
+            <!--div id="back-button" class="back-button">
+                <a href="#" id="backB" class="backB">
+                    <i class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp;Previous
+                </a>
+            </div-->
+            <div class="card-container">
+                <div class="card-view-container row text-center" id="cardViewContainer">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="descriptionData" class="description-data"></div>
 
-		<div class="popup-container" id="popupContainer" tabindex="1">
-			<div class="component-popup-layout" id ="component-popup-layout">
-				<div class="fixed-menu">
-					<div class="profile-pic-container">
-                       
-                        <div class="pepcus-logo" id="backB">
-                            <div class="logoPepcusFigure" title='Home'>
-                                <a href="#" id="backB" class="backB logoPepcusLink">
-                                    <img alt="image not load" class="logoPepcus" src="images/logo.png"/>
-                                </a>
+    <div class="popup-container" id="popupContainer" tabindex="1">
+        <div class="component-popup-layout" id="component-popup-layout">
+            <div class="fixed-menu">
+                <div class="profile-pic-container">
+
+                    <div class="pepcus-logo" id="backB">
+                        <div class="logoPepcusFigure" title='Home'>
+                            <a href="#" id="backB" class="backB logoPepcusLink">
+                                <img alt="image not load" class="logoPepcus" src="images/logo.png"/>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="fixedDiv">
+                    <!-- <div class="list-items">
+                        <div class="menu-icons">
+                        </div>
+                        <div class="component-list">
+                            <div class="component-list-item hvr-rectangle-out"></div>
+                        </div> -->
+
+                    <div class="components-list" id="componentsList">
+                        <ul id="uiElementsList" data-name="User Interface">
+                        </ul>
+                        <ul id="backendElementsList" data-name="Backend Utility">
+                        </ul>
+                        <ul id="MiscellaneousElementsList" data-name="Coming Soon">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="right-rendering-container">
+                <div class="popup-header-container">
+                    <div class="popup-header">
+                        <div class="popup-header-left">
+                            <div class="side-navigation-icon">
+                                <i class="fa fa-bars" aria-hidden="true"></i>
+                            </div>
+                            <div class="child-component-heading"><h1 class="component-heading h2">User Interface</h1>
                             </div>
                         </div>
-					</div>
-					<div class="fixedDiv">
-						<!-- <div class="list-items">
-							<div class="menu-icons">
-							</div>
-							<div class="component-list">
-								<div class="component-list-item hvr-rectangle-out"></div>
-							</div> -->
-							
-							<div class="components-list" id="componentsList">
-								<ul id="uiElementsList" data-name="User Interface">
- 								</ul>
- 								<ul id="backendElementsList" data-name="Backend Utility">
-								</ul>
-								<ul id="MiscellaneousElementsList" data-name="Coming Soon">
-								</ul>
-							</div>
-						</div>
-				</div>
-				<div class="right-rendering-container">
-					<div class="popup-header-container">
-						<div class="popup-header">
-							<div class="popup-header-left">
-								<div class="side-navigation-icon">
-									<i class="fa fa-bars" aria-hidden="true"></i>
-								</div>
-								<div class="child-component-heading"><h1 class="component-heading h2">User Interface</h1>
-								</div>
-							</div>
-							<div class="popup-header-right">
-								<div class="popup-header-option">
-							<!-- 		<div class="component-description ">
-										<div class="info-icon"><i class="fa fa-info fa-2x" aria-hidden="true"></i></div>
-										<div class="description-popup"></div>
-									</div> -->
-									<div class="close-button ">
-										<div class="close">
-											<span>&times;</span>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+                        <div class="popup-header-right">
+                            <div class="popup-header-option">
+                                <!-- 		<div class="component-description ">
+                                            <div class="info-icon"><i class="fa fa-info fa-2x" aria-hidden="true"></i></div>
+                                            <div class="description-popup"></div>
+                                        </div> -->
+                                <div class="close-button ">
+                                    <div class="close">
+                                        <span>&times;</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-					<div class="components-content-container">
-						<!-- <div class="components-content">						
-						</div> -->
-							<div class="iframe-content-container">
-								<div class="iframe-container">
-									<div class="iframe-heading-container">
-										<div class="iframe-heading"> </div>
-									</div>
-									<div class="iframe-section-container">
-										<!-- iframe will be rendered here dynamically -->
-									</div>
-									
-								</div>
-							</div>
-						<!-- </div> -->
-					</div>
-				</div>
-				<div class="disable-overlay"><div class="overlay-image"></div></div>
-				<!-- <div class="components-container row">
-					<div class="list-items col-md-3">
-						<div class="components">
-							<div class="menu-icons">
-	    					</div>
-	    					<div class="component-list">
-	    						<div class="component-list-item"></div>
-	    					</div>
-						</div>
-					</div>
-					<div class="iframe-container col-md-9">
-						<iframe src=""> </iframe>
-					</div>
-				</div> -->
-			</div>
-		</div>
-	</div>
-	<footer>	
-		<!-- <div class="one">
-			<div class="footer-content">
-				<div class="footer-data text-center">
-					<h5>Corporate Office</h5>
-					<p >
-						<span style="color:#ddd;font-size:13px;">Pepcus Software Services Pvt. Ltd.</span>
-						201, Balaji corporate, New Palasia, Indore, Madhya Pradesh 452001, India.
-					</p>
-				</div>
-				<div class="footer-data text-center">
-					<h5>Get in touch</h5>
-					<p>You can call us at: +91-9754550505. Drop us a line on:
-						<a href='mailto:info@pepcus.com'>info@pepcus.com</a>
-					</p>
-				</div>
-			</div>
-		</div> -->
+                <div class="components-content-container">
+                    <!-- <div class="components-content">
+                    </div> -->
+                    <div class="iframe-content-container">
+                        <div class="iframe-container">
+                            <div class="iframe-heading-container">
+                                <div class="iframe-heading"></div>
+                            </div>
+                            <div class="iframe-section-container">
+                                <!-- iframe will be rendered here dynamically -->
+                            </div>
 
-		<div class="two">
-			<div class="copyrights-content">
-				<div class="copyrights">
-					<span>Copyright &#169; 2017-18 Pepcus Software Services. All rights reserved.</span>	
-				</div>
-			</div>
-		</div>
-	</footer>
+                        </div>
+                    </div>
+                    <!-- </div> -->
+                </div>
+            </div>
+            <div class="disable-overlay">
+                <div class="overlay-image"></div>
+            </div>
+            <!-- <div class="components-container row">
+                <div class="list-items col-md-3">
+                    <div class="components">
+                        <div class="menu-icons">
+                        </div>
+                        <div class="component-list">
+                            <div class="component-list-item"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="iframe-container col-md-9">
+                    <iframe src=""> </iframe>
+                </div>
+            </div> -->
+        </div>
+    </div>
+</div>
+<footer>
+    <!-- <div class="one">
+        <div class="footer-content">
+            <div class="footer-data text-center">
+                <h5>Corporate Office</h5>
+                <p >
+                    <span style="color:#ddd;font-size:13px;">Pepcus Software Services Pvt. Ltd.</span>
+                    201, Balaji corporate, New Palasia, Indore, Madhya Pradesh 452001, India.
+                </p>
+            </div>
+            <div class="footer-data text-center">
+                <h5>Get in touch</h5>
+                <p>You can call us at: +91-9754550505. Drop us a line on:
+                    <a href='mailto:info@pepcus.com'>info@pepcus.com</a>
+                </p>
+            </div>
+        </div>
+    </div> -->
+
+    <div class="two">
+        <div class="copyrights-content">
+            <div class="copyrights">
+                <span>Copyright &#169; 2017-18 Pepcus Software Services. All rights reserved.</span>
+            </div>
+        </div>
+    </div>
+</footer>
 
 
-	</body>
+</body>
 </html>

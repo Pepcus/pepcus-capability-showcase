@@ -1,37 +1,43 @@
-body{
+body {
     font-family: 'Open Sans', sans-serif;
 }
-#myform{
+
+#myform {
     padding: 5px;
     width: 60%;
 
 }
-#myform label{
+
+#myform label {
     /*display: inline-block;
     padding: 10px;*/
     white-space: nowrap;
     width: 50px;
     float: left;
 }
-#myform input{
+
+#myform input {
     /*width: 130%;
     padding: 10px;*/
     float: left;
     width: 280px;
-    min-width: 280px;
+    min-width: 265px;
     margin-top: 5px;
 }
-#myform textarea{
+
+#myform textarea {
     /*width: 130%;*/
     float: left;
     width: 280px;
-    min-width: 280px;
+    min-width: 265px;
     margin-top: 5px;
 }
-#myform p{
+
+#myform p {
     /*display: inline-block;
     margin-bottom: 20px;*/
-}       
+}
+
 .percent {
     display: block;
     color: #fff;
@@ -47,8 +53,7 @@ body{
     height: 0;
     border-style: solid;
     border-width: 7.5px 10px 7.5px 0;
-    border-color: transparent rgba(255, 255, 255, .3) transparent
-    transparent;
+    border-color: transparent rgba(255, 255, 255, .3) transparent transparent;
     display: block;
     position: absolute;
     left: -10px;
@@ -60,8 +65,7 @@ body{
     height: 0;
     border-style: solid;
     border-width: 7.5px 0 7.5px 10px;
-    border-color: transparent transparent transparent
-    rgba(255, 255, 255, .3);
+    border-color: transparent transparent transparent rgba(255, 255, 255, .3);
     display: block;
     position: absolute;
     right: -10px;
@@ -89,18 +93,20 @@ body{
     height: 20px
 }
 
-.rendering-container{
+.rendering-container {
     padding-left: 10px;
     padding-right: 10px;
     padding-bottom: 10px;
 }
-.section-container{
+
+.section-container {
     margin-top: 20px;
     margin-left: 10px;
     margin-right: 10px;
     margin-bottom: 10px;
 }
-.form-slider-contents{
+
+.form-slider-contents {
     box-sizing: border-box;
     display: flex;
     align-items: center;
@@ -110,7 +116,8 @@ body{
     display: -webkit-box;
     -webkit-box-align: center;
 }
-.form-formatter-contents{
+
+.form-formatter-contents {
     box-sizing: border-box;
     display: flex;
     align-items: center;
@@ -122,39 +129,79 @@ body{
     display: -webkit-box;
     -webkit-box-align: center;
 }
-label{
+
+label {
     margin-bottom: 0;
     padding: 10px;
 }
-.attribute-name{
+
+.attribute-name {
     width: 20%;
     text-align: left;
     color: #656565;
 }
-.attribute-field{
+
+.attribute-field {
     box-sizing: border-box;
     display: flex;
     width: 79%;
 }
-.input-field{
+
+.input-field {
     width: 30%;
     padding: 10px;
 }
-#slider{
+
+#slider {
     width: 30%;
     margin: 10px;
 }
-.progression-input-field{
+
+.progression-input-field {
     width: 100%;
     display: inline-block;
 }
-.progression-input-field input{
+
+.progression-input-field input {
     margin-left: 10px;
 }
-.progression-input-field textarea{
+.progression-input-field textarea {
     margin-left: 10px;
 }
-.progression-button{
+.progression-button {
     width: 30%;
     float: right;
+}
+@media (max-width: 480px) {
+    #myform > .progression-input-field ~ .progression-input-field {
+        padding-top: 0px;
+    }
+    #myform > .progression-input-field {
+        padding-top: 90px;
+    }
+    #myform input {
+        width: 100%;
+    }
+    #myform textarea {
+        width: 100%;
+        min-width: 265px;
+    }
+    .syco_tooltip {
+        -webkit-transition: top .3s ease-in-out;
+        -moz-transition: top .3s ease-in-out;
+        -o-transition: top .3s ease-in-out;
+        transition: top .3s ease-in-out;
+        border-radius: 0.3em;
+        padding: 10px;
+        top: 3px !important;
+        position: absolute;
+        background: #a2cbfa;
+        right: 0;
+        width: 200px;
+        left: 10px !important;
+    }
+    .triangle_right {
+        display: none;
+
+    }
 }

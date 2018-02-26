@@ -1,92 +1,119 @@
-body{
+body {
 
 }
-.h6{
-	margin: 0; 
-	padding: 5px;
+
+.h6 {
+    margin: 0;
+    padding: 5px;
 }
-.container { 
-	width: 50%; 
-	margin: 20px;
+
+.container {
+    width: 50%;
+    margin: 20px;
 }
-input{
-	margin-bottom: 10px;
+
+input {
+    margin-bottom: 10px;
 }
-#loader{
-	background-image:url('loading.gif');
-	width:70px;
-	height:70px;
+
+#loader {
+    background-image: url('loading.gif');
+    width: 70px;
+    height: 70px;
     background-repeat: no-repeat;
-	background-size: contain;
-	display:none;
-	margin:-32px 0 -30px 0 ;
-	
-	}
-.input-country{
-	display:inline-block;
+    background-size: contain;
+    display: none;
+    margin: -32px 0 -30px 0;
+
+}
+
+.input-country {
+    display: inline-block;
     margin: 0 20px 0 0;
 }
+
 .content {
-	text-align: left;
-	position: relative;
-	padding: 5px;
+    text-align: left;
+    position: relative;
+    padding: 5px;
 }
 
-.autocomplete-suggestions { 
-	border: 1px solid #999; 
-	background: #FFF; 
-	cursor: default; 
-	overflow: auto; 
-	-webkit-box-shadow: 1px 4px 3px rgba(50, 50, 50, 0.64); 
-	-moz-box-shadow: 1px 4px 3px rgba(50, 50, 50, 0.64); 
-	box-shadow: 1px 4px 3px rgba(50, 50, 50, 0.64); 
-	max-height:240px;
+.autocomplete-suggestions {
+    border: 1px solid #999;
+    background: #FFF;
+    cursor: default;
+    overflow: auto;
+    -webkit-box-shadow: 1px 4px 3px rgba(50, 50, 50, 0.64);
+    -moz-box-shadow: 1px 4px 3px rgba(50, 50, 50, 0.64);
+    box-shadow: 1px 4px 3px rgba(50, 50, 50, 0.64);
+    max-height: 240px;
 }
-.autocomplete-suggestion { 
-	padding: 2px 5px; 
-	white-space: nowrap; 
-	overflow: hidden; 
-	font-size: 14px;
+
+.autocomplete-suggestion {
+    padding: 2px 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 14px;
 }
-.autocomplete-selected { 
-	background: #bfbfbf; 
+
+.autocomplete-selected {
+    background: #bfbfbf;
 }
-.autocomplete-suggestions strong { 
-	font-weight: 500; 
-	color: #ef5350; 
+
+.autocomplete-suggestions strong {
+    font-weight: 500;
+    color: #ef5350;
 }
+
 .content-heading {
-	font-size: 24px;
+    font-size: 24px;
 }
+
 .input-option {
-	/*position: absolute;*/
-	width: 70%;
-	margin: 5px;
+    /*position: absolute;*/
+    width: 70%;
+    margin: 5px;
 }
+
 .autocomplete-ajax {
-	/*min-width:0%;
-	width:400px;
-	height:25px;
-	position: absolute; 
-	z-index: 2; 
-	background: transparent;*/
+    /*min-width:0%;
+    width:400px;
+    height:25px;
+    position: absolute;
+    z-index: 2;
+    background: transparent;*/
 }
+
 .autocomplete-ajax-x {
-	min-width:0%;
-	border-radius:0.3em;
-	width:400px;
-	height:25px;
-	color: #CCC; 
-	position: absolute; 
-	background: transparent; 
-	z-index: 1;
+    min-width: 0%;
+    border-radius: 0.3em;
+    width: 400px;
+    height: 25px;
+    color: #CCC;
+    position: absolute;
+    background: transparent;
+    z-index: 1;
 }
+
 /*input{
 	min-width:initial;
 	padding-left: 5px;
 	font-size: 16px;
 }*/
-#selction-ajax{
-	padding-bottom: 7px;
-	padding-left: 7px;
+#selction-ajax {
+    padding-bottom: 7px;
+    padding-left: 7px;
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 90%;
+    }
+
+    #loader {
+        margin: 0;
+        position: absolute;
+        right: 15px;
+        bottom: 3px;
+    }
 }

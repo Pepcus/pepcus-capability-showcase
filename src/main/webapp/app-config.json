@@ -34,15 +34,6 @@
                "_iconClass":"fa-microchip",
 			   "_appData":"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
             },
-            
-            {
-               "_name": "Mailing Tool",
-               "_welcomePage": "/mailingTool.html",
-               "_parentApp": "Backend Utility",
-               "_applicationUrl": "ui-components/mailingTool",
-               "_iconClass":"fa-envelope-o",
-			   "_appData":"Simple email tool to send emails with attachments and html formatted content. You can select a desired template, add related data to the template and send it as an email. You can also add files as attachment to the email."
-            },
             {
                "_name": "Menu",
                "_welcomePage": "/ScrollNavigationDemo.html",
@@ -176,14 +167,6 @@
                "_parentApp": "User Interface",
                "_applicationUrl": "ui-components/notification-module",
                "_iconClass":"fa-exclamation-circle",
-               "_appData":"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-            },
-            {
-               "_name": "Newsletter",
-               "_welcomePage": "/index.html",
-               "_parentApp": "User Interface",
-               "_applicationUrl": "ui-components/newsletter",
-               "_iconClass":"fa-pencil-square-o",
                "_appData":"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
             },
              {
@@ -324,6 +307,22 @@
                "_applicationUrl": "ui-components/VideoGallery",
                "_iconClass":"fa-film",
 			   "_appData":"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+            },
+            {
+               "_name": "Newsletter",
+               "_welcomePage": "/index.html",
+               "_parentApp": "User Interface",
+               "_applicationUrl": "ui-components/newsletter",
+               "_iconClass":"fa-pencil-square-o",
+               "_appData":"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+            },
+            {
+               "_name": "Mailing Tool",
+               "_welcomePage": "/mailingTool.html",
+               "_parentApp": "Backend Utility",
+               "_applicationUrl": "ui-components/mailingTool",
+               "_iconClass":"fa-envelope-o",
+               "_appData":"Simple email tool to send emails with attachments and html formatted content. You can select a desired template, add related data to the template and send it as an email. You can also add files as attachment to the email."
             },
             {
                "_name": "Form Wizard",

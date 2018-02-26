@@ -38,6 +38,7 @@
 
     .fixed-menu {
         width: 210px;
+        z-index: 1111;
     }
 
     .right-rendering-container {
@@ -131,9 +132,21 @@
         width: 100%;
         margin-left: 0;
     }
-    .components-list li#Newsletter{
+
+    .components-list li#Newsletter {
         display: none;
     }
+
+   /* #backendElementsList li#MailingTool {
+        display: none;
+    }*/
+
+   /* [data-name="Newsletter"] {
+        display: none !important;
+    }
+    [data-name="Mailing Tool"] {
+        display: none !important;
+    }*/
 
     .parent-block-container {
         max-height: 90%;
@@ -191,5 +204,8 @@
 }
 
 @media (min-width: 320px) and (max-width: 480px) {
+    .overlay-image {
+        margin-left: 24%;
 
+    }
 }

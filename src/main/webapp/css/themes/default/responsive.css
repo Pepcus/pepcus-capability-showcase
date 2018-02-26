@@ -137,16 +137,16 @@
         display: none;
     }
 
-   /* #backendElementsList li#MailingTool {
+    #backendElementsList li#MailingTool {
         display: none;
-    }*/
+    }
 
-   /* [data-name="Newsletter"] {
+    [data-name="Newsletter"] {
         display: none !important;
     }
     [data-name="Mailing Tool"] {
         display: none !important;
-    }*/
+    }
 
     .parent-block-container {
         max-height: 90%;

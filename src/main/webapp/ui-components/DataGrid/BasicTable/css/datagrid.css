@@ -98,4 +98,8 @@ h2 {
     .ui-grid-pager-container{
         float: none;
     }
+    .ui-grid-pager-control{
+        margin-left: 35px;
+
+    }
 }

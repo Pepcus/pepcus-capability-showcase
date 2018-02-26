@@ -99,7 +99,18 @@ div.model {
 }
 @media (max-width: 480px) {
 	.section-container{
-		width: 863px;
+		width: 315px;
+		overflow: scroll;
+		padding-top: 20px;
 
+	}
+	.content-heading{
+	padding: 10px;
+	position: fixed;
+	top: 21px;
+	width: 294px;
+	}
+	div.selectModel{
+display: inline-flex;
 	}
 }

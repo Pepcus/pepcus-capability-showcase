@@ -193,11 +193,11 @@ label {
         transition: top .3s ease-in-out;
         border-radius: 0.3em;
         padding: 10px;
-        top: 3px !important;
+        top: 10px !important;
         position: absolute;
         background: #a2cbfa;
-        right: 0;
-        width: 200px;
+        right: 0 !important;
+        width: 200px !important;
         left: 10px !important;
     }
     .triangle_right {

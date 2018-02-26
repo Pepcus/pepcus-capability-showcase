@@ -32,7 +32,10 @@
       $scope.showPreview = function () {
         $("#pdf-input-div").css("display","none");
         $(".pdf-div").css("display","block");
-      }
+      };
+      $scope.generatePDF = function () {
+        $("#create_pdf").click();
+      };
     }]);
 })();
 

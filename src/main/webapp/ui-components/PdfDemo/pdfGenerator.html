@@ -62,6 +62,7 @@
                                         </div>
                                         <div id="editor"></div>
                                     <input  type="button" class="btn" ng-click="showPreview()" value="showPreview">
+
                                 </div>
                             </div>
                     </form>
@@ -101,7 +102,7 @@
                     <p style="margin: 10px;" ng-bind-html="employeeInfo"></p>
                 </div>
             </form>
-            <input  type="button" class="btn" style="max-width: 150px;" id="create_pdf" value="Generate PDF">
+            <input  type="button" class="btn" style="max-width: 150px;" id="create_pdf" ng-model="generatePDF" value="Generate PDF">
 
         </div>
     </body>

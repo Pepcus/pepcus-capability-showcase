@@ -212,3 +212,12 @@ position: absolute;
     border-radius: 0.25rem;
     transition: all 0.2s ease-in-out;
 }
+@media (max-width: 480px) {
+    #form-div{
+        display: block;
+    }
+    .form-element{
+        width: auto;
+
+    }
+}

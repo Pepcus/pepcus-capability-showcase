@@ -238,4 +238,10 @@ input {
     .ngdialog.ngdialog-theme-default .ngdialog-content{
         width:60%;
     }
+    .pdf-form{
+        transform-origin: 0 0;
+        zoom: 0.3;
+
+
+    }
 }

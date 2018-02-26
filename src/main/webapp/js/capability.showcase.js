@@ -21,7 +21,7 @@ var onClickKnowMoreBtn = function (e) {
 }
 
 var bindEvents = function () {
-  //  $(window).resize(function(){location.reload();});
+    $(window).resize(function(){location.reload();});
     $(".parent-block-layout").on("click", "#knowMoreBtn", onClickKnowMoreBtn);
     $(".parent-block-layout").on("click", ".more-info-btn", onClickMoreInfoBtn);
     $(".header-list").on("click", ".more-info", onClickMoreInfoOnHeader);

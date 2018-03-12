@@ -7,8 +7,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/mail")
 public class MailingToolController {
 	
-	
-	
+	@GetMapping
+	public String s()
+	{
+		return "Test";
+	}
 	
 	
 }

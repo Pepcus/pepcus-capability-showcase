@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 public class EmailService {
 	
 //	 public EmailRequest createEmailRequest(Integer brokerId, String username) {
-//		 
+//		OTP	 
 //	 }
 //	
 //	

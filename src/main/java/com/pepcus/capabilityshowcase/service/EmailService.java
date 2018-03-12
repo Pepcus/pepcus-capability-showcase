@@ -1,8 +1,8 @@
 package com.pepcus.capabilityshowcase.service;
 
-import static com.pepcus.capabilityshowcase.ApplicationConstants.emailMessage;
-import static com.pepcus.capabilityshowcase.ApplicationConstants.emailSubject;
-import static com.pepcus.capabilityshowcase.ApplicationConstants.exp_min;
+import static com.pepcus.capabilityshowcase.ApplicationConstants.EMAIL_MESSAGE;
+import static com.pepcus.capabilityshowcase.ApplicationConstants.EMAIL_SUBJECT;
+import static com.pepcus.capabilityshowcase.ApplicationConstants.EXP_MIN;
 
 import java.security.NoSuchAlgorithmException;
 import java.time.LocalTime;
@@ -12,10 +12,10 @@ import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
-import com.pepcus.capabilityshowcase.checker.OTPGeneration;
 import com.pepcus.capabilityshowcase.entity.User;
 import com.pepcus.capabilityshowcase.exception.AuthorizationFailedException;
 import com.pepcus.capabilityshowcase.repository.UserRepository;
+import com.pepcus.capabilityshowcase.util.OTPGeneration;
 
 /**
  * 
@@ -49,14 +49,14 @@ public class EmailService
     {
     	String otp = OTPGeneration.otpGeneration();
     	user.setOtp(otp);
-    	LocalTime endTime=java.time.LocalTime.now().plusMinutes(exp_min);
+    	LocalTime endTime=java.time.LocalTime.now().plusMinutes(EXP_MIN);
     	user.setExpiryTime(endTime);
     	
 		SimpleMailMessage mailMessage = new SimpleMailMessage();
 		
 		mailMessage.setTo(user.getEmail());
-		mailMessage.setSubject(emailSubject);
-		mailMessage.setText("Hey! "+user.getName()+ emailMessage +" Your OTP : "+otp);
+		mailMessage.setSubject(EMAIL_SUBJECT);
+		mailMessage.setText("Hey! "+user.getName()+ EMAIL_MESSAGE +" Your OTP : "+otp);
 		
 		javaMailSender.send(mailMessage);
 		

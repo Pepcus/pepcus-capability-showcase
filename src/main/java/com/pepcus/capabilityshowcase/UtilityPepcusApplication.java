@@ -1,15 +1,14 @@
 package com.pepcus.capabilityshowcase;
 
-import static com.pepcus.capabilityshowcase.ApplicationConstants.temp;
+import static com.pepcus.capabilityshowcase.ApplicationConstants.TEMP;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-import com.pepcus.capabilityshowcase.checker.DeleteTempFile;
 import com.pepcus.capabilityshowcase.repository.UserRepository;
+import com.pepcus.capabilityshowcase.util.DeleteTempFile;
 
 /**
  * 
@@ -20,7 +19,6 @@ import com.pepcus.capabilityshowcase.repository.UserRepository;
  */
 @SpringBootApplication
 @EnableJpaRepositories(basePackageClasses = UserRepository.class)
-@EnableJpaAuditing
 public class UtilityPepcusApplication implements CommandLineRunner
 {
 	
@@ -34,7 +32,7 @@ public class UtilityPepcusApplication implements CommandLineRunner
 	 */
 	@Override
 	public void run(String... args) throws Exception {
-		DeleteTempFile.deleteTempFiles(temp);	//uploaded CSV file
+		DeleteTempFile.deleteTempFiles(TEMP);	//uploaded CSV file
         //d.deleteTempFiles(zipFiles);
         //d.deleteTempFiles(protectedZip);	
 	}

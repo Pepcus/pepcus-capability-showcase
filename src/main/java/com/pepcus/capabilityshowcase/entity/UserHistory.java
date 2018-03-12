@@ -20,6 +20,11 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import lombok.Data;
 
+/**
+ * Audited table   
+ * @author SHUBHAM
+ * @since 12-03-2018
+ */
 @Entity
 @EntityListeners(AuditingEntityListener.class)
 @Data

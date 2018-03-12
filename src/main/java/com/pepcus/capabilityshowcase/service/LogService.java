@@ -13,10 +13,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.pepcus.capabilityshowcase.checker.ExtensionChecker;
-import com.pepcus.capabilityshowcase.checker.SizeChecker;
 import com.pepcus.capabilityshowcase.entity.LogModel;
 import com.pepcus.capabilityshowcase.exception.BadRequestException;
+import com.pepcus.capabilityshowcase.util.ExtensionChecker;
+import com.pepcus.capabilityshowcase.util.SizeChecker;
 
 /**
  * 
@@ -194,7 +194,7 @@ public class LogService
 	{
 		try 
 		{
-			if(file.isEmpty() && ExtensionChecker.checkFile(file,"log") && SizeChecker.checkSize(file)) 
+			if(!file.isEmpty() && ExtensionChecker.checkFile(file,"log") && SizeChecker.checkSize(file)) 
 			{
 				byte[] bytes = file.getBytes();
 	            return new String(bytes);		//returning the complete data from the given file

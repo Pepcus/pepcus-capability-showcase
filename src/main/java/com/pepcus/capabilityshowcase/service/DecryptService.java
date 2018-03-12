@@ -1,6 +1,6 @@
 package com.pepcus.capabilityshowcase.service;
 
-import static com.pepcus.capabilityshowcase.ApplicationConstants.storeFileToBeDecrypted;
+import static com.pepcus.capabilityshowcase.ApplicationConstants.STORE_FILE_TO_BE_DECRYPTED;
 
 import java.io.File;
 import java.io.IOException;
@@ -33,7 +33,7 @@ public class DecryptService
 	{
 		CryptoTest cT=new CryptoTest();
 		String filename=file.getOriginalFilename();
-		file.transferTo(new File(storeFileToBeDecrypted+filename));
-		return cT.decryptCrypto(key, storeFileToBeDecrypted+filename);
+		file.transferTo(new File(STORE_FILE_TO_BE_DECRYPTED+filename));
+		return cT.decryptCrypto(key, STORE_FILE_TO_BE_DECRYPTED+filename);
 	}
 }

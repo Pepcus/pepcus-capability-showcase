@@ -1,7 +1,7 @@
 package com.pepcus.capabilityshowcase.service;
 
-import static com.pepcus.capabilityshowcase.ApplicationConstants.protectedZip;
-import static com.pepcus.capabilityshowcase.ApplicationConstants.zipFiles;
+import static com.pepcus.capabilityshowcase.ApplicationConstants.PROTECTED_ZIP;
+import static com.pepcus.capabilityshowcase.ApplicationConstants.ZIP_FILES;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -12,10 +12,10 @@ import java.util.logging.Logger;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.pepcus.capabilityshowcase.checker.DeleteTempFile;
-import com.pepcus.capabilityshowcase.checker.SaveTempFiles;
 import com.pepcus.capabilityshowcase.entity.Zip;
 import com.pepcus.capabilityshowcase.exception.GenericException;
+import com.pepcus.capabilityshowcase.util.DeleteTempFile;
+import com.pepcus.capabilityshowcase.util.SaveTempFiles;
 
 import net.lingala.zip4j.core.ZipFile;
 import net.lingala.zip4j.exception.ZipException;
@@ -42,12 +42,12 @@ public class ZipService
 	{
 		Zip z=new Zip();
 		SaveTempFiles save=new SaveTempFiles();
-		ArrayList<File> filesToAdd=save.saveZipFile(files, zipFiles);
+		ArrayList<File> filesToAdd=save.saveZipFile(files, ZIP_FILES);
 		if(!filesToAdd.isEmpty()) 
 		{
 			String zipping=createProtectedZip(key,filesToAdd);
 			
-			DeleteTempFile.deleteTempFiles(zipFiles);
+			DeleteTempFile.deleteTempFiles(ZIP_FILES);
 			//delete.deleteTempFiles(protectedZip);
 			
 			z.setMessage(zipping);
@@ -68,7 +68,7 @@ public class ZipService
 		try 
         {
 			//This is name and path of zip file to be created
-            ZipFile zipFile = new ZipFile(protectedZip+"//temp.zip");
+            ZipFile zipFile = new ZipFile(PROTECTED_ZIP+"//temp.zip");
             
             //Initiate Zip Parameters which define various properties
             ZipParameters parameters = new ZipParameters();

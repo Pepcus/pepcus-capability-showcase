@@ -1,6 +1,6 @@
 package com.pepcus.capabilityshowcase.service;
 
-import static com.pepcus.capabilityshowcase.ApplicationConstants.storeFileToBeEncrypted;
+import static com.pepcus.capabilityshowcase.ApplicationConstants.STORE_FILE_TO_BE_ENCRYPTED;
 
 import java.io.File;
 import java.io.IOException;
@@ -91,10 +91,10 @@ public class EncryptService
 		CryptoTest cT=new CryptoTest();
 		
 		String filename=file.getOriginalFilename();
-		File f=new File(storeFileToBeEncrypted+filename);
+		File f=new File(STORE_FILE_TO_BE_ENCRYPTED+filename);
 		file.transferTo(f);
 		
-		return cT.encryptCrypto(key, storeFileToBeEncrypted+filename);
+		return cT.encryptCrypto(key, STORE_FILE_TO_BE_ENCRYPTED+filename);
 	
 	}
 	

@@ -15,6 +15,12 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import lombok.Data;
 
+/**
+ * Generic Auditable class which can be mapped to any class(user defined) by extending it 
+ * @author SHUBHAM
+ * @since 12-03-2018
+ * @param <T>
+ */
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
 @Data

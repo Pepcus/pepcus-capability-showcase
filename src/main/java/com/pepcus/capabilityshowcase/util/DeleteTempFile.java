@@ -1,4 +1,4 @@
-package com.pepcus.capabilityshowcase.checker;
+package com.pepcus.capabilityshowcase.util;
 
 import java.io.File;
 

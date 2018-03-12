@@ -1,4 +1,4 @@
-package com.pepcus.capabilityshowcase.checker;
+package com.pepcus.capabilityshowcase.util;
 
 import static com.pepcus.capabilityshowcase.ApplicationConstants.FILE_SIZE;
 

@@ -1,4 +1,4 @@
-package com.pepcus.capabilityshowcase.checker;
+package com.pepcus.capabilityshowcase.util;
 
 import org.apache.commons.io.FilenameUtils;
 import org.springframework.web.multipart.MultipartFile;

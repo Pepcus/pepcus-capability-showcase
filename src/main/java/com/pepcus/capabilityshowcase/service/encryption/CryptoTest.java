@@ -1,8 +1,6 @@
 package com.pepcus.capabilityshowcase.service.encryption;
 
 import org.apache.log4j.Logger;
-import static com.pepcus.capabilityshowcase.ApplicationConstants.DECRYPTED_FILE_NAME;
-import static com.pepcus.capabilityshowcase.ApplicationConstants.ENCRYPTED_FILE_NAME;
 import static com.pepcus.capabilityshowcase.ApplicationConstants.STORE_FILE_TO_BE_DECRYPTED;
 import static com.pepcus.capabilityshowcase.ApplicationConstants.STORE_FILE_TO_BE_ENCRYPTED;
 import static com.pepcus.capabilityshowcase.ApplicationConstants.CRYPTO_CIPHER;
@@ -55,27 +53,26 @@ public class CryptoTest
         catch (Exception e) 
         {
         	log.error(e.getMessage());
-            throw new GenericException(e.getMessage());
+            throw new GenericException("File not valid");
         }
     }
 	
     /**
      * Encrypting file using a key
      * @param key
-     * @param tempZip
+     * @param storeFile
      * @return
      */
-    public EncryptDecryptFile encryptCrypto(String key,String tempZip) 
+    public EncryptDecryptFile encryptCrypto(String key,String storeFile,String filename) 
     {
     	EncryptDecryptFile ed=new EncryptDecryptFile();
     	MD5Encryption m=new MD5Encryption();
     	String secretKey=m.enc(key);
-    	File inputFile = new File(tempZip);
-		File encryptedFile = new File(STORE_FILE_TO_BE_ENCRYPTED+ENCRYPTED_FILE_NAME);
+    	File inputFile = new File(storeFile);
+		File encryptedFile = new File(STORE_FILE_TO_BE_ENCRYPTED+"//"+filename);
 		
 		ed.setMessage(CryptoTest.fileProcessor(Cipher.ENCRYPT_MODE,secretKey,inputFile,encryptedFile));
-	    return ed;
-	
+		return ed;
     }
     
     /**
@@ -84,17 +81,16 @@ public class CryptoTest
      * @param encryptedFile
      * @return
      */
-    public EncryptDecryptFile decryptCrypto(String key,String encryptedFile) 
+    public EncryptDecryptFile decryptCrypto(String key,String encryptedFile,String filename) 
     {
     	EncryptDecryptFile ed=new EncryptDecryptFile();
     	MD5Encryption m=new MD5Encryption();
     	String secretKey=m.enc(key);
     	File inputFile = new File(encryptedFile);
-    	File decryptedFile = new File(STORE_FILE_TO_BE_DECRYPTED+DECRYPTED_FILE_NAME);
+    	File decryptedFile = new File(STORE_FILE_TO_BE_DECRYPTED+"//"+filename);
 		
     	ed.setMessage(CryptoTest.fileProcessor(Cipher.DECRYPT_MODE,secretKey,inputFile,decryptedFile));
-		return ed;
-	   
+    	return ed;
     }
 	
 }

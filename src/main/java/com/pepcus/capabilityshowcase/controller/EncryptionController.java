@@ -37,8 +37,7 @@ public class EncryptionController
 	@PostMapping
 	public ResponseEntity<Encryption> e(@RequestBody Encryption user) throws Exception 
 	{
-		Encryption savedUser = eS.saveUser(user);
-		return new ResponseEntity<Encryption>(savedUser, HttpStatus.CREATED);
+		return new ResponseEntity<Encryption>(eS.saveUser(user), HttpStatus.CREATED);
 	}
 	
 	/**
@@ -51,8 +50,7 @@ public class EncryptionController
 	@PostMapping(value="/file")
 	public ResponseEntity<EncryptDecryptFile> ef(@RequestParam("file") MultipartFile file,@RequestParam("key")String key) throws Exception 
 	{
-		EncryptDecryptFile ed=eS.encryptFile(file, key);
-		return new ResponseEntity<EncryptDecryptFile>(ed, HttpStatus.CREATED);
+		return new ResponseEntity<EncryptDecryptFile>(eS.encryptFile(file, key), HttpStatus.CREATED);
 	}
 	
 }

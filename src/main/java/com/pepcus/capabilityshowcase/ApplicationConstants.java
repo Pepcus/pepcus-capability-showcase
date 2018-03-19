@@ -26,21 +26,21 @@ public class ApplicationConstants
 	/**
 	 * For CSV to JSON controller 
 	 */
-	public static final String TEMP="E:\\Boot\\UtilityPepcus\\logs\\temp\\csv";		//For CSV to JSON 
+	public static final String TEMP="C:\\pcs\\temp\\csv";		//For CSV to JSON 
 	
 	/**
 	 * For protected Zip  
 	 */
-	public static final String ZIP_FILES="E:\\Boot\\UtilityPepcus\\logs\\temp\\zipFiles";	//Storing temporary uploading file
-	public static final String PROTECTED_ZIP="E:\\Boot\\UtilityPepcus\\logs\\temp\\protectedZip";	//Storing protected Zip
+	public static final String ZIP_FILES="C:\\pcs\\temp\\zipFiles";	//Storing temporary uploading file
+	public static final String PROTECTED_ZIP="C:\\pcs\\temp\\protectedZip";	//Storing protected Zip
 
 	/**
 	 * For Encrypted file
 	 */
-	public static final String STORE_FILE_TO_BE_ENCRYPTED="E:\\Boot\\UtilityPepcus\\logs\\temp\\Enc\\";
-	public static final String STORE_FILE_TO_BE_DECRYPTED="E:\\Boot\\UtilityPepcus\\logs\\temp\\Enc\\";
-	public static final String ENCRYPTED_FILE_NAME="zip.encrypted";
-	public static final String DECRYPTED_FILE_NAME="decrypted.zip";
+	public static final String STORE_FILE_TO_BE_ENCRYPTED="C:\\pcs\\temp\\Encrypt";
+	public static final String STORE_FILE_TO_BE_DECRYPTED="C:\\pcs\\temp\\Decrypt";
+	//public static final String ENCRYPTED_FILE_NAME="\\file.encrypted";
+	//public static final String DECRYPTED_FILE_NAME="\\file.decrypted";
 	
 	/**
 	 * For Logger file 

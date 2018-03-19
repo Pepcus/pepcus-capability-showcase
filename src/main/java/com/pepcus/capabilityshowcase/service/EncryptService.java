@@ -91,10 +91,10 @@ public class EncryptService
 		CryptoTest cT=new CryptoTest();
 		
 		String filename=file.getOriginalFilename();
-		File f=new File(STORE_FILE_TO_BE_ENCRYPTED+filename);
+		File f=new File(STORE_FILE_TO_BE_ENCRYPTED+"//"+filename);
 		file.transferTo(f);
 		
-		return cT.encryptCrypto(key, STORE_FILE_TO_BE_ENCRYPTED+filename);
+		return cT.encryptCrypto(key, STORE_FILE_TO_BE_ENCRYPTED+"//"+filename,filename);
 	
 	}
 	

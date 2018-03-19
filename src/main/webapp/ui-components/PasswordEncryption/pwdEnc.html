@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Logger</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+	<script type="text/javascript" src="js/pwdEnc.js"></script>
+
+	<div class="container-fluid">
+		<form role="form" name="pwdEncForm" id="pwdEncForm">	
+			<div class="row">
+				<div class="col-md-3" style="background-color:lavender;">
+					<div class="form-group">
+	                    <div class="selectContainer">
+		                    <select class="form-control" name="algorithm" id="algorithm" required>
+		                        <option value="">--Select Encryption methid--</option>
+		                        <option value="bcrypt">Bcrypt</option>
+		                        <option value="base64">Base64</option>
+		                        <option value="TripleDES">TripleDES</option>
+		                        <option value="PBKD">PBKD</option>
+		                        <option value="md5">Message Digest (MD5)</option>
+		                        <option value="sha">SHA-512</option>
+		                    </select>
+	                    </div>
+	                </div>
+				</div>
+				<div class="col-md-3 col-md-offset-4" style="background-color:orange;">
+					<div class="form-group">
+	                    <label class="sr-only" for="password">Input String</label>
+	                    <input type="text" name="password" placeholder="Enter any String..." required class="form-control" id="password">
+	                </div>
+				</div>
+			</div>
+		</form><br>
+		<div class="row">
+			<div class="col-md-8">
+				<div class="form-group">
+					<input type="text" name="pwdResponse" id="pwdResponse">
+				</div>	
+			</div>
+		</div>
+	</div>
+</body>
+</html>		

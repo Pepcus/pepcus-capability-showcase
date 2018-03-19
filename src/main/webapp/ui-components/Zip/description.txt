@@ -1,0 +1,1 @@
+This is a file uploader which you can upload or store your data in the local storage of your browser and retrieve it later.

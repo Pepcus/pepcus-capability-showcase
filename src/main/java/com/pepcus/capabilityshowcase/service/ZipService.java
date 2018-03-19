@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.pepcus.capabilityshowcase.entity.Zip;
+import com.pepcus.capabilityshowcase.exception.DataNotFoundException;
 import com.pepcus.capabilityshowcase.exception.GenericException;
 import com.pepcus.capabilityshowcase.util.DeleteTempFile;
 import com.pepcus.capabilityshowcase.util.SaveTempFiles;
@@ -40,6 +41,8 @@ public class ZipService
 	 */
 	public Zip getZip(List<MultipartFile> files,String key) 
 	{
+		//List<MultipartFile> files=new ArrayList<>();
+		//filesM.forEach((k,v)-> files.add(v));
 		Zip z=new Zip();
 		SaveTempFiles save=new SaveTempFiles();
 		ArrayList<File> filesToAdd=save.saveZipFile(files, ZIP_FILES);
@@ -53,8 +56,7 @@ public class ZipService
 			z.setMessage(zipping);
 			return z;
 		}
-		z.setMessage("Zip cannot be created");
-		return z;
+		throw new DataNotFoundException("No file found for Zip to be created");
 	}
 	
 	/**

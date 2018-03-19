@@ -43,6 +43,70 @@
                "_iconClass":"fa-envelope-o",
 			   "_appData":"Simple email tool to send emails with attachments and html formatted content. You can select a desired template, add related data to the template and send it as an email. You can also add files as attachment to the email."
             },
+             {
+               "_name": "Log",
+               "_welcomePage": "/log.html",
+               "_parentApp": "Backend Utility",
+               "_applicationUrl": "ui-components/Log",
+               "_iconClass":"fa-envelope-o",
+            "_appData":"Generates log report."
+            },
+            {
+               "_name": "Csv To Json Converter",
+               "_welcomePage": "/csv.html",
+               "_parentApp": "Backend Utility",
+               "_applicationUrl": "ui-components/CsvToJson",
+               "_iconClass":"fa-exchange",
+            "_appData":"A simple tool which converts CSV file into JSON"
+            },
+            {
+               "_name": "Password Encryption",
+               "_welcomePage": "/pwdEnc.html",
+               "_parentApp": "Backend Utility",
+               "_applicationUrl": "ui-components/PasswordEncryption",
+               "_iconClass":"fa-lock",
+            "_appData":"Different types of Password Encryption techniques"
+            },
+            {
+               "_name": "Password Decryption",
+               "_welcomePage": "/pwdDec.html",
+               "_parentApp": "Backend Utility",
+               "_applicationUrl": "ui-components/PasswordDecryption",
+               "_iconClass":"fa-key",
+            "_appData":"Different types of Password Decryption techniques"
+            },
+            {
+               "_name": "File Encryption",
+               "_welcomePage": "/fileEnc.html",
+               "_parentApp": "Backend Utility",
+               "_applicationUrl": "ui-components/FileEncryption",
+               "_iconClass":"fa-lock",
+            "_appData":"Tool to encrypt a file"
+            },
+            {
+               "_name": "File Decryption",
+               "_welcomePage": "/fileDec.html",
+               "_parentApp": "Backend Utility",
+               "_applicationUrl": "ui-components/FileDecryption",
+               "_iconClass":"fa-key",
+            "_appData":"Tool to decrypt an encrypted file"
+            },
+            {
+               "_name": "User Authentication",
+               "_welcomePage": "/UserAuth.html",
+               "_parentApp": "Backend Utility",
+               "_applicationUrl": "ui-components/UserAuthentication",
+               "_iconClass":"fa-lock",
+            "_appData":"Authenticate an user"
+            },
+            {
+               "_name": "Zip",
+               "_welcomePage": "/Zip.html",
+               "_parentApp": "Backend Utility",
+               "_applicationUrl": "ui-components/Zip",
+               "_iconClass":"fa-lock",
+            "_appData":"Create a protected zip"
+            },
             {
                "_name": "Menu",
                "_welcomePage": "/ScrollNavigationDemo.html",

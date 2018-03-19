@@ -35,9 +35,8 @@ public class ZipController
 	 * @return
 	 */
 	@PostMapping
-	public ResponseEntity<Zip> zip(@RequestParam("file")List<MultipartFile> files,@RequestParam("key") String key) 
+	public ResponseEntity<Zip> zip(@RequestParam("key") String key,@RequestParam("file") List<MultipartFile> files) 
 	{
-		Zip z=zS.getZip(files, key);
-		return new ResponseEntity<Zip>(z,HttpStatus.CREATED);
+		return new ResponseEntity<Zip>(zS.getZip(files, key),HttpStatus.CREATED);
 	}
 }

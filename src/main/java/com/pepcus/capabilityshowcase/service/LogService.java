@@ -37,54 +37,22 @@ public class LogService
 	 */
 	public LogModel generateLogger(MultipartFile file,Map<String,String> allRequestParams)
 	{
-		String completeData=validateFileAndReturnData(file);
-		
-		if(allRequestParams.keySet().isEmpty()) 
+
+		if(allRequestParams.get("start").isEmpty() && allRequestParams.get("end").isEmpty()) 
 		{
-			return generateAll(completeData);
+			return generateAll(validateFileAndReturnData(file));
 		}
-		if(allRequestParams.containsKey("startdate") && !allRequestParams.get("startdate").isEmpty() || allRequestParams.containsKey("starttime") && !allRequestParams.get("starttime").isEmpty()) 
+		if(allRequestParams.containsKey("start") && !allRequestParams.get("start").isEmpty() &&  allRequestParams.containsKey("end") && !allRequestParams.get("end").isEmpty()) 
 		{
-			String start="";
-			if(allRequestParams.get("startdate")!=null) 
-			{
-				start=allRequestParams.get("startdate");
-			}
-			if(allRequestParams.get("starttime")!=null) 
-			{
-				start=allRequestParams.get("starttime");
-			}
-			return generateSortedStart(completeData,start);
+			return generateSortedInInterval(validateFileAndReturnData(file), allRequestParams.get("start"), allRequestParams.get("end"));
 		}
-		if(allRequestParams.containsKey("enddate") && !allRequestParams.get("enddate").isEmpty() || allRequestParams.containsKey("endtime") && !allRequestParams.get("endtime").isEmpty()) 
+		if(allRequestParams.containsKey("start") && !allRequestParams.get("start").isEmpty()) 
 		{
-			String end="";
-			if(allRequestParams.get("enddate")!=null) 
-			{
-				end=allRequestParams.get("enddate");
-			}
-			if(allRequestParams.get("endtime")!=null) 
-			{
-				end=allRequestParams.get("endtime");
-			}
-			return generateSortedEnd(completeData,end);
+			return generateSortedStart(validateFileAndReturnData(file),allRequestParams.get("start"));
 		}
-		if(allRequestParams.containsKey("startdate") && !allRequestParams.get("startdate").isEmpty() &&  allRequestParams.containsKey("enddate") && !allRequestParams.get("enddate").isEmpty() || allRequestParams.containsKey("starttime") && !allRequestParams.get("starttime").isEmpty() && allRequestParams.containsKey("endtime") && !allRequestParams.get("endtime").isEmpty()) 
+		if(allRequestParams.containsKey("end") && !allRequestParams.get("end").isEmpty()) 
 		{
-			String start="";
-			String end="";
-			
-			if(allRequestParams.get("startdate")!=null && allRequestParams.get("enddate")!=null) 
-			{
-				start=allRequestParams.get("startdate");
-				end=allRequestParams.get("enddate");
-			}
-			if(allRequestParams.get("starttime")!=null && allRequestParams.get("endtime")!=null) 
-			{
-				start=allRequestParams.get("starttime");
-				end=allRequestParams.get("endtime");
-			}
-			return generateSortedInInterval(completeData, start, end);
+			return generateSortedEnd(validateFileAndReturnData(file),allRequestParams.get("end"));
 		}
 		throw new BadRequestException("No such mapping exists");
 	}
@@ -169,7 +137,8 @@ public class LogService
 	 */
 	private String generateSortedLogStart(String completeData,String start) 
 	{
-        return substringAfter(completeData, start);
+		String substring=substringAfter(completeData, start);
+        return (!substring.isEmpty()) ? substring:completeData ;	//returns complete data if Starting point does not exist
 	}
 	
 	/**
@@ -185,7 +154,7 @@ public class LogService
 	
 	/**
 	 * Validating file by extension and size 
-	 * and returning the logger file data
+	 * and returning the logger file data (complete)
 	 * @param file
 	 * @return
 	 * @throws IOException 
@@ -197,7 +166,7 @@ public class LogService
 			if(!file.isEmpty() && ExtensionChecker.checkFile(file,"log") && SizeChecker.checkSize(file)) 
 			{
 				byte[] bytes = file.getBytes();
-	            return new String(bytes);		//returning the complete data from the given file
+				return new String(bytes);		//returning the complete data from the given file
 			}
 		}
 		catch(Exception e) 

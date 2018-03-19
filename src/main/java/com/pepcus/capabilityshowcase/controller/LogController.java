@@ -37,8 +37,7 @@ public class LogController
 	@PostMapping
 	public ResponseEntity<LogModel> createLogs(@RequestParam("file") MultipartFile file,@RequestParam Map<String,String> allRequestParams) 
 	{
-		LogModel log = lS.generateLogger(file,allRequestParams);
-		return new ResponseEntity<LogModel>(log, HttpStatus.CREATED);
+		return new ResponseEntity<LogModel>(lS.generateLogger(file,allRequestParams), HttpStatus.CREATED);
 	}
 	
 }

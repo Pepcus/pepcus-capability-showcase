@@ -1,9 +1,11 @@
 package com.pepcus.capabilityshowcase.service.encryption;
 
-import java.io.UnsupportedEncodingException;
 import java.util.Base64;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import com.pepcus.capabilityshowcase.exception.BadRequestException;
+
 import static com.pepcus.capabilityshowcase.ApplicationConstants.BASE_64_ENCODING_UTF;
 
 /**
@@ -26,7 +28,7 @@ public class Base64Encoding
         {
             return Base64.getMimeEncoder().encodeToString(data.getBytes(BASE_64_ENCODING_UTF));
         }
-        catch (UnsupportedEncodingException ex) 
+        catch (Exception ex) 
         {
             Logger.getLogger(Base64Encoding.class.getName()).log(Level.SEVERE, null, ex);
             return ex.getMessage();
@@ -45,10 +47,9 @@ public class Base64Encoding
 			byte[] mi=Base64.getMimeDecoder().decode(encryptedString);
 	        return new String(mi,BASE_64_ENCODING_UTF);
 		}
-		catch (UnsupportedEncodingException ex) 
+		catch (Exception ex) 
         {
-            Logger.getLogger(Base64Encoding.class.getName()).log(Level.SEVERE, null, ex);
-            return ex.getMessage();
+            throw new BadRequestException("Invalid encrypted string");
         }
 	}
 }

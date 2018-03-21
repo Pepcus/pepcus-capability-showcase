@@ -217,6 +217,7 @@ var onClickBackendlist = function (e) {
     var selectedItemName = $(target).attr("data-name");
     $(e.currentTarget).addClass("selected-item");
     renderIframe(selectedItemName);
+    console.log(selectedItemName);
     $(".iframe-heading").html($(".active").text());
     if ($(window).width() < 769) {
         if (!($(".fixed-menu").hasClass("inactive"))) {
@@ -526,21 +527,18 @@ function onClickBackendlistItem() {
 
 function renderIframe(selectedItemName) {
     $.each(window.appData.CapacityShowcase.WebApps.StaticWebapp, function (key, item) {
-        if (item._parentApp === "Backend Utility") {
+ /*     if (item._parentApp === "Backend Utility") {
             $("iframe").attr("src", "");
-
         }
         if (item._name != selectedItemName) {
             return;
         }
-        $("iframe").attr("src", item._applicationUrl + item._welcomePage);
-        /*$.ajax({
-        url: item._applicationUrl+'/description.txt',
-        success: function(componentDescriptionData){
-            $(".description-popup").html('');
-            $(".description-popup").html(componentDescriptionData);
+        $("iframe").attr("src", item._applicationUrl + item._welcomePage);  */
+        
+        if (item._name == selectedItemName) {
+           $("iframe").attr("src", item._applicationUrl + item._welcomePage);
         }
-        });*/
+        
     });
 
 //	$("iframe").niceScroll({cursorborder:"",cursorcolor:"#C2C2C2"});

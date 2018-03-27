@@ -60,10 +60,10 @@
             "_appData":"A simple tool which converts CSV file into JSON"
             },
             {
-               "_name": "Password Encryption",
-               "_welcomePage": "/pwdEnc.html",
+               "_name": "Encryption",
+               "_welcomePage": "/Enc.html",
                "_parentApp": "Backend Utility",
-               "_applicationUrl": "ui-components/PasswordEncryption",
+               "_applicationUrl": "ui-components/Encryption",
                "_iconClass":"fa-lock",
             "_appData":"Different types of Password Encryption techniques"
             },
@@ -74,14 +74,6 @@
                "_applicationUrl": "ui-components/PasswordDecryption",
                "_iconClass":"fa-key",
             "_appData":"Different types of Password Decryption techniques"
-            },
-            {
-               "_name": "File Encryption",
-               "_welcomePage": "/fileEnc.html",
-               "_parentApp": "Backend Utility",
-               "_applicationUrl": "ui-components/FileEncryption",
-               "_iconClass":"fa-lock",
-            "_appData":"Tool to encrypt a file"
             },
             {
                "_name": "File Decryption",

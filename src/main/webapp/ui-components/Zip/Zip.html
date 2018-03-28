@@ -1,71 +1,77 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">  
-        <meta name="description" content="timeline" />
-        <title>File Uploader</title>
-        <link href="./../css/include.css" rel="stylesheet" type="text/css"/>
-        <script type="text/javascript" src="./../js/jquery/jquery-3.2.1.min.js"></script>
-        <script type="text/javascript" src="./../js/jquery.nicescroll.min.js"></script>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="description" content="timeline"/>
+    <title>File Uploader</title>
+    <link href="./../css/include.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="./../js/jquery/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="./../js/jquery.nicescroll.min.js"></script>
 
-        <link rel="stylesheet" type="text/css" href="./../css/font-awesome-4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" type="text/css" href="./css/fileuploader.css" >
-    </head>
-    <body>
-        <!--<script type="text/javascript" src="js/zip2.js"></script>-->
-        <div class="rendering-container">
-            <section class="border-lightblue">
-                <div class="content-heading lightblue">
-                    <h2 class="h5 white-heading">File Uploader</h2>
-                </div>
-                <div class="drop-box-container">
-                    <div class = "drop-zone" id="dropzone">
-                        <form id="form-div" action="/pepcuscapability-showcase/zip" method="post" enctype="multipart/form-data">
-                            <div class="form-control">
-                                <label class="btn" for="key" >
-                                <input type="password" name="key" id="key" placeholder="Enter password">  
-                            </div><br>
-                            <div class="form-element upload-files-button"> 
-                                <label class="btn" for="file" >
-                                <input type="file" name="file" class="file" id="file" multiple>Upload files
-                                </label>
-                            </div>
-
-                            <p>OR</p>
-
-                            <!--<div class="fetch-data-button">-->
-                                <!--<input type="button" class="btn" id = "fetchdata" value="Fetch Data">-->
-                            <!--</div>-->
-                            <div class="form-element drag-drop">
-                                <p>Drag your files here</p>
-                            </div>
-                            <div>
-                                <div style="padding-top: 30px;">
-                                    <input type="submit" class="btn btn-danger" style="width:120px;height:50px;margin:auto;display:block" id="btnSubmit">
-                                </div>
-                            </div>
-                        </form>
-                    </div> 
-                </div>
-      
-                <div id="showFiles">
-                <!-- Items will be rendered here via jQuery dynamically -->
-                </div>
-                <div class="uploded-files-container">   
-                    <div id="uploadedFiles">
-                    <!-- Items will be rendered here via jQuery dynamically -->
-                    </div>
-                </div>
-            </section>     
+    <link rel="stylesheet" type="text/css" href="./../css/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/fileuploader.css">
+</head>
+<body>
+<!--<script type="text/javascript" src="js/zip2.js"></script>-->
+<div class="rendering-container">
+    <section class="border-lightblue">
+        <div class="content-heading lightblue">
+            <h2 class="h5 white-heading">File Uploader</h2>
         </div>
-        <div class="preview-div">
-            
-            <div class="preview-image">
-                <div class="close-preview"> <span>&#x2716;</span></div>
+        <div class="drop-box-container">
+            <div class="drop-zone" id="dropzone">
+                <form id="form-div" action="/pepcuscapability-showcase/zip" method="post" enctype="multipart/form-data">
+                    <div class="first-step">
+                        <div class="label"><label for="file">Step - 1</label></div>
+                        <div class="form-element upload-files-button">
+                            <label class="btn" for="file0" >
+                            <input type="file" name="file" class="file0" id="file0" multiple>Upload files
+                            </label>
+                        </div>
+                        <p>OR</p>
+                        <div class="form-element drag-drop">
+                            <p>Drag your files here</p>
+                        </div>
+                    </div>
             </div>
-		</div>
-        <div id="upload-result">
-            </div><!-- #upload-result -->
-    </body>
-    <script type="text/javascript" src="./js/fileuploader.js"></script>
+            <br>
+            <div class="second-step">
+                <div class="label"><label for="file">Step - 2</label></div>
+                <div class="form-control">
+                    <input type="password" name="key" id="key" placeholder="Enter password">
+                </div>
+            </div>
+            <div class="third-step">
+                <div class="label"><label for="file">Step - 3</label></div>
+                <div>
+                    <input type="submit" class="btn btn-danger"
+                           style="width:120px;height: 35px;margin:auto;display:block" id="btnSubmit">
+                </div>
+            </div>
+            </form>
+        </div>
+
+
+        <div id="showFiles">
+            <!-- Items will be rendered here via jQuery dynamically -->
+        </div>
+        <div class="uploded-files-container">
+            <div id="uploadedFiles">
+                <!-- Items will be rendered here via jQuery dynamically -->
+            </div>
+        </div>
+
+</div>
+<div class="preview-div">
+
+    <div class="preview-image">
+        <div class="close-preview"><span>&#x2716;</span></div>
+    </div>
+</div>
+<div id="upload-result">
+</div><!-- #upload-result -->
+</section>
+</div>
+</body>
+<script type="text/javascript" src="./js/fileuploader.js"></script>
 </html>

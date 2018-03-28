@@ -68,18 +68,10 @@
             "_appData":"Different types of Password Encryption techniques"
             },
             {
-               "_name": "Password Decryption",
-               "_welcomePage": "/pwdDec.html",
+               "_name": "Decryption",
+               "_welcomePage": "/decrypt.html",
                "_parentApp": "Backend Utility",
-               "_applicationUrl": "ui-components/PasswordDecryption",
-               "_iconClass":"fa-key",
-            "_appData":"Different types of Password Decryption techniques"
-            },
-            {
-               "_name": "File Decryption",
-               "_welcomePage": "/fileDec.html",
-               "_parentApp": "Backend Utility",
-               "_applicationUrl": "ui-components/FileDecryption",
+               "_applicationUrl": "ui-components/Decryption",
                "_iconClass":"fa-key",
             "_appData":"Tool to decrypt an encrypted file"
             },

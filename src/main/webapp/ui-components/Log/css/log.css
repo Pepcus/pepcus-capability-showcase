@@ -29,6 +29,8 @@ input{
 .label{
     padding:20px;
     width:60px;
+    font-size:13px;
+    font-weight: bold;
 }
 .second-step{
     display:inline-flex;

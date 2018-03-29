@@ -61,9 +61,9 @@
             },
             {
                "_name": "Encryption",
-               "_welcomePage": "/Enc.html",
+               "_welcomePage": "/index.html",
                "_parentApp": "Backend Utility",
-               "_applicationUrl": "ui-components/Encryption",
+               "_applicationUrl": "ui-components/encryption/dist",
                "_iconClass":"fa-lock",
             "_appData":"Different types of Password Encryption techniques"
             },

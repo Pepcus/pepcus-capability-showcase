@@ -39,7 +39,19 @@ input{
     padding:20px;
 }
 .json-data{
-    display: inline-block;
+    display: none;
     margin: 10px;
-    width: 40%;
+    //width: 40%;
+    border: 5px solid #f2f2f2;
+}
+.json-data h2{
+    margin: 5px 0px 5px 10px;
+    display: inline-block;
+}
+.copy-btn{
+    float: right;
+    height: 30px;
+    margin: 5px;
+    /*background-color: #b2b2b2;*/
+    color: black;
 }

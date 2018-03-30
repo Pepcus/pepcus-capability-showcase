@@ -20,7 +20,12 @@ $(document).ready(function () {
 
 		// disabled the submit button
         $("#btnSubmit").prop("disabled", true);
+    $("#copy").click(function () {
+      $("#HiddenJsonOutput").val().select();
+      document.execCommand("copy");
+      $("#copy").html("Copied");
 
+    });
         $.ajax({
             type: "POST",
             enctype: 'multipart/form-data',
@@ -32,10 +37,16 @@ $(document).ready(function () {
             timeout: 600000,
 
             success: function (data) {
-            	$("#jsonResponse").css("display","block");
+            	$(".json-data").css("display","inline-block");
             	console.log("SUCCESS : ", data);
             	var json = JSON.stringify(data);
-            	$("#jsonResponse").val(json);
+              $("#HiddenJsonOutput").html(json);
+            	$(".container").html(json);
+              $(".container").beautifyJSON({
+                hoverable: true,
+                collapsible: true
+              });
+
                 $("#btnSubmit").prop("disabled", false);
             },
             error: function (e) {

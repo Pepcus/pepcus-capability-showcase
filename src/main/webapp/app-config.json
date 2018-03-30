@@ -68,16 +68,8 @@
             "_appData":"Different types of Encryption techniques for Password and File"
             },
             {
-               "_name": "Password Encryption",
-               "_welcomePage": "/index.html",
-               "_parentApp": "Backend Utility",
-               "_applicationUrl": "ui-components/encryption/dist",
-               "_iconClass":"fa-lock",
-            "_appData":"Different types of Password Encryption techniques"
-            },
-            {
                "_name": "Decryption",
-               "_welcomePage": "/decrypt.html",
+               "_welcomePage": "/index.html",
                "_parentApp": "Backend Utility",
                "_applicationUrl": "ui-components/Decryption",
                "_iconClass":"fa-key",

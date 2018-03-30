@@ -35,7 +35,7 @@ public class CryptoTest
 	 */
     static String fileProcessor(int cipherMode,String key,File inputFile,File outputFile)
     {
-        try (FileInputStream inputStream = new FileInputStream(inputFile);FileOutputStream outputStream = new FileOutputStream(outputFile))
+        try (FileOutputStream outputStream = new FileOutputStream(outputFile);FileInputStream inputStream = new FileInputStream(inputFile);)
         {
         	Key secretKey = new SecretKeySpec(key.getBytes(), CRYPTO_CIPHER);
             Cipher cipher = Cipher.getInstance(CRYPTO_CIPHER);
@@ -60,16 +60,15 @@ public class CryptoTest
     /**
      * Encrypting file using a key
      * @param key
-     * @param storeFile
+     * @param f
      * @return
      */
-    public EncryptDecryptFile encryptCrypto(String key,String storeFile,String filename) 
+    public EncryptDecryptFile encryptCrypto(String key,File inputFile,String filename) 
     {
     	EncryptDecryptFile ed=new EncryptDecryptFile();
     	MD5Encryption m=new MD5Encryption();
     	String secretKey=m.enc(key);
-    	File inputFile = new File(storeFile);
-		File encryptedFile = new File(STORE_FILE_TO_BE_ENCRYPTED+"//"+filename);
+		File encryptedFile = new File(STORE_FILE_TO_BE_ENCRYPTED+"//E"+filename);
 		
 		ed.setMessage(CryptoTest.fileProcessor(Cipher.ENCRYPT_MODE,secretKey,inputFile,encryptedFile));
 		return ed;
@@ -78,16 +77,15 @@ public class CryptoTest
     /**
      * Decrypting file using key
      * @param key
-     * @param encryptedFile
+     * @param f
      * @return
      */
-    public EncryptDecryptFile decryptCrypto(String key,String encryptedFile,String filename) 
+    public EncryptDecryptFile decryptCrypto(String key,File inputFile,String filename) 
     {
     	EncryptDecryptFile ed=new EncryptDecryptFile();
     	MD5Encryption m=new MD5Encryption();
     	String secretKey=m.enc(key);
-    	File inputFile = new File(encryptedFile);
-    	File decryptedFile = new File(STORE_FILE_TO_BE_DECRYPTED+"//"+filename);
+    	File decryptedFile = new File(STORE_FILE_TO_BE_DECRYPTED+"//D"+filename);
 		
     	ed.setMessage(CryptoTest.fileProcessor(Cipher.DECRYPT_MODE,secretKey,inputFile,decryptedFile));
     	return ed;

@@ -12,6 +12,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 import com.pepcus.capabilityshowcase.util.CreateDirectory;
+import com.pepcus.capabilityshowcase.util.DeleteTempFile;
 
 /**
  * 
@@ -36,6 +37,11 @@ public class PepcusCapabilityApplication
 	public CommandLineRunner run() throws Exception 
 	{
 		return args -> {
+//			DeleteTempFile.deleteTempFiles(TEMP);
+//			DeleteTempFile.deleteTempFiles(ZIP_FILES);
+//			DeleteTempFile.deleteTempFiles(PROTECTED_ZIP);
+//			DeleteTempFile.deleteTempFiles(STORE_FILE_TO_BE_ENCRYPTED);
+//			DeleteTempFile.deleteTempFiles(STORE_FILE_TO_BE_DECRYPTED);
 			CreateDirectory.CreateDirectoryIfNotExist(TEMP);
 			CreateDirectory.CreateDirectoryIfNotExist(ZIP_FILES);
 			CreateDirectory.CreateDirectoryIfNotExist(PROTECTED_ZIP);

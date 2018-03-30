@@ -19,7 +19,9 @@ import com.pepcus.capabilityshowcase.entity.LogModel;
 import com.pepcus.capabilityshowcase.entity.User;
 import com.pepcus.capabilityshowcase.entity.Zip;
 import com.pepcus.capabilityshowcase.exception.ApiErrorResponse;
+import com.pepcus.capabilityshowcase.util.DeleteTempFile;
 
+import static com.pepcus.capabilityshowcase.ApplicationConstants.TEMP;
 /**
  * Global response handler for all APIs
  * 
@@ -73,8 +75,7 @@ public class ResponseHandler implements ResponseBodyAdvice<Object>
 
 		if (httpRequest.getMethod().equals(HttpMethod.POST) && body instanceof Encryption) 
 		{
-			apiResponse.setMessage("Encryted password successfully created");
-			apiResponse.setUser((Encryption) body);
+			return body;
 		}
 		if (httpRequest.getMethod().equals(HttpMethod.POST) && body instanceof EncryptDecryptFile) 
 		{
@@ -101,6 +102,7 @@ public class ResponseHandler implements ResponseBodyAdvice<Object>
 		
 		if (httpRequest.getMethod().equals(HttpMethod.POST) && body instanceof String) 
 		{
+			DeleteTempFile.deleteTempFiles(TEMP);
 			return body;
 		}
 		

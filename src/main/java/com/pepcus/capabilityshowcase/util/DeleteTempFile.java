@@ -2,6 +2,8 @@ package com.pepcus.capabilityshowcase.util;
 
 import java.io.File;
 
+import com.pepcus.capabilityshowcase.exception.GenericException;
+
 /**
  * 
  * Deleting temporary files
@@ -17,11 +19,18 @@ public class DeleteTempFile
 	 */
 	public static void deleteTempFiles(String pathFolder) 
 	{
-		File folder = new File(pathFolder);
-		for (File file : folder.listFiles()) 
+		try 
 		{
-			file.delete();
-	  	}
+			File folder = new File(pathFolder);
+			for (File file : folder.listFiles()) 
+			{
+				file.delete();
+		  	}
+		}
+		catch(Exception e) 
+		{
+			throw new GenericException("File not found");
+		}
 		//Files.deleteIfExists(Paths.get(tempZip));
 	}
 }

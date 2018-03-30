@@ -61,7 +61,9 @@ public class DecryptService
 	{
 		CryptoTest cT=new CryptoTest();
 		String filename=file.getOriginalFilename();
-		file.transferTo(new File(STORE_FILE_TO_BE_DECRYPTED+"//"+filename));
-		return cT.decryptCrypto(key, STORE_FILE_TO_BE_DECRYPTED+"//"+filename,filename);
+		File f=new File(STORE_FILE_TO_BE_DECRYPTED+"//"+filename);
+		file.transferTo(f);
+		
+		return cT.decryptCrypto(key, f,filename);
 	}
 }

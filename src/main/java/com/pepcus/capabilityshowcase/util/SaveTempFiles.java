@@ -37,7 +37,7 @@ public class SaveTempFiles
 				}
 				catch (Exception e) 
 				{
-					throw new BadRequestException("Files cannot be saved");
+					throw new BadRequestException("Files cannot be saved : "+ e.getMessage());
 				} 
 				filesToAdd.add(f);	//files added
 			});

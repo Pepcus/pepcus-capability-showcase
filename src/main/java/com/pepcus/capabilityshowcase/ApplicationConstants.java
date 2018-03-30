@@ -31,8 +31,8 @@ public class ApplicationConstants
 	/**
 	 * For protected Zip  
 	 */
-	public static final String ZIP_FILES="C:\\pcs\\temp\\zipFiles";	//Storing temporary uploading file
-	public static final String PROTECTED_ZIP="C:\\pcs\\temp\\protectedZip";	//Storing protected Zip
+	public static final String ZIP_FILES="C:\\pcs\\temp\\zipfiles";	//Storing temporary uploading file
+	public static final String PROTECTED_ZIP="C:\\pcs\\temp\\protectedzip";	//Storing protected Zip
 
 	/**
 	 * For Encrypted file

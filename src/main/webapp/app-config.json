@@ -8,7 +8,7 @@
                "_parentApp": "",
                "_applicationUrl": "",
                "_iconClass":"fa-microchip",
-			   "_appData":"Generic UI components with intractive designs. Encapsulated components which mange their own state. These components can be easily composed to build complex applications."
+            "_appData":"Generic UI components with intractive designs. Encapsulated components which mange their own state. These components can be easily composed to build complex applications."
             },
             {
                "_name": "Backend Utility",
@@ -16,7 +16,7 @@
                "_parentApp": "",
                "_applicationUrl": "",
                "_iconClass":"fa-microchip",
-			   "_appData":"Idependent widgets for backend utilities used for common operations such as PDF generator, mailing tool, import & export data tool etc. "
+            "_appData":"Idependent widgets for backend utilities used for common operations such as PDF generator, mailing tool, import & export data tool etc. "
             },
             {
                "_name": "Coming Soon",
@@ -24,7 +24,7 @@
                "_parentApp": "",
                "_applicationUrl": "",
                "_iconClass":"fa-microchip",
-			   "_appData":"More generic and plugable components which are under development."
+            "_appData":"More generic and plugable components which are under development."
             },
             {
                "_name": "Demo Test",
@@ -32,7 +32,7 @@
                "_parentApp": "No",
                "_applicationUrl": "",
                "_iconClass":"fa-microchip",
-			   "_appData":"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+            "_appData":"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
             },
             
             {
@@ -41,7 +41,7 @@
                "_parentApp": "Backend Utility",
                "_applicationUrl": "ui-components/mailingTool",
                "_iconClass":"fa-envelope-o",
-			   "_appData":"Simple email tool to send emails with attachments and html formatted content. You can select a desired template, add related data to the template and send it as an email. You can also add files as attachment to the email."
+            "_appData":"Simple email tool to send emails with attachments and html formatted content. You can select a desired template, add related data to the template and send it as an email. You can also add files as attachment to the email."
             },
              {
                "_name": "Log",
@@ -53,7 +53,7 @@
             },
             {
                "_name": "Csv To Json Converter",
-               "_welcomePage": "/csv.html",
+               "_welcomePage": "/index.html",
                "_parentApp": "Backend Utility",
                "_applicationUrl": "ui-components/CsvToJson",
                "_iconClass":"fa-exchange",
@@ -61,6 +61,14 @@
             },
             {
                "_name": "Encryption",
+               "_welcomePage": "/index.html",
+               "_parentApp": "Backend Utility",
+               "_applicationUrl": "ui-components/Encryption",
+               "_iconClass":"fa-lock",
+            "_appData":"Different types of Encryption techniques for Password and File"
+            },
+            {
+               "_name": "Password Encryption",
                "_welcomePage": "/index.html",
                "_parentApp": "Backend Utility",
                "_applicationUrl": "ui-components/encryption/dist",
@@ -97,7 +105,7 @@
                "_parentApp": "Coming Soon",
                "_applicationUrl": "ui-components/Menus/ScrollNavigation",
                "_iconClass":"fa-bars",
-			   "_appData":"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+            "_appData":"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
             },
             {
                "_name": "Scroll Navigation Menu",
@@ -105,14 +113,14 @@
                "_parentApp": "Menu",
                "_applicationUrl": "ui-components/Menus/ScrollNavigation",
                "_iconClass":"fa-microchip",
-			   "_appData":"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+            "_appData":"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
             },
              {
                "_name": "Left Sticky Side Menu",
                "_welcomePage": "/LeftStickyMenu.html",
                "_parentApp": "Menu",
                "_applicationUrl": "ui-components/Menus/LeftStickySideMenu",
-			   "_appData":"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+            "_appData":"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
             },
             {
                "_name": "Form",
@@ -120,7 +128,7 @@
                "_parentApp": "User Interface",
                "_applicationUrl": "ui-components/Form/Form Elements",
                "_iconClass":"fa-wpforms",
-			   "_appData":"General purpose forms with commonly used form elements such as form progression, passwords, file uploaders etc."
+            "_appData":"General purpose forms with commonly used form elements such as form progression, passwords, file uploaders etc."
             },
             {
                "_name": "Form Elements",
@@ -136,7 +144,7 @@
                "_parentApp": "Form",
                "_applicationUrl": "ui-components/Form/Radios",
                "_iconClass":"fa-microchip",
-			   "_appData":"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+            "_appData":"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
             },
             {
                "_name": "Search",
@@ -144,7 +152,7 @@
                "_parentApp": "User Interface",
                "_applicationUrl": "ui-components/Search/ServerSideSearch",
                "_iconClass":"fa-search",
-			   "_appData":"Search utility to filter data. Demo includes both server side and client side search with an ability to customize our search."
+            "_appData":"Search utility to filter data. Demo includes both server side and client side search with an ability to customize our search."
             },
             {
                "_name": "Server side search",
@@ -152,7 +160,7 @@
                "_parentApp": "Search",
                "_applicationUrl": "ui-components/Search/ServerSideSearch",
                "_iconClass":"fa-microchip",
-			   "_appData":"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+            "_appData":"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
             },
             {
                "_name": "Client side search",
@@ -160,7 +168,7 @@
                "_parentApp": "Search",
                "_applicationUrl": "ui-components/Search/ClientSideSearch",
                "_iconClass":"fa-microchip",
-			   "_appData":"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+            "_appData":"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
             },
             {
                "_name": "Custom Search",
@@ -168,7 +176,7 @@
                "_parentApp": "@@@@@@@@@@@@@@@@@@@@@@2@@@@@@@@@@@@@@@@@@This is removed@@@@@@@@@@@@@@@@@@@@@@@@@@@",
                "_applicationUrl": "ui-components/Search/CustomSearch",
                "_iconClass":"fa-microchip",
-			   "_appData":"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+            "_appData":"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
             },
             {
                "_name": "Data Grid",
@@ -176,7 +184,7 @@
                "_parentApp": "User Interface",
                "_applicationUrl": "ui-components/DataGrid/BasicTable/wrapper.html",
                "_iconClass":"fa-table",
-			   "_appData":"Fully featured table widget which accomodates almost all general purpose needs for a tabular data representation. It includes search, sort and paginate data."
+            "_appData":"Fully featured table widget which accomodates almost all general purpose needs for a tabular data representation. It includes search, sort and paginate data."
             },
             {
                "_name": "Basic Table",
@@ -184,7 +192,7 @@
                "_parentApp": "Data Grid",
                "_applicationUrl": "ui-components/DataGrid/BasicTable/wrapper.html",
                "_iconClass":"fa-microchip",
-			   "_appData":"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+            "_appData":"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
             },
             {
                "_name": "Shopping Cart",
@@ -192,7 +200,7 @@
                "_parentApp": "User Interface",
                "_applicationUrl": "ui-components/smartcart",
                "_iconClass":"fa-shopping-cart",
-			   "_appData":"A basic product purchase and checkout process demo with a categoried product layout. "
+            "_appData":"A basic product purchase and checkout process demo with a categoried product layout. "
             },
             {
                "_name": "Password Strength",
@@ -248,7 +256,7 @@
                "_parentApp": "User Interface",
                "_applicationUrl": "ui-components/Charts/HighChartMultiple",
                "_iconClass":"fa-bar-chart",
-			   "_appData":"Animated graphical representation of data with examples of Pie chart, Donut chart, Area chart and many more."
+            "_appData":"Animated graphical representation of data with examples of Pie chart, Donut chart, Area chart and many more."
             },
             {
                "_name": "Multiple Charts",
@@ -256,7 +264,7 @@
                "_parentApp": "Charts",
                "_applicationUrl": "ui-components/Charts/HighChartMultiple",
                "_iconClass":"fa-microchip",
-			   "_appData":"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+            "_appData":"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
             },
             {
                "_name": "Pie Chart",
@@ -264,7 +272,7 @@
                "_parentApp": "Charts",
                "_applicationUrl": "ui-components/Charts/PieChart",
                "_iconClass":"fa-microchip",
-			   "_appData":"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+            "_appData":"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
             },
             {
                "_name": "Donut Chart",
@@ -272,7 +280,7 @@
                "_parentApp": "Charts",
                "_applicationUrl": "ui-components/Charts/DonutChart",
                "_iconClass":"fa-microchip",
-			   "_appData":"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+            "_appData":"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
             },
             {
                "_name": "Column Basic",
@@ -280,7 +288,7 @@
                "_parentApp": "Charts",
                "_applicationUrl": "ui-components/Charts/HiChartColumnBasic",
                "_iconClass":"fa-microchip",
-			   "_appData":"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+            "_appData":"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
             },
             {
                "_name": "Auto Update",
@@ -288,7 +296,7 @@
                "_parentApp": "Charts",
                "_applicationUrl": "ui-components/Charts/HiChartDynamicUpdate",
                "_iconClass":"fa-microchip",
-			   "_appData":"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+            "_appData":"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
             },
             {
                "_name": "Notification-slider",
@@ -296,7 +304,7 @@
                "_parentApp": "Coming Soon",
                "_applicationUrl": "ui-components/Notification/SliderNotification",
                "_iconClass":"fa-bell-o",
-			   "_appData":"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+            "_appData":"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
             },
             {
                "_name": "Pdf Generator",
@@ -304,7 +312,7 @@
                "_parentApp": "User Interface",
                "_applicationUrl": "ui-components/PdfDemo",
                "_iconClass":"fa-file-pdf-o",
-			   "_appData":"Generate PDF files. File generator utility which wraps text, data and image into Pdf file."
+            "_appData":"Generate PDF files. File generator utility which wraps text, data and image into Pdf file."
             },
             {
                "_name": "Csv to Json",
@@ -312,7 +320,7 @@
                "_parentApp": "User Interface",
                "_applicationUrl": "ui-components/CsvUploader",
                "_iconClass":"fa-exchange",
-			   "_appData":"Generate PDF files. File generator utility which wraps text, data and image into Pdf file."
+            "_appData":"Generate PDF files. File generator utility which wraps text, data and image into Pdf file."
             },
             {
                "_name": "Popup",
@@ -320,7 +328,7 @@
                "_parentApp": "Coming Soon",
                "_applicationUrl": "ui-components/Popup/JQueryPopup",
                "_iconClass":"fa-expand",
-			   "_appData":"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+            "_appData":"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
             },
             {
                "_name": "Image Gallery",
@@ -328,7 +336,7 @@
                "_parentApp": "Coming Soon",
                "_applicationUrl": "ui-components/ImageSlider",
                "_iconClass":"fa-picture-o",
-			   "_appData":"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+            "_appData":"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
             },
             {
                 "_name": "Basic Slider",
@@ -371,7 +379,7 @@
                "_parentApp": "Coming Soon",
                "_applicationUrl": "ui-components/VideoGallery",
                "_iconClass":"fa-film",
-			   "_appData":"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+            "_appData":"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
             },
             {
                "_name": "Form Wizard",
@@ -379,7 +387,7 @@
                "_parentApp": "Coming Soon",
                "_applicationUrl": "ui-components/Wizards",
                "_iconClass":"fa-pencil-square-o",
-			   "_appData":"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+            "_appData":"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
             }
          ]
       }

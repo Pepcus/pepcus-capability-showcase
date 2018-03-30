@@ -77,7 +77,7 @@
             },
             {
                "_name": "User Authentication",
-               "_welcomePage": "/UserAuth.html",
+               "_welcomePage": "/index.html",
                "_parentApp": "Backend Utility",
                "_applicationUrl": "ui-components/UserAuthentication",
                "_iconClass":"fa-lock",

@@ -1,0 +1,45 @@
+.wrapper{
+    margin:10px;
+    border: 1px solid #f2f2f2;
+}
+.wrapper-heading{
+    padding:10px;
+    font-size:24px;
+}
+.form-group{
+    display:inline-flex;
+    width: 51%
+}
+.first-step input{
+
+    border-style: none;
+    box-shadow: none;
+    border: none;
+    width:90%;
+
+}
+.first-step .input{
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    width: 61%;
+    margin: 10px;
+}
+input{
+    min-width:80%;
+}
+.label{
+    padding: 20px 0 0 20px;
+    width: 31px;
+}
+.submit-btn{
+    width:15%;
+    margin:15px;
+}
+.submit{
+    width:10%;
+    padding:20px;
+}
+.json-data{
+    display: inline-block;
+    margin: 10px;
+    width: 40%;
+}

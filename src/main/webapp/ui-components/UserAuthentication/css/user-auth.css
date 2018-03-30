@@ -67,7 +67,10 @@ body{
     right: -10px;
     top: 10px
 }
-
+.label{
+    font-size:13px;
+    font-weight: bold;
+}
 .tooltip p {
     color: white;
     margin-bottom: 10px;
@@ -156,5 +159,13 @@ label{
 }
 .progression-button{
     width: 30%;
-    float: right;
+    margin-left: 10px;
+    cursor:pointer;
+}
+.btn{
+    cursor:pointer;
+}
+input{
+    margin-bottom:10px;
+    min-width:20%;
 }

@@ -71,9 +71,6 @@ position: absolute;
 .drop-box-container{
     margin-top: 30px;
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 .uploaded-image{
     width: 100%;
@@ -108,7 +105,7 @@ position: absolute;
 }
 #form-div{
     width: 100%;
-    display: flex;
+    /*display: flex;*/
     align-items: center;
     justify-content: space-around;
 }
@@ -211,4 +208,66 @@ position: absolute;
     font-size: 14px;
     border-radius: 0.25rem;
     transition: all 0.2s ease-in-out;
+}
+
+
+.first-step input{
+    margin:5px;
+    border-style: none;
+    box-shadow: none;
+    border: none;
+    width:90%;
+
+}
+.first-step .input{
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    width: 61%;
+    margin: 7px;
+}
+input{
+    min-width:80%;
+}
+.label{
+    padding:20px;
+    width:100px;
+    font-size:13px;
+    font-weight: bold;
+}
+.second-step .label{
+    width:65px;
+}
+.third-step .label{
+    width:65px;
+}
+.second-step{
+    display:inline-flex;
+    width:100%;
+    align-items: center;
+
+}
+.date-selector{
+    display: inline-grid;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    width:31%;
+    margin:7px;
+}
+.second-step .input{
+    margin:10px;
+
+}
+.submit-btn{
+    width:10%;
+}
+.first-step{
+    display: inline-flex;
+    align-items: center;
+}
+.third-step{
+    align-items: center;
+    display: inline-flex;
+}
+.form-control{
+    width:44%;
+    border:none;
+    padding:0px;
 }

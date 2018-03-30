@@ -71,31 +71,15 @@
                "_name": "Password Encryption",
                "_welcomePage": "/index.html",
                "_parentApp": "Backend Utility",
-               "_applicationUrl": "ui-components/PasswordEncryption",
+               "_applicationUrl": "ui-components/encryption/dist",
                "_iconClass":"fa-lock",
             "_appData":"Different types of Password Encryption techniques"
             },
             {
-               "_name": "Password Decryption",
-               "_welcomePage": "/pwdDec.html",
+               "_name": "Decryption",
+               "_welcomePage": "/decrypt.html",
                "_parentApp": "Backend Utility",
-               "_applicationUrl": "ui-components/PasswordDecryption",
-               "_iconClass":"fa-key",
-            "_appData":"Different types of Password Decryption techniques"
-            },
-            {
-               "_name": "File Encryption",
-               "_welcomePage": "/fileEnc.html",
-               "_parentApp": "Backend Utility",
-               "_applicationUrl": "ui-components/FileEncryption",
-               "_iconClass":"fa-lock",
-            "_appData":"Tool to encrypt a file"
-            },
-            {
-               "_name": "File Decryption",
-               "_welcomePage": "/fileDec.html",
-               "_parentApp": "Backend Utility",
-               "_applicationUrl": "ui-components/FileDecryption",
+               "_applicationUrl": "ui-components/Decryption",
                "_iconClass":"fa-key",
             "_appData":"Tool to decrypt an encrypted file"
             },

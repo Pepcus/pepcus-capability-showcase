@@ -1,45 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="../../js/jquery/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/csv.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="../../css/common/global.css"/>
+    <link rel="stylesheet" type="text/css" href="css/csv-to-json.css"/>
 </head>
 <body>
-	<style type="text/css">
-		textarea {
-  width: 450px;
-  height: 250px;
-}
-	</style>
-	<script type="text/javascript" src="js/csv.js"></script>
-	<div class="container-fluid">
-		<form role="form" name="csvForm" id="csvForm" enctype="multipart/form-data">
-			<div class="row">
-			    <div class="col-md-6 col-md-offset-4" style="background-color:lavender;">
-		    		<div class="form-group">
-					  <label for="file">File:</label>
-					  <input type="file" class="form-control" id="file" name="file" required>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div style="padding-top: 30px;">
-		        	<input type="submit" class="btn btn-danger" style="width:120px;height:50px;margin:auto;display:block" id="btnSubmit">
-		    	</div>
-	    	</div>
-		</form>
-		<div class="row">
-			<div class="col-md-12">
+<div class="wrapper">
+    <div class="wrapper-heading blue"><h2 class="h5 white-heading">Upload Csv</h2></div>
+    <div class="form-wrapper">
+        <form role="form" name="csvForm" id="csvForm" enctype="multipart/form-data">
+            <div class="first-step">
+                <div class="form-group">
+                    <!--<div class="label"> <label for="file">File :</label></div>-->
+                    <div class="input"><input type="file" class="form-control" id="file" name="file" required></div>
+                    <div class="submit-btn">
+                        <input type="submit" class="btn" id="btnSubmit">
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="json-data">
 				<textarea id="jsonResponse" style="display:none;">
-					<!--Returns json response-->
+						<!--Returns json response-->
 				</textarea>
-			</div>
-		</div>
-	</div>
+        </div>
+    </div>
+</div>
 </body>
 </html>

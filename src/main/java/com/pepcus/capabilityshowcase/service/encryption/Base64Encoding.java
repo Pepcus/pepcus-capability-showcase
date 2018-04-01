@@ -1,8 +1,6 @@
 package com.pepcus.capabilityshowcase.service.encryption;
 
 import java.util.Base64;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import com.pepcus.capabilityshowcase.exception.BadRequestException;
 
@@ -22,7 +20,7 @@ public class Base64Encoding
 	 * @param data
 	 * @return
 	 */
-	public String mimeEncoding(String data)
+	public static String mimeEncoding(String data)
     {
         try 
         {
@@ -30,8 +28,7 @@ public class Base64Encoding
         }
         catch (Exception ex) 
         {
-            Logger.getLogger(Base64Encoding.class.getName()).log(Level.SEVERE, null, ex);
-            return ex.getMessage();
+        	throw new BadRequestException("String cannot be encrypted :" + ex.getMessage());
         }
     }
 	
@@ -40,7 +37,7 @@ public class Base64Encoding
 	 * @param encryptedString
 	 * @return
 	 */
-	public String mimeDecoding(String encryptedString) 
+	public static String mimeDecoding(String encryptedString) 
 	{
 		try 
 		{

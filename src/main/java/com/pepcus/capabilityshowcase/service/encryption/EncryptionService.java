@@ -13,6 +13,17 @@ import com.pepcus.capabilityshowcase.service.encryption.EncryptionService;
 public class EncryptionService 
 {
 	/**
+	 * Using AES 
+	 * @param data
+	 * @param key
+	 * @return
+	 */
+	public String aesE(String data,String key)
+	{
+		return AESPassword.encrypt(data, key);
+	}
+	
+	/**
 	 * Using BCRYPT
 	 * @param data
 	 * @return
@@ -20,8 +31,7 @@ public class EncryptionService
 	 */
 	public String bcryptE(String data) throws NoSuchAlgorithmException 
 	{
-		BcryptEnc b=new BcryptEnc();
-		return b.Bcrypt(data);
+		return BcryptEnc.Bcrypt(data);
 	}
 	
 	/**
@@ -30,10 +40,9 @@ public class EncryptionService
 	 * @return
 	 * @throws NoSuchAlgorithmException
 	 */
-	public String base64E(String data) throws NoSuchAlgorithmException 
+	public String base64E(String data)
 	{
-		Base64Encoding b=new Base64Encoding();
-		return b.mimeEncoding(data);
+		return Base64Encoding.mimeEncoding(data);
 	}
 	
 	/**
@@ -44,8 +53,7 @@ public class EncryptionService
 	 */
 	public String pbkdE(String data) throws NoSuchAlgorithmException, InvalidKeySpecException 
 	{
-		PBKD p=new PBKD();
-		return p.enc(data);
+		return PBKD.enc(data);
 	}
 	
 	/**
@@ -56,8 +64,7 @@ public class EncryptionService
 	 */
 	public String desE(String data) throws Exception 
 	{
-		TrippleDES t=new TrippleDES();
-		return t.enc(data);
+		return TrippleDES.enc(data);
 	}
 	
 	/**
@@ -68,8 +75,7 @@ public class EncryptionService
 	 */
 	public String md5E(String data) 
 	{
-		MD5Encryption m=new MD5Encryption();
-		return m.enc(data);
+		return MD5Encryption.enc(data);
 	}
 	
 	/**
@@ -80,8 +86,7 @@ public class EncryptionService
 	 */
 	public String shaE(String data) throws NoSuchAlgorithmException
 	{
-		SHA s=new SHA();
-		return s.encrypt(data);
+		return SHA.encrypt(data);
 	}
 
 }

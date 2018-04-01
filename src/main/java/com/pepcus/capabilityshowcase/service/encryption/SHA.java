@@ -22,7 +22,7 @@ public class SHA
 	 * @return
 	 * @throws NoSuchAlgorithmException
 	 */
-	public String encrypt(String data) throws NoSuchAlgorithmException 
+	public static String encrypt(String data) throws NoSuchAlgorithmException 
 	{
         byte[] salt = getSalt();
          

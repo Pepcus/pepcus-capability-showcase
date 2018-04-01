@@ -53,7 +53,7 @@
             },
             {
                "_name": "Csv To Json Converter",
-               "_welcomePage": "/index.html",
+               "_welcomePage": "/csv.html",
                "_parentApp": "Backend Utility",
                "_applicationUrl": "ui-components/CsvToJson",
                "_iconClass":"fa-exchange",

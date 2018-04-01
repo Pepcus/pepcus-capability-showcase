@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="./css/fileuploader.css">
 </head>
 <body>
-<!--<script type="text/javascript" src="js/zip2.js"></script>-->
+<script type="text/javascript" src="js/zip2.js"></script>
 <div class="rendering-container">
     <section class="border-lightblue">
         <div class="content-heading lightblue">
@@ -20,12 +20,12 @@
         </div>
         <div class="drop-box-container">
             <div class="drop-zone" id="dropzone">
-                <form id="form-div" action="/pepcuscapability-showcase/zip" method="post" enctype="multipart/form-data">
+                <form id="form-div" >
                     <div class="first-step">
                         <div class="label"><label for="file">Step - 1</label></div>
                         <div class="form-element upload-files-button">
                             <label class="btn" for="file0" >
-                            <input type="file" name="file" class="file0" id="file0" multiple>Upload files
+                            <input type="file" name="file[]" class="file0 TheFiles" id="file0" multiple>Upload files
                             </label>
                         </div>
                         <p>OR</p>

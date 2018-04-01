@@ -40,6 +40,10 @@ public class EncryptService
 		String encryptedPassword="";
 		try 
 		{
+			if(algorithm.equalsIgnoreCase("aes"))
+			{
+				encryptedPassword=eS.aesE(data,user.getKey());
+			}
 			if(algorithm.equalsIgnoreCase("bcrypt"))
 			{
 				encryptedPassword=eS.bcryptE(data);

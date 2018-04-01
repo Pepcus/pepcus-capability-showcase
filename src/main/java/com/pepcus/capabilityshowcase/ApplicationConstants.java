@@ -55,4 +55,23 @@ public class ApplicationConstants
 	public static final String ALGORITHM_MD5 ="MD5";
 	public static final String ALGORITHM_SHA ="SHA-512";
 	public static final String ALGORITHM_PBKD ="PBKDF2WithHmacSHA1";
+	public static final String CIPHER_INSTANCE = "AES/ECB/PKCS5Padding";
+	public static final String MESSAGE_DIGEST_INSTANCE = "SHA-1";
+	
+	public static final String TEMPLATE = "Dear Something Name,"
+
+			+"Pepcus wishes you a very Happy Diwali..!!"
+
+			+"May the festival of lights be the harbinger of joy and prosperity. As the holy occasion of Diwali is here and the atmosphere is filled with the spirit of mirth and love, here's hoping this festival of beauty brings your way, bright sparkles of contentment, that stay with you through the days ahead."
+
+			+"Corporate Office"
+			+"Pepcus Software Services Pvt. Ltd."
+			+"201, Balaji Corporate, New Palasia"
+			+"Indore, Madhya Pradesh"
+			+"452001, India. Contact us" 
+			+"You can call us at:"
+			+"Mobile : +91-9754550505"
+			+"Phone : +91-731-4218554"
+			+"Email: info@pepcus.com"
+			+"www.pepcus.com";
 }

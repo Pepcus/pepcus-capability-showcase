@@ -14,4 +14,5 @@ public class Encryption
 {
 	private String password;
 	private String algorithm;
+	private String key;		// In case of AES encoding or decoding
 }

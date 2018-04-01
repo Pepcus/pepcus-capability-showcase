@@ -22,7 +22,7 @@ import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.PBEKeySpec;
 import javax.crypto.spec.SecretKeySpec;
 
-public class AES 
+public class AESFile 
 {
 	public String Encryption(String key)
     {

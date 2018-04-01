@@ -11,6 +11,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.pepcus.capabilityshowcase.entity.EncryptDecryptFile;
 import com.pepcus.capabilityshowcase.entity.Encryption;
 import com.pepcus.capabilityshowcase.exception.BadRequestException;
+import com.pepcus.capabilityshowcase.service.encryption.AESPassword;
 import com.pepcus.capabilityshowcase.service.encryption.Base64Encoding;
 import com.pepcus.capabilityshowcase.service.encryption.CryptoTest;
 import com.pepcus.capabilityshowcase.service.encryption.TrippleDES;
@@ -34,16 +35,19 @@ public class DecryptService
 	public Encryption decryptString(Encryption user) 
 	{
 		Encryption enc = new Encryption();
+		if(user.getAlgorithm().equalsIgnoreCase("aes")) 
+		{
+			enc.setPassword(AESPassword.decrypt(user.getPassword(), user.getKey()));
+			return enc;
+		}
 		if(user.getAlgorithm().equalsIgnoreCase("TripleDES")) 
 		{
-			TrippleDES des=new TrippleDES();
-			enc.setPassword(des.dec(user.getPassword()));
+			enc.setPassword(TrippleDES.dec(user.getPassword()));
 			return enc;
 		}
 		if(user.getAlgorithm().equalsIgnoreCase("base64")) 
 		{
-			Base64Encoding base64=new Base64Encoding();
-			enc.setPassword(base64.mimeDecoding(user.getPassword()));
+			enc.setPassword(Base64Encoding.mimeDecoding(user.getPassword()));
 			return enc;
 		}
 		throw new BadRequestException("No such Algorithm exists");

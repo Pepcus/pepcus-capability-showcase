@@ -66,8 +66,7 @@ public class CryptoTest
     public EncryptDecryptFile encryptCrypto(String key,File inputFile,String filename) 
     {
     	EncryptDecryptFile ed=new EncryptDecryptFile();
-    	MD5Encryption m=new MD5Encryption();
-    	String secretKey=m.enc(key);
+    	String secretKey=MD5Encryption.enc(key);
 		File encryptedFile = new File(STORE_FILE_TO_BE_ENCRYPTED+"//E"+filename);
 		
 		ed.setMessage(CryptoTest.fileProcessor(Cipher.ENCRYPT_MODE,secretKey,inputFile,encryptedFile));
@@ -83,8 +82,7 @@ public class CryptoTest
     public EncryptDecryptFile decryptCrypto(String key,File inputFile,String filename) 
     {
     	EncryptDecryptFile ed=new EncryptDecryptFile();
-    	MD5Encryption m=new MD5Encryption();
-    	String secretKey=m.enc(key);
+    	String secretKey=MD5Encryption.enc(key);
     	File decryptedFile = new File(STORE_FILE_TO_BE_DECRYPTED+"//D"+filename);
 		
     	ed.setMessage(CryptoTest.fileProcessor(Cipher.DECRYPT_MODE,secretKey,inputFile,decryptedFile));

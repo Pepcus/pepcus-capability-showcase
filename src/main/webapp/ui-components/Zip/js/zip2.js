@@ -2,26 +2,24 @@ $(document).ready(function () {
 
     $("#btnSubmit").click(function (event) {
 
-    var formDetail = document.getElementById('form-div');
-    console.log(formDetail);
-    var fileInput = document.getElementById('file');
-    console.log(fileInput.files);
-
     var password= document.getElementById('key');
 
     var fileList = [];
-    var data = new FormData();
 
-    for (var i = 0; i < fileInput.files.length; i++) {
-        fileList.push(fileInput.files[i]);
-        console.log(fileInput.files[i]);
-        //console.log(localStorage.getItem(localStorage.key(i)));
-    }
-    console.log(fileList);
+    var formData = new FormData();
+    formData.append('key', password);
+    $.each($("input[type=file]"), function (i, obj) {                
+        $.each(obj.files, function (j, file) {  
+        	fileList.push(file);	
+            formData.append('File[' + i + ']', file); // is the var i against the var j, because the i is incremental the j is ever 0
+            console.log(file);
+        });
+    });
+    console.log(formData);
         $.ajax({
             type: 'POST',
-            url: "/pepcuscapability-showcase/zip",  // our controller
-            data: {file : fileList},
+            url: "/pepcuscapability-showcase/zip?key="+password+"&file="+fileList,  // our controller
+            data: {},
             processData: false,                     // tell jQuery not to process the data
             contentType: false,                     // tell jQuery not to set contentType
             cache: false,

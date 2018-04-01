@@ -24,7 +24,7 @@ public class PBKD
 	 * @throws NoSuchAlgorithmException
 	 * @throws InvalidKeySpecException
 	 */
-	public String enc(String data) throws NoSuchAlgorithmException, InvalidKeySpecException
+	public static String enc(String data) throws NoSuchAlgorithmException, InvalidKeySpecException
     {
         return generateStorngPasswordHash(data);
     }

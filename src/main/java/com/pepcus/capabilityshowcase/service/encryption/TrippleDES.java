@@ -36,7 +36,7 @@ public class TrippleDES
 	 * @throws InvalidKeyException 
 	 * @throws Exception
 	 */
-    public String enc(String data) throws NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException, IllegalBlockSizeException, BadPaddingException 
+    public static String enc(String data) throws NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException, IllegalBlockSizeException, BadPaddingException 
     {
         KeyGenerator keyGenerator = KeyGenerator.getInstance(CRYPTO_CIPHER);
         keyGenerator.init(128); // block size is 128bits
@@ -56,7 +56,7 @@ public class TrippleDES
      * @throws InvalidKeyException 
      * @throws Exception
      */
-    public String dec(String encryptedText) 
+    public static String dec(String encryptedText) 
     {
     	return decrypt(encryptedText, secretKey);
     }

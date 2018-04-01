@@ -15,7 +15,7 @@ public class BcryptEnc
 	 * @return
 	 * @throws NoSuchAlgorithmException
 	 */
-	public String Bcrypt(String data) throws NoSuchAlgorithmException
+	public static String Bcrypt(String data) throws NoSuchAlgorithmException
     {
         return BCrypt.hashpw(data, BCrypt.gensalt(12));
     }

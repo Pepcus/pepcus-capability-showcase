@@ -24,7 +24,6 @@ import com.pepcus.capabilityshowcase.util.DeleteTempFile;
 @SpringBootApplication
 public class PepcusCapabilityApplication
 {
-	
 	public static void main(String[] args) 
 	{
 		SpringApplication.run(PepcusCapabilityApplication.class, args);

@@ -20,7 +20,7 @@ public class MD5Encryption
 	 * @param password
 	 * @return
 	 */
-	public String enc(String password)
+	public static String enc(String password)
 	{
         try 
         {

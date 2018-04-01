@@ -139,4 +139,23 @@ public class ApiExceptionHandler
 		response.setUrl(req.getRequestURI());
 		return response;
 	}
+	
+	/**
+	 * Method used to handle {@link IllegalArgumentException}
+	 * @param req
+	 * @param ex
+	 * @return
+	 */
+	@ExceptionHandler({ IllegalArgumentException.class })
+	@ResponseStatus(HttpStatus.NO_CONTENT)
+	@ResponseBody
+	public ApiErrorResponse IllegalArgumentException(HttpServletRequest req, IllegalArgumentException ex) 
+	{
+		ApiErrorResponse response = new ApiErrorResponse();
+		response.setMessage(ex.getMessage());
+		response.setError(HttpStatus.NO_CONTENT.name());
+		response.setStatus(HttpStatus.NO_CONTENT.value());
+		response.setUrl(req.getRequestURI());
+		return response;
+	}
 }

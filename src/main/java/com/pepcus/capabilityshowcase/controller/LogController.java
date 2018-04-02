@@ -26,7 +26,7 @@ import com.pepcus.capabilityshowcase.service.LogService;
 public class LogController 
 {
 	@Autowired
-	LogService lS;
+	private LogService lS;
 	
 	/**
 	 * Takes a log file and sorting parameters (if given)

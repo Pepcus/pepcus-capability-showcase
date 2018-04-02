@@ -8,15 +8,15 @@ import java.security.NoSuchAlgorithmException;
 import java.time.LocalTime;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.mail.SimpleMailMessage;
-import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
 import com.pepcus.capabilityshowcase.entity.User;
 import com.pepcus.capabilityshowcase.exception.AuthorizationFailedException;
+import com.pepcus.capabilityshowcase.exception.GenericException;
 import com.pepcus.capabilityshowcase.repository.UserRepository;
+import com.pepcus.capabilityshowcase.util.MailProcessor;
 import com.pepcus.capabilityshowcase.util.OTPGeneration;
-
+import static com.pepcus.capabilityshowcase.ApplicationConstants.OTP_TEMPLATE;
 /**
  * 
  * Service to Send and verify OTP 
@@ -25,20 +25,12 @@ import com.pepcus.capabilityshowcase.util.OTPGeneration;
  *
  */
 @Service
-public class EmailService 
+public class OTPService 
 {
 	
 	@Autowired
 	private UserRepository userRepository;
 	
-    private JavaMailSender javaMailSender;
-    
-    @Autowired
-    public EmailService(JavaMailSender javaMailSender) 
-    {
-        this.javaMailSender = javaMailSender;
-    }
-    
     /**
      * Method to send Email with OTP in it
      * @param user
@@ -51,16 +43,16 @@ public class EmailService
     	user.setOtp(otp);
     	LocalTime endTime=java.time.LocalTime.now().plusMinutes(EXP_MIN);
     	user.setExpiryTime(endTime);
-    	
-		SimpleMailMessage mailMessage = new SimpleMailMessage();
-		
-		mailMessage.setTo(user.getEmail());
-		mailMessage.setSubject(EMAIL_SUBJECT);
-		mailMessage.setText("Hey! "+user.getName()+ EMAIL_MESSAGE +" Your OTP : "+otp);
-		
-		javaMailSender.send(mailMessage);
-		
-		return userRepository.save(user);
+    	try 
+    	{
+    		MailProcessor mail = new MailProcessor();
+    		mail.sendMail(user.getEmail(), EMAIL_SUBJECT, EMAIL_MESSAGE, OTP_TEMPLATE.replaceAll("0000", otp).replaceAll("UserName", user.getName()), null);
+    	}
+    	catch(Exception e) 
+    	{
+    		throw new GenericException("OTP cannot be sent : "+e.toString());
+    	}
+    	return userRepository.save(user);
     }
     
     /**

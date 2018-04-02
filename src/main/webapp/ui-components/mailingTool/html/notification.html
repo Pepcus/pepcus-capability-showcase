@@ -17,21 +17,32 @@
         <link rel="stylesheet" type="text/css" href="css/global.css">
 
     </head>
+<style>
+.ngdialog-overlay {
+    background: rgba(0, 0, 0, 0);
 
+}
+.ngdialog.ngdialog-theme-default .ngdialog-content {
+    background: rgba(0, 0, 0, 0.4);
+
+}
+.ngdialog.ngdialog-theme-default {
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+</style>
     <body >
-  <table id="TemplateData" border="0" cellspacing="0" cellpadding="0" style="margin:auto;width:600px;background-color:#FFFFFF;padding-top: 15px;background-color:rgb(219,0,0);border-radius: 30px;">
+  <table id="TemplateData" border="0" cellspacing="0" cellpadding="0" style="margin:auto;width:600px;background-color:#FFFFFF;padding-top: 15px;outline:none;border-radius: 30px;">
     <tr align="center" style="margin:auto;width:100%;padding-bottom:20px;">
         <td >
-            <a href= "http://www.pepcus.com" target="_blank">
-            <img src="images/favicon.png" width="64"/><br>
-            <img src="images/pepcus.png" style="width:80px;padding-top:5px;"/>
+            <a href= "http://www.pepcus.com" target="_blank" style="outline:none;">
+            <img src="http://www.pepcus.com/images/logo/logonew.png" style="width:80px;padding-top:5px;"/>
             </a>
-            <h3 style="color:white;margin-top: 5px;">Let's Grow Together!!</h3>
         </td>
     </tr>
     
     <tr style="background-color:white;">
-    <td align="left" style="font-family: Verdana, Geneva, sans-serif; color:#666766; font-size:13px; line-height:21px;padding-left: 25px;padding-right: 25px;text-align: justify;">
+    <td align="left" style="font-family: Verdana, Geneva, sans-serif; color:white;background-color:red; font-size:13px; line-height:21px;padding-left: 25px;padding-right: 25px;text-align: justify;">
     <br><br><hr>
     <p>Dear <span id="reciverTemplate" style="font-size:15px"> Something Name</span>,</p>
     <p>
@@ -55,7 +66,7 @@
     </tr>
     
     <tr >
-    <td style="color:#ddd;font-size: 12px;">
+    <td style="color:black;font-size: 12px;">
     <p style="text-align:left;padding-left:20px;width:40%;float:left;">
     <b>Corporate Office</b> <br>
     Pepcus Software Services Pvt. Ltd.<br>
@@ -72,30 +83,34 @@
     Email: <a href="mailto:info@pepcus.com" style="color:black; text-decoration:none;">info@pepcus.com</a><br>
     </p>
     <p style="text-align:center;padding-bottom: 0px;margin-bottom: -12px;position: relative;top: -15px;">
-    <a href="http://www.pepcus.com" target="_blank" onMouseOver="this.style.color='#333'"   onMouseOut="this.style.color='#ddd'" style="color:#ddd; text-decoration:none;font-size:16px;">www.pepcus.com</a>
     </p>
     </td>
     </tr>
     
 </table>
-  <div id="details-form" style="display:none; text-align: center;">
+  <div id="details-form" style="display:none; text-align: center;" ng-controller="templateController">
+   <form ng-submit="SendNotificationTemplate()">
       <div>
           <span></span><br>
-          <input type="text" placeholder="Reciever's name">
+          <input type="text" placeholder="Reciever's name" ng-model="recieversName">
       </div>
       <div>
           <span></span><br>
-          <input type="text" placeholder="Reciever's email">
+          <input type="text" placeholder="Reciever's email" ng-model="recieversEmail">
       </div>
       <div>
           <span></span><br>
-          <input type="text" placeholder="Reciever's designation">
+          <input type="text" placeholder="Reciever's designation" ng-model="senderName">
       </div>
       <div>
           <span></span><br>
-          <input type="text"placeholder="Sender's name">
+          <input type="text"placeholder="Sender's name" ng-model="senderDesignation">
       </div>
-
+      <div>
+      	  <span></span><br>
+      	  <input type="submit" value="send" />
+      </div>
+    </form>
   </div>
     <div style="text-align: center; padding: 11px;" ng-controller="templateController"><button class="btn select-send" ng-click="AddReciever()">Select</button></div>
     </body>

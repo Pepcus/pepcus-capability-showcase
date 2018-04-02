@@ -1,4 +1,4 @@
-<html  ng-app="PdfDemo">
+<html  ng-app="mailingTool">
     <meta charset="utf-8"/>
     <head>
 
@@ -18,7 +18,7 @@
 
     </head>
 
-    <body>
+    <body ng-controller="SelectTemplateController">
   <table id="TemplateData" width="600" border="0" align="center" cellpadding="0" cellspacing="0">
     <tr>
         <!--Upper Banner-->
@@ -56,16 +56,19 @@
     </td>
     </tr>
 </table>
-  <div id="details-form" style="display:none; text-align: center;">
-      <div>
+  <div id="details-form" style="display:none; text-align: center;" ng-controller="templateController">
+     <form ng-submit="SendGreetingTemplate()">
           <span></span><br>
-          <input type="text" placeholder="Reciever's name">
-      </div>
-      <div>
+          <input type="text" placeholder="Reciever's name" ng-model="recieversName">
+     
+    
           <span></span><br>
-          <input type="text"placeholder="Reciever's email">
-      </div>
-
+          <input type="text"placeholder="Reciever's email" ng-model="recieversEmail">
+   
+	  
+		  <input type="submit" value="send" />
+	  
+	 </form> 
   </div>
   <div style="text-align: center; padding: 11px;" ng-controller="templateController"><button class="btn select-send" ng-click="SelectTemplate()">Select</button></div>
 

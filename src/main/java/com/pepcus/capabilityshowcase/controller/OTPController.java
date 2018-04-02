@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.pepcus.capabilityshowcase.entity.User;
-import com.pepcus.capabilityshowcase.service.EmailService;
+import com.pepcus.capabilityshowcase.service.OTPService;
 
 /**
  * 
@@ -23,7 +23,7 @@ import com.pepcus.capabilityshowcase.service.EmailService;
 public class OTPController 
 {
 	@Autowired
-	private EmailService emailService;
+	private OTPService emailService;
 	
 	/**
 	 * Sending Email 

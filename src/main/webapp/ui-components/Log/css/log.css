@@ -18,13 +18,16 @@
     width:90%;
 
 }
+.form-control{
+    width: 80%;
+}
 .first-step .input{
     border: 1px solid rgba(0, 0, 0, 0.15);
     width: 61%;
     margin: 7px;
 }
 input{
-    min-width:80%;
+    min-width:60%;
 }
 .label{
     padding:20px;
@@ -49,4 +52,42 @@ input{
 .submit{
     width:10%;
     padding:20px;
+}
+
+@media only screen and (max-device-width : 480px) {
+    .form-group{
+        width: 100%;
+    }
+    .first-step .input{
+        width: 70%;
+    }
+    .date-selector{
+        width:70%;
+    }
+    .label{
+        padding: 20px 0px 20px 10px;
+        width: 55px;
+    }
+    .first-step input{
+        width: 50%;
+    }
+}
+@media only screen and (max-device-width : 1024px) and (min-device-width: 480px) {
+    .form-group{
+        width: 100%;
+
+    }
+    .first-step input{
+        width: 50%;
+    }
+    .label{
+        padding: 20px 0px 20px 10px;
+        width: 55px;
+    }
+    .form-control{
+        width: 80%;
+    }
+    .date-selector{
+        width:61%;
+    }
 }

@@ -55,3 +55,54 @@ input{
     /*background-color: #b2b2b2;*/
     color: black;
 }
+@media only screen and (max-device-width : 480px) {
+.form-group{
+    width: 100%;
+}
+.first-step .input{
+    width: 70%;
+}
+.date-selector{
+    width:70%;
+}
+.label{
+    padding: 20px 0px 20px 10px;
+    width: 55px;
+}
+.first-step input{
+    width: 50%;
+}
+.submit-btn{
+    width: 25%;
+    margin:15px 0px 15px 0px;
+}
+.btn{
+    padding: 7px 5px;
+}
+}
+@media only screen and (max-device-width : 1024px) and (min-device-width: 480px) {
+    .form-group{
+        width: 100%;
+
+    }
+    .btn{
+        padding: 7px 5px;
+    }
+    .submit-btn{
+        width: 25%;
+        margin:15px 0px 15px 0px;
+    }
+    .first-step input{
+        width: 50%;
+    }
+    .label{
+        padding: 20px 0px 20px 10px;
+        width: 55px;
+    }
+    .form-control{
+        width: 80%;
+    }
+    .date-selector{
+        width:61%;
+    }
+}

@@ -217,11 +217,11 @@ var onClickBackendlist = function (e) {
     var selectedItemName = $(target).attr("data-name");
     $(e.currentTarget).addClass("selected-item");
     renderIframe(selectedItemName);
-    console.log(selectedItemName);
     $(".iframe-heading").html($(".active").text());
     if ($(window).width() < 769) {
         if (!($(".fixed-menu").hasClass("inactive"))) {
             $(".fixed-menu").addClass("inactive");
+          $(".popup-header-left").css("margin-left", "0px");
         }
     }
 }
@@ -517,10 +517,12 @@ function onClickUIlistItem(selectedItemName, targetId, target) {
 }
 
 function onClickBackendlistItem() {
+  console.log("backenlist cki");
     $("#backendElementsList").on("click", "li", onClickBackendSubChilds);
     if ($(window).width() < 769) {
         if (!($(".fixed-menu").hasClass("inactive"))) {
             $(".fixed-menu").addClass("inactive");
+            $(".popup-header-left").css("margin-left", "0px");
         }
     }
 }

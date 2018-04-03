@@ -84,14 +84,6 @@
             "_appData":"Authenticate an user"
             },
             {
-               "_name": "Zip",
-               "_welcomePage": "/Zip.html",
-               "_parentApp": "Backend Utility",
-               "_applicationUrl": "ui-components/Zip",
-               "_iconClass":"fa-lock",
-            "_appData":"Create a protected zip"
-            },
-            {
                "_name": "Menu",
                "_welcomePage": "/ScrollNavigationDemo.html",
                "_parentApp": "Coming Soon",

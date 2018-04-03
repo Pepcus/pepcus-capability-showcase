@@ -38,7 +38,7 @@ function ajaxReq(data) {
       cache: false,
       timeout: 600000,
       success: function (data) {
-        $("#logResult").css("display", "block");
+        $("#logResult").css("display", "inline-flex");
         $("#debugData").html(data.log.debug);
         $("#infoData").html(data.log.info);
         $("#errorData").html(data.log.error);

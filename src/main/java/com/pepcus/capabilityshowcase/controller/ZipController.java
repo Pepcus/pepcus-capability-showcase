@@ -1,9 +1,7 @@
 
 package com.pepcus.capabilityshowcase.controller;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -38,8 +36,8 @@ public class ZipController
 	 * @return
 	 */
 	@PostMapping
-	public ResponseEntity<Zip> zip(@RequestParam("file") List<MultipartFile> files) 
-	{System.out.println("key"+":"+files.size());
+	public ResponseEntity<Zip> zip(@RequestParam("file") String key,@RequestParam("file") List<MultipartFile> files) 
+	{
 		return new ResponseEntity<Zip>(zS.getZip(files, "KEY"),HttpStatus.CREATED);
 	}
 }

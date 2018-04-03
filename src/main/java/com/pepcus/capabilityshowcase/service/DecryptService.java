@@ -15,6 +15,7 @@ import com.pepcus.capabilityshowcase.service.encryption.AESPassword;
 import com.pepcus.capabilityshowcase.service.encryption.Base64Encoding;
 import com.pepcus.capabilityshowcase.service.encryption.CryptoTest;
 import com.pepcus.capabilityshowcase.service.encryption.TrippleDES;
+import com.pepcus.capabilityshowcase.util.CreateDirectory;
 
 /**
  * 
@@ -63,6 +64,7 @@ public class DecryptService
 	 */
 	public EncryptDecryptFile decryptFile(MultipartFile file,String key) throws IllegalStateException, IOException 
 	{
+		CreateDirectory.CreateDirectoryIfNotExist(STORE_FILE_TO_BE_DECRYPTED);
 		CryptoTest cT=new CryptoTest();
 		String filename=file.getOriginalFilename();
 		File f=new File(STORE_FILE_TO_BE_DECRYPTED+"//"+filename);

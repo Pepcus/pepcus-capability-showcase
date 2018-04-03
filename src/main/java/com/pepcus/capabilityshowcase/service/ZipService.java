@@ -2,10 +2,10 @@ package com.pepcus.capabilityshowcase.service;
 
 import static com.pepcus.capabilityshowcase.ApplicationConstants.PROTECTED_ZIP;
 import static com.pepcus.capabilityshowcase.ApplicationConstants.ZIP_FILES;
+import static com.pepcus.capabilityshowcase.ApplicationConstants.ZIP_NAME;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -15,6 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.pepcus.capabilityshowcase.entity.Zip;
 import com.pepcus.capabilityshowcase.exception.DataNotFoundException;
 import com.pepcus.capabilityshowcase.exception.GenericException;
+import com.pepcus.capabilityshowcase.util.CreateDirectory;
 import com.pepcus.capabilityshowcase.util.DeleteTempFile;
 import com.pepcus.capabilityshowcase.util.SaveTempFiles;
 
@@ -39,7 +40,7 @@ public class ZipService
 	 * @param key
 	 * @return
 	 */
-	public Zip getZip(List<MultipartFile> files,String key) 
+	public Zip getZip(ArrayList<MultipartFile> files,String key) 
 	{
 //		List<MultipartFile> files=new ArrayList<>();
 //		filesM.forEach((k,v)-> 
@@ -48,6 +49,8 @@ public class ZipService
 //				System.out.println("key :"+ k);
 //			});
 //		System.err.println(files.size());
+		CreateDirectory.CreateDirectoryIfNotExist(ZIP_FILES);
+		CreateDirectory.CreateDirectoryIfNotExist(PROTECTED_ZIP);
 		
 		Zip z=new Zip();
 		SaveTempFiles save=new SaveTempFiles();
@@ -57,7 +60,6 @@ public class ZipService
 			String zipping=createProtectedZip(key,filesToAdd);
 			
 			DeleteTempFile.deleteTempFiles(ZIP_FILES);
-			//delete.deleteTempFiles(protectedZip);
 			
 			z.setMessage(zipping);
 			return z;
@@ -76,7 +78,7 @@ public class ZipService
 		try 
         {
 			//This is name and path of zip file to be created
-            ZipFile zipFile = new ZipFile(PROTECTED_ZIP+"//temp.zip");
+            ZipFile zipFile = new ZipFile(PROTECTED_ZIP+"//"+ZIP_NAME);
             
             //Initiate Zip Parameters which define various properties
             ZipParameters parameters = new ZipParameters();

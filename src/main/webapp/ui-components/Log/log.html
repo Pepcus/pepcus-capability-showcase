@@ -1,87 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Logger</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-	<script type="text/javascript" src="../../js/jquery/jquery-3.2.1.min.js"></script>
-	<script type="text/javascript" src="js/log.js"></script>
-
-	<link rel="stylesheet" type="text/css" href="../../css/common/global.css" />
-	<link rel="stylesheet" type="text/css" href="css/log.css" />
-
-	<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">-->
-  <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
-  <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>-->
-  <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>-->
+    <title>Logger</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="../../js/jquery/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/log.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../css/common/global.css"/>
+    <link rel="stylesheet" type="text/css" href="css/log.css"/>
 </head>
+<style>
+    #logResult span{
+        display: inline-block;
+        color: rgba(0, 0, 0, 0.55);
+
+        text-align: center;
+        padding-top: 5px;
+    }
+</style>
 <body>
-	<div class="wrapper">
-		<div class="wrapper-heading blue"><h2 class="h5 white-heading">Log</h2></div>
-		<form role="form" name="logForm" id="logForm" enctype="multipart/form-data">
-			<div class="first-step" >
-	    		<div class="form-group">
-				 <div class="label"> <label for="file">Step - 1</label></div>
-				 <div class="input">
-					 <input type="file" class="form-control" id="file" name="file" required>
+<div class="wrapper">
+    <div class="wrapper-heading blue"><h2 class="h5 white-heading">Log</h2></div>
+    <form role="form" name="logForm" id="logForm" enctype="multipart/form-data">
+        <div class="first-step">
+            <div class="form-group">
+                <div class="label"><label for="file">Step - 1</label></div>
+                <div class="input" style="color:grey;">
+                    <input type="file" class="form-control" id="file" name="file" required >
+                    <input type="button" class="btn" required="" style="width: 28%;
+					  margin-left: 15px; min-width: 10%! important; padding-left: 7px;"
+                           value="Use Sample" onclick="useSampleFile()">Submit Sample File...
+                </div>
 
-					 <input type="button" class="btn" required="" style="width: 28%;
-					  margin-left: 15px; min-width: 10%! important;"
-					 value="Sample File" onclick="useSampleFile()">Use Sample File...
-				 </div>
+            </div>
+        </div>
+        <br>
+        <div class="second-step">
+            <div class="label"><label for="file">Step - 2</label></div>
+            <div class="date-selector">
+                <div class="form-group">
+                    <div class="label"><label for="start">Starting</label></div>
+                    <div class="input"><input type="date" class="form-control" id="start" name="start"></div>
+                </div>
+                <div class="form-group">
+                    <div class="label"><label for="end">&nbsp;Ending</label></div>
+                    <div class="input"><input type="date" class="form-control" id="end" name="end"></div>
+                </div>
+            </div>
+        </div>
+        <div class="submit">
+            <input type="submit" class="btn " id="btnSubmit">
+        </div>
 
-				</div>
-			</div>
-			<br>
-			<div class="second-step">
-				<div class="label"> <label for="file">Step - 2</label></div>
-				<div class="date-selector">
-					<div class="form-group">
-						<div class="label">	<label for="start">Starting</label></div>
-						<div class="input"><input type="date" class="form-control" id="start" name="start"></div>
-					</div>
+    </form>
+    <br>
 
+    <div class="" id="logResult" style="display: none;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+        margin-left: 20px;
+    margin-bottom: 10px;
+        margin-right: 10px;
+    font-weight: 600;
 
+    padding: 0px 10px 10px 10px ;">
 
-					<div class="form-group">
-						<div class="label">	<label for="end">&nbsp;Ending</label></div>
-						<div class="input">	<input type="date" class="form-control" id="end" name="end" ></div>
-					</div>
-				</div>
-			</div>
-			<div class="submit">
-				<input type="submit" class="btn "  id="btnSubmit">
-			</div>
+        <div style="display: grid;padding-right: 5px;     padding-left: 5px;
+    border-right: 1px solid rgba(0, 0, 0, 0.15);">
+            <span>DEBUG </span>
+            <span id="debugData">22</span>
+        </div>
+        <div style="display: grid;padding-right: 5px;     padding-left: 5px;
+    border-right: 1px solid rgba(0, 0, 0, 0.15);">
+            <span>INFO </span>
+            <span id="infoData">55</span>
+        </div>
+        <div style="display: grid; padding-right: 5px;     padding-left: 5px;
+    border-right: 1px solid rgba(0, 0, 0, 0.15);">
+            <span>ERROR </span>
+            <span id="errorData">57</span>
+        </div>
+        <div style="display: grid;padding-right: 5px;     padding-left: 5px;
+    border-right: 1px solid rgba(0, 0, 0, 0.15);">
+            <span>WARN </span>
+            <span id="warnData">64</span>
+        </div>
+        <div style="display: grid;padding-right: 5px;    padding-left: 5px;
+   ">
+            <span>TRACE </span>
+            <span id="traceData">98</span>
+        </div>
 
-		</form>
-		<br>
+    </div>
 
-		<table  class="" id="logResult" style="display:none;">
-			<tbody>
-				<tr>
-					<td>DEBUG : </td>
-					<td id="debugData"></td>
-				</tr>
-				<tr>
-					<td>INFO : </td>
-					<td id="infoData"></td>
-				</tr>
-				<tr>
-					<td>ERROR : </td>
-					<td id="errorData"></td>
-				</tr>
-				<tr>
-					<td>WARN : </td>
-					<td id="warnData"></td>
-				</tr>
-				<tr>
-					<td>TRACE : </td>
-					<td id="traceData"></td>
-				</tr>
-			</tbody>
-		</table>
-	
-	</div>
+</div>
 </body>
 
 </html>

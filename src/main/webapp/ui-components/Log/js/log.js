@@ -2,42 +2,58 @@
  * Taking request and providing response
  */
 function useSampleFile() {
-    console.log("sample-file-used");
+  $.ajax({
+    type: "POST",
+    enctype: 'multipart/form-data',
+    url: "/pepcuscapability-showcase/log?useSample=true",
+    processData: false,
+    contentType: false,
+    cache: false,
+    timeout: 600000,
+    success: function (data) {
+      console.log("success");
+      $("#logResult").css("display", "inline-flex");
+      $("#debugData").html(data.log.debug);
+      $("#infoData").html(data.log.info);
+      $("#errorData").html(data.log.error);
+      $("#warnData").html(data.log.warn);
+      $("#traceData").html(data.log.trace);
+      $("#btnSubmit").prop("disabled", false);
+    },
+    error: function (e) {
+      console.log("failed");
+      // $("#result").text(e.responseText);
+      // $("#btnSubmit").prop("disabled", false);
+    }
+  });
 }
 function ajaxReq(data) {
     $.ajax({
-        type: "POST",
-        enctype: 'multipart/form-data',
-        url: "/pepcuscapability-showcase/log",
-        data: data,
-        processData: false,
-        contentType: false,
-        cache: false,
-        timeout: 600000,
-        success: function (data) {
-            $("#logResult").css("display","block");
-            $("#debugData").html(data.log.debug);
-            $("#infoData").html(data.log.info);
-            $("#errorData").html(data.log.error);
-            $("#warnData").html(data.log.warn);
-            $("#traceData").html(data.log.trace);
-            // $("#result").text(data);
-            console.log("SUCCESS : ", data);
-            $("#btnSubmit").prop("disabled", false);
-
-        },
-        error: function (e) {
-
-            $("#result").text(e.responseText);
-            $("#btnSubmit").prop("disabled", false);
-        }});
-
+      type: "POST",
+      enctype: 'multipart/form-data',
+      url: "/pepcuscapability-showcase/log",
+      data: data,
+      processData: false,
+      contentType: false,
+      cache: false,
+      timeout: 600000,
+      success: function (data) {
+        $("#logResult").css("display", "block");
+        $("#debugData").html(data.log.debug);
+        $("#infoData").html(data.log.info);
+        $("#errorData").html(data.log.error);
+        $("#warnData").html(data.log.warn);
+        $("#traceData").html(data.log.trace);
+        $("#btnSubmit").prop("disabled", false);
+      },
+      error: function (e) {
+        $("#result").text(e.responseText);
+        $("#btnSubmit").prop("disabled", false);
+      }
+    });
 }
 
 $(document).ready(function () {
-
-
-
     $("#btnSubmit").click(function (event) {
 
         //stop submit the form, we will post it manually.
@@ -54,9 +70,7 @@ $(document).ready(function () {
 console.log(data);
 		// disabled the submit button
         $("#btnSubmit").prop("disabled", true);
-
             ajaxReq(data);
     });
-
 });
 

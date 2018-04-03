@@ -30,6 +30,7 @@ function ajaxReq(data) {
 
             $("#result").text(e.responseText);
             $("#btnSubmit").prop("disabled", false);
+        }});
 
 }
 

@@ -161,7 +161,7 @@ public class ApplicationConstants
 			"        </td>\r\n" + 
 			"    </tr>\r\n" + 
 			"    \r\n" + 
-			"    <tr style=\"background-color:white;\">\r\n" + 
+			"    <tr style=\"background-color:#f1efec;\">\r\n" + 
 			"    <td align=\"left\" style=\"font-family: Verdana, Geneva, sans-serif; color:white;background-color:red; font-size:13px; line-height:21px;padding-left: 25px;padding-right: 25px;text-align: justify;\">\r\n" + 
 			"    <br><br><hr>\r\n" + 
 			"    <p>Dear <span id=\"reciverTemplate\" style=\"font-size:15px\"> Something Name</span>,</p>\r\n" + 

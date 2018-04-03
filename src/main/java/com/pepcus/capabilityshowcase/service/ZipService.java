@@ -40,15 +40,15 @@ public class ZipService
 	 * @param key
 	 * @return
 	 */
-	public Zip getZip(Map<String,MultipartFile> filesM,String key) 
+	public Zip getZip(List<MultipartFile> files,String key) 
 	{
-		List<MultipartFile> files=new ArrayList<>();
-		filesM.forEach((k,v)-> 
-			{
-				files.add(v);
-				System.out.println("key :"+ k);
-			});
-		System.err.println(files.size());
+//		List<MultipartFile> files=new ArrayList<>();
+//		filesM.forEach((k,v)-> 
+//			{
+//				files.add(v);
+//				System.out.println("key :"+ k);
+//			});
+//		System.err.println(files.size());
 		
 		Zip z=new Zip();
 		SaveTempFiles save=new SaveTempFiles();

@@ -40,14 +40,14 @@ public class LogService
 	 */
 	public LogModel generateLogger(MultipartFile file,Map<String,String> allRequestParams)
 	{
-		if(allRequestParams.isEmpty()) 
-		{
-			return generateAll(validateFileAndReturnData(file));
-		}
 		if(allRequestParams.containsKey("useSample") && allRequestParams.get("useSample").equals("true")) 
 		{
 			UseSampleLogger sample =new UseSampleLogger();
 			return generateAll(sample.getSampleData());
+		}
+		if(allRequestParams.isEmpty() || (allRequestParams.get("start").isEmpty() && allRequestParams.get("end").isEmpty())) 
+		{
+			return generateAll(validateFileAndReturnData(file));
 		}
 		if(allRequestParams.containsKey("start") && !allRequestParams.get("start").isEmpty() &&  allRequestParams.containsKey("end") && !allRequestParams.get("end").isEmpty()) 
 		{

@@ -25,9 +25,9 @@ public class ApplicationConstants
 			"       bgcolor=\"#f0f4f5\">\r\n" + 
 			"  <tbody>\r\n" + 
 			"  <tr>\r\n" + 
-			"    <td><img\r\n" + 
-			"      src=\"https://ci4.googleusercontent.com/proxy/vCa1a46OVt34H_AY9Sb_XxVe64bUXYo6XGDd7lVs4bJzweNBAa9iXvrtAwTccF-RjCa87gOotJ70x9TP2SWqKCs0AfncAuAYN7PQvj0=s0-d-e1-ft#http://d294ggda20vm7n.cloudfront.net/rakhi/top-head.jpg\"\r\n" + 
-			"      width=\"100%\" style=\"max-width:550px\" class=\"CToWUd\"></td>\r\n" + 
+			"    <td style=\"text-align:center;\"><img\r\n" + 
+			"      src=\"http://www.pepcus.com/images/logo/logonew.png\"\r\n" + 
+			"      width=\"100%\" style=\"max-width:140px\" class=\"CToWUd\"></td>\r\n" + 
 			"  </tr>\r\n" + 
 			"  <tr>\r\n" + 
 			"    <td align=\"center\"><h2\r\n" + 
@@ -210,41 +210,43 @@ public class ApplicationConstants
 			"</table>\r\n" + 
 			"  ";
 	
-	public static final String GREETINGS_TEMPLATE = "<table id=\"TemplateData\" width=\"600\" border=\"0\" align=\"center\" cellpadding=\"0\" cellspacing=\"0\">\r\n" + 
-			"    <tr>\r\n" + 
-			"        <!--Upper Banner-->\r\n" + 
-			"        <td align=\"left\" valign=\"top\" style=\"\"><img src=\"http://www.umiyamataji.com/images/kids_corner/diwali_banner.jpg\" width=\"600\" height=\"106\" style=\"display:block;border-radius:30px 30px 0 0;\"></td>\r\n" + 
-			"    </tr>\r\n" + 
-			"    <tr>\r\n" + 
-			"    <!--Middle background-->\r\n" + 
-			"    <td style=\"height:400px;text-align:center;vertical-align:top;background-image:url('https://s3.amazonaws.com/media.dpn/54336_4021549307_bb5bd6cbb0_bf.jpg');color:white;\">\r\n" + 
-			"    <!--Pepcus Logo-->\r\n" + 
-			"    <p style=\"padding-top:180px;padding-left:10px;font-size:14px\">Dear <span id=\"reciverTemplate\" style=\"font-size:18px\"> Something Name</span>,</p>\r\n" + 
-			"    <p style=\"padding-top:0px;font-size:25px;\">Pepcus wishes you a very<span style=\"font-size:35px;font-family: 'Brush Script MT', cursive;\"> Happy Diwali..!!</span></p>\r\n" + 
-			"    <p style=\"font-family: 'Brush Script MT', cursive;font-size: 18px;width: 350px;margin: auto;\">May the festival of lights be the harbinger of joy and prosperity. As the holy occasion of Diwali is here and the atmosphere is filled with the spirit of mirth and love, here's hoping this festival of beauty brings your way, bright sparkles of contentment, that stay with you through the days ahead.</p>\r\n" + 
-			"    </tr>\r\n" + 
-			"    <!--Bottom background-->\r\n" + 
-			"    <tr ><td style=\"color:#333;background-image:url('http://rockstartemplate.com/blogheaders/bannerdesign1.jpg');border-radius: 0 0 30px 30px;\">\r\n" + 
-			"    \r\n" + 
-			"    <p style=\"margin-top:20px;text-align:left;padding-left:20px;width:40%;float:left;\">\r\n" + 
-			"    <b>Corporate Office</b> <br>\r\n" + 
-			"    Pepcus Software Services Pvt. Ltd.<br>\r\n" + 
-			"    201, Balaji Corporate, New Palasia<br>\r\n" + 
-			"    Indore, Madhya Pradesh<br>\r\n" + 
-			"    452001, India.\r\n" + 
-			"    </p>\r\n" + 
-			"    \r\n" + 
-			"    <p style=\"margin-top:20px;text-align:right;padding-right:20px;width:40%;float:right;\">\r\n" + 
-			"    <b>Contact us</b> <br>\r\n" + 
-			"    You can call us at:<br>\r\n" + 
-			"    Mobile : +91-9754550505<br>\r\n" + 
-			"    Phone : +91-731-4218554<br>\r\n" + 
-			"    Email: <a href=\"mailto:info@pepcus.com\" style=\"color:red; text-decoration:none;\">info@pepcus.com</a><br>\r\n" + 
-			"    </p>\r\n" + 
-			"    <p style=\"text-align:center;padding-bottom:20px;\">\r\n" + 
-			"    <a href=\"http://www.pepcus.com\" target=\"_blank\" onMouseOver=\"this.style.color='#333'\"   onMouseOut=\"this.style.color='#ddd'\" style=\"color:#ddd; text-decoration:none;font-size:20px;\">www.pepcus.com</a>\r\n" + 
-			"    </p>\r\n" + 
-			"    </td>\r\n" + 
-			"    </tr>\r\n" + 
+	public static final String GREETINGS_TEMPLATE = "\r\n" + 
+			"<table id=\"TemplateData\" width=\"600\" border=\"0\" align=\"center\" cellpadding=\"0\" cellspacing=\"0\">\r\n" + 
+			"<tr>\r\n" + 
+			"    <!--Upper Banner-->\r\n" + 
+			"    <td align=\"left\" valign=\"top\" style=\"\"><img src=\"http://www.umiyamataji.com/images/kids_corner/diwali_banner.jpg\" width=\"600\" height=\"106\" style=\"display:block;border-radius:30px 30px 0 0;\"></td>\r\n" + 
+			"</tr>\r\n" + 
+			"<tr>\r\n" + 
+			"<!--Middle background-->\r\n" + 
+			"<td style=\"height:400px;text-align:center;vertical-align:top;background-image:url('https://s3.amazonaws.com/media.dpn/54336_4021549307_bb5bd6cbb0_bf.jpg');color:white;\">\r\n" + 
+			"<!--Pepcus Logo-->\r\n" + 
+			"    <a href=\"http://www.pepcus.com\" target=\"_blank\" style=\"outline:none;\">\r\n" + 
+			"        <img src=\"http://www.pepcus.com/images/logo/logonew.png\" style=\"width: 120px;padding-top: 40px;\">\r\n" + 
+			"    </a>\r\n" + 
+			"<p style=\"padding-top:30px;padding-left:10px;font-size:14px\">Dear <span id=\"reciverTemplate\" style=\"font-size:18px\"> Something Name</span>,</p>\r\n" + 
+			"<p style=\"padding-top:0px;font-size:25px;\">Pepcus wishes you a very<span style=\"font-size:35px;font-family: 'Brush Script MT', cursive;\"> Happy Diwali..!!</span></p>\r\n" + 
+			"<p style=\"font-family: 'Brush Script MT', cursive;font-size: 18px;width: 350px;margin: auto;\">May the festival of lights be the harbinger of joy and prosperity. As the holy occasion of Diwali is here and the atmosphere is filled with the spirit of mirth and love, here's hoping this festival of beauty brings your way, bright sparkles of contentment, that stay with you through the days ahead.</p>\r\n" + 
+			"</tr>\r\n" + 
+			"<!--Bottom background-->\r\n" + 
+			"<tr ><td style=\"color:#333;background-image:url('https://png.pngtree.com/photos/sm/2017-12-23/e3c66c7822a18db3de256517cb0cf94a.jpg');border-radius: 0 0 30px 30px;\">\r\n" + 
+			"\r\n" + 
+			"<p style=\"margin-top:20px;text-align:left;padding-left:20px;width:40%;float:left;\">\r\n" + 
+			"<b>Corporate Office</b> <br>\r\n" + 
+			"Pepcus Software Services Pvt. Ltd.<br>\r\n" + 
+			"201, Balaji Corporate, New Palasia<br>\r\n" + 
+			"Indore, Madhya Pradesh<br>\r\n" + 
+			"452001, India.\r\n" + 
+			"</p>\r\n" + 
+			"\r\n" + 
+			"<p style=\"margin-top:20px;text-align:right;padding-right:20px;width:40%;float:right;\">\r\n" + 
+			"<b>Contact us</b> <br>\r\n" + 
+			"You can call us at:<br>\r\n" + 
+			"Mobile : +91-9754550505<br>\r\n" + 
+			"Phone : +91-731-4218554<br>\r\n" + 
+			"Email: <a href=\"mailto:info@pepcus.com\" style=\"color:red; text-decoration:none;\">info@pepcus.com</a><br>\r\n" + 
+			"</p>\r\n" + 
+			"\r\n" + 
+			"</td>\r\n" + 
+			"</tr>\r\n" + 
 			"</table>";
 }

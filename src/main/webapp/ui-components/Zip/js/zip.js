@@ -3,19 +3,9 @@
 $(document).ready(function () {
 
     $("#btnSubmit").click(function (event) {
-        var form = $('#form-div')[0];
-        console.log('form', $('#form-div'));
-		// new html5 formdata object.
-        var formData = new FormData(form);
-        //for each entry, add to formdata to later access via $_FILES["file" + i]
-        /*
-        for (var i = 0, i < document.getElementById('file').files.length; i++) {
-            formData.append("file" + i, document.getElementById('file').files[i]);
-            console.log(document.getElementById('file').files[i]);
-        }
-        */
-        //var bla = $('#key').val();
-        //formData.append("key", bla);
+		var form = document.getElementById("form-div");
+    	var formData = new FormData(form);
+
         console.log(formData);
         //send formdata to server-side
         $.ajax({
@@ -32,8 +22,8 @@ $(document).ready(function () {
                 $('#upload-result .alert').append(data);
                 console.log(data);
             },
-            error : function(request) {
-                console.log(request);
+            error : function(error) {
+                console.log(error);
             }
         });
     });

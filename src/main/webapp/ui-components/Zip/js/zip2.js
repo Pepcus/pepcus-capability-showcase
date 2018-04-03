@@ -18,8 +18,8 @@ $(document).ready(function () {
     console.log(formData);
         $.ajax({
             type: 'POST',
-            url: "/pepcuscapability-showcase/zip?key="+password+"&file="+fileList,  // our controller
-            data: {},
+            url: "/pepcuscapability-showcase/zip",  // our controller
+            data: formData,
             processData: false,                     // tell jQuery not to process the data
             contentType: false,                     // tell jQuery not to set contentType
             cache: false,

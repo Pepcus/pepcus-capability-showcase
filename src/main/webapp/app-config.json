@@ -76,10 +76,10 @@
             "_appData":"Tool to decrypt an encrypted file"
             },
             {
-               "_name": "User Authentication",
+               "_name": "Email Verification",
                "_welcomePage": "/index.html",
                "_parentApp": "Backend Utility",
-               "_applicationUrl": "ui-components/UserAuthentication",
+               "_applicationUrl": "ui-components/EmailVerification",
                "_iconClass":"fa-lock",
             "_appData":"Authenticate an user"
             },

@@ -6,6 +6,7 @@ import static com.pepcus.capabilityshowcase.ApplicationConstants.ZIP_FILES;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -39,10 +40,16 @@ public class ZipService
 	 * @param key
 	 * @return
 	 */
-	public Zip getZip(List<MultipartFile> files,String key) 
+	public Zip getZip(Map<String,MultipartFile> filesM,String key) 
 	{
-		//List<MultipartFile> files=new ArrayList<>();
-		//filesM.forEach((k,v)-> files.add(v));
+		List<MultipartFile> files=new ArrayList<>();
+		filesM.forEach((k,v)-> 
+			{
+				files.add(v);
+				System.out.println("key :"+ k);
+			});
+		System.err.println(files.size());
+		
 		Zip z=new Zip();
 		SaveTempFiles save=new SaveTempFiles();
 		ArrayList<File> filesToAdd=save.saveZipFile(files, ZIP_FILES);

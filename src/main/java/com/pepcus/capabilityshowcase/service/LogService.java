@@ -4,6 +4,7 @@ import static org.apache.commons.lang3.StringUtils.substringAfter;
 import static org.apache.commons.lang3.StringUtils.substringBeforeLast;
 import static org.apache.commons.lang3.StringUtils.substringBetween;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Map;
 import java.util.logging.Level;
@@ -17,6 +18,7 @@ import com.pepcus.capabilityshowcase.entity.LogModel;
 import com.pepcus.capabilityshowcase.exception.BadRequestException;
 import com.pepcus.capabilityshowcase.util.ExtensionChecker;
 import com.pepcus.capabilityshowcase.util.SizeChecker;
+import com.pepcus.capabilityshowcase.util.UseSampleLogger;
 
 /**
  * 
@@ -33,14 +35,19 @@ public class LogService
 	 * @param file
 	 * @param allRequestParams
 	 * @return
+	 * @throws FileNotFoundException 
 	 * @throws IOException 
 	 */
 	public LogModel generateLogger(MultipartFile file,Map<String,String> allRequestParams)
 	{
-
-		if(allRequestParams.get("start").isEmpty() && allRequestParams.get("end").isEmpty()) 
+		if(allRequestParams.isEmpty()) 
 		{
 			return generateAll(validateFileAndReturnData(file));
+		}
+		if(allRequestParams.containsKey("useSample") && allRequestParams.get("useSample").equals("true")) 
+		{
+			UseSampleLogger sample =new UseSampleLogger();
+			return generateAll(sample.getSampleData());
 		}
 		if(allRequestParams.containsKey("start") && !allRequestParams.get("start").isEmpty() &&  allRequestParams.containsKey("end") && !allRequestParams.get("end").isEmpty()) 
 		{

@@ -31,6 +31,8 @@ public class User
 	
 	private String number;
 	
+	private String passwod;
+	
 	private String otp;
 	
 	@Column(name="expiry_time")

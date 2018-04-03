@@ -46,7 +46,7 @@ public class OTPService
     	try 
     	{
     		MailProcessor mail = new MailProcessor();
-    		mail.sendMail(user.getEmail(), EMAIL_SUBJECT, EMAIL_MESSAGE, OTP_TEMPLATE.replaceAll("0000", otp).replaceAll("UserName", user.getName()), null);
+    		mail.sendMail(user.getEmail(), EMAIL_SUBJECT, EMAIL_MESSAGE, OTP_TEMPLATE.replaceAll("0000", otp).replaceAll("UserName", user.getName().toUpperCase()), null);
     	}
     	catch(Exception e) 
     	{

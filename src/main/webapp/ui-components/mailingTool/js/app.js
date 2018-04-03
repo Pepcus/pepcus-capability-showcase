@@ -18,19 +18,13 @@
     }]);
     app.controller("templateController",['$scope',"$http","ngDialog",function($scope,$http,ngDialog){
       $scope.AddReciever = function () {
-        $('#TemplateData').css("display","none");
         $('#details-form').css("display","block");
-        $(".ngdialog-content").css("width","350px");
-        $('.select-send').html('send');
+        $('.select-send').css("display","none");
 
-        console.log("clicked");
       };
       $scope.SelectTemplate = function () {
-        $('#TemplateData').css("display","none");
         $('#details-form').css("display","block");
-        $(".ngdialog-content").css("width","350px");
-//        $('.select-send').html('send');
-        console.log("clicked");
+        $('.select-send').css("display","none");
       };
       $scope.SendNotificationTemplate = function () {
     	  var data = {

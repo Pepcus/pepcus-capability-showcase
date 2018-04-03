@@ -23,8 +23,11 @@
 
 }
 .ngdialog.ngdialog-theme-default .ngdialog-content {
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.7);
 
+}
+.ngdialog.ngdialog-theme-default .ngdialog-content{
+    line-height: 1.0em;
 }
 .ngdialog.ngdialog-theme-default {
     padding-bottom: 5px;
@@ -82,8 +85,7 @@
     Phone : +91-731-4218554<br>
     Email: <a href="mailto:info@pepcus.com" style="color:black; text-decoration:none;">info@pepcus.com</a><br>
     </p>
-    <p style="text-align:center;padding-bottom: 0px;margin-bottom: -12px;position: relative;top: -15px;">
-    </p>
+
     </td>
     </tr>
     
@@ -100,15 +102,15 @@
       </div>
       <div>
           <span></span><br>
-          <input type="text" placeholder="Reciever's designation" ng-model="senderName">
+          <input type="text" placeholder="Sender's designation" ng-model="senderName">
       </div>
       <div>
           <span></span><br>
           <input type="text"placeholder="Sender's name" ng-model="senderDesignation">
       </div>
       <div>
-      	  <span></span><br>
-      	  <input type="submit" value="send" />
+          <span></span><br>
+          <button type="submit" value="send" class="btn" style=" ">Send</button>
       </div>
     </form>
   </div>

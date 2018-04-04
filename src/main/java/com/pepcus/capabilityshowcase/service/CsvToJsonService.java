@@ -1,6 +1,6 @@
 package com.pepcus.capabilityshowcase.service;
 
-import static com.pepcus.capabilityshowcase.ApplicationConstants.TEMP;
+import static com.pepcus.capabilityshowcase.ApplicationConstants.TEMP_CSV;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -47,7 +47,7 @@ public class CsvToJsonService
 	 */
 	public String getFile(MultipartFile file) throws IOException
 	{
-		CreateDirectory.CreateDirectoryIfNotExist(TEMP);
+		CreateDirectory.CreateDirectoryIfNotExist(TEMP_CSV);
 		
 		C2J =StringUtils.substringBefore( file.getOriginalFilename(), ".");		//getting original file name
 		
@@ -57,7 +57,7 @@ public class CsvToJsonService
 			
 			List<MultipartFile> files=new ArrayList<>(Arrays.asList(file));	
 			
-			save.saveZipFile(files,TEMP);
+			save.saveZipFile(files,TEMP_CSV);
 			
 			CSVtoJSONParser();	//Creating JSON file
 			
@@ -72,9 +72,9 @@ public class CsvToJsonService
 	 */
 	public void CSVtoJSONParser() throws IOException 
     {
-		File csvFile=new File(TEMP+"//"+C2J+".csv");		//csv
+		File csvFile=new File(TEMP_CSV+"//"+C2J+".csv");		//csv
 		
-        File jsonFile = new File(TEMP+"//"+C2J+".json");	//json
+        File jsonFile = new File(TEMP_CSV+"//"+C2J+".json");	//json
     	BufferedWriter output = new BufferedWriter(new FileWriter(jsonFile));
 	
         CloseableCsvReader reader = CsvParser.reader(csvFile);
@@ -115,7 +115,7 @@ public class CsvToJsonService
 	 */
 	public String readJson() throws IOException 
 	{
-    	BufferedReader br = new BufferedReader(new FileReader(TEMP+"//"+C2J+".json"));
+    	BufferedReader br = new BufferedReader(new FileReader(TEMP_CSV+"//"+C2J+".json"));
         StringBuilder sb = new StringBuilder();
         String line = br.readLine();	
         sb.append(line);
@@ -127,7 +127,7 @@ public class CsvToJsonService
         	throw new FileNotSupportedException("File not correctly coded");
         }
         
-        DeleteTempFile.deleteTempFiles(TEMP);
+        DeleteTempFile.deleteTempFiles(TEMP_CSV);
         return sb.toString();
 	}
 }

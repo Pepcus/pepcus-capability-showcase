@@ -117,7 +117,7 @@ public class ApplicationConstants
 	/**
 	 * For CSV to JSON controller 
 	 */
-	public static final String TEMP="C:\\pcs\\temp\\csv";		//For CSV to JSON 
+	public static final String TEMP_CSV="C:\\pcs\\temp\\csv";		//For CSV to JSON 
 	
 	/**
 	 * For protected Zip  
@@ -148,7 +148,8 @@ public class ApplicationConstants
 	public static final String ALGORITHM_PBKD ="PBKDF2WithHmacSHA1";
 	public static final String CIPHER_INSTANCE = "AES/ECB/PKCS5Padding";
 	public static final String MESSAGE_DIGEST_INSTANCE = "SHA-1";
-	
+	public static final String BLOWFISH_ALGO = "Blowfish";
+    
 	/**
 	 * Mailing tool templates
 	 */

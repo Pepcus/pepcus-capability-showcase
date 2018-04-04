@@ -46,13 +46,17 @@ public class EncryptService
 			{
 				encryptedPassword=eS.aesE(data,user.getKey());
 			}
+			if(algorithm.equalsIgnoreCase("base64")) 
+			{
+				encryptedPassword=eS.base64E(data);
+			}
 			if(algorithm.equalsIgnoreCase("bcrypt"))
 			{
 				encryptedPassword=eS.bcryptE(data);
 			}
-			if(algorithm.equalsIgnoreCase("base64")) 
+			if(algorithm.equalsIgnoreCase("blowfish")) 
 			{
-				encryptedPassword=eS.base64E(data);
+				encryptedPassword=eS.blow(data);
 			}
 			if(algorithm.equalsIgnoreCase("TripleDES"))
 			{

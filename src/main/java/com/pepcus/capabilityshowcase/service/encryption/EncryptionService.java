@@ -46,6 +46,17 @@ public class EncryptionService
 	}
 	
 	/**
+	 * Using Blowfish  
+	 * @param data
+	 * @return
+	 */
+	public String blow(String data) 
+	{
+		BlowfishEncryptorDecryptor b = new BlowfishEncryptorDecryptor();
+		return b.encryptData(data);
+	}
+	
+	/**
 	 * Using PBKDE
 	 * @param data
 	 * @return

@@ -4,11 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="text/javascript" src="../../js/jquery/jquery-3.2.1.min.js"></script>
-	<script src="js/Simple-JSON-Beautifier-With-jQuery-CSS-CSS3-Beautify-json/jquery.beautify-json.js"></script>
+    <script src="js/Simple-JSON-Beautifier-With-jQuery-CSS-CSS3-Beautify-json/jquery.beautify-json.js"></script>
     <script type="text/javascript" src="js/csv.js"></script>
 
     <link rel="stylesheet" type="text/css" href="../../css/common/global.css"/>
-    <link rel="stylesheet" type="text/css" href="js/Simple-JSON-Beautifier-With-jQuery-CSS-CSS3-Beautify-json/beautify-json.css"/>
+    <link rel="stylesheet" type="text/css"
+          href="js/Simple-JSON-Beautifier-With-jQuery-CSS-CSS3-Beautify-json/beautify-json.css"/>
     <link rel="stylesheet" type="text/css" href="css/csv-to-json.css"/>
 
 </head>
@@ -27,9 +28,16 @@
                 </div>
             </div>
         </form>
-        <input id="HiddenJsonOutput" hidden></input>
+        <input id="HiddenJsonOutput" type="text" style="display: block; min-width: 0%;    width: 1%;    box-shadow: none;    position: absolute;    bottom: 0px;    z-index: -999;    outline: none;    border: none;"> </input>
         <div class="json-data">
-            <h2>Beautified Json Output</h2><button  class="btn copy-btn" id="copy">Copy</button>
+            <h2>Beautified Json Output</h2>
+            <div class="tooltip">
+                <button class="btn" onclick="copyFunction()" onmouseout="outFunc()">
+                    <span class=" tooltiptext" id="myTooltip">Copy to clipboard</span>
+                    Copy text
+                </button>
+            </div>
+            <!--<button  class="btn copy-btn" id="copy">Copy</button>-->
             <div class="container">
             </div>
         </div>

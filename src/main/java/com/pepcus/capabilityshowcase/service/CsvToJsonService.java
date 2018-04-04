@@ -22,6 +22,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.pepcus.capabilityshowcase.exception.FileNotSupportedException;
+import com.pepcus.capabilityshowcase.util.CreateDirectory;
 import com.pepcus.capabilityshowcase.util.DeleteTempFile;
 import com.pepcus.capabilityshowcase.util.ExtensionChecker;
 import com.pepcus.capabilityshowcase.util.SaveTempFiles;
@@ -46,6 +47,8 @@ public class CsvToJsonService
 	 */
 	public String getFile(MultipartFile file) throws IOException
 	{
+		CreateDirectory.CreateDirectoryIfNotExist(TEMP);
+		
 		C2J =StringUtils.substringBefore( file.getOriginalFilename(), ".");		//getting original file name
 		
 		if(ExtensionChecker.checkFile(file, "csv")) 

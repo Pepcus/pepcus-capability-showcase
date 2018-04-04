@@ -15,6 +15,7 @@ import javax.crypto.spec.SecretKeySpec;
 
 import com.pepcus.capabilityshowcase.entity.EncryptDecryptFile;
 import com.pepcus.capabilityshowcase.exception.GenericException;
+import com.pepcus.capabilityshowcase.util.DeleteTempFile;
 
 /**
  * Encrypting / Decrypting file using Crypto - cipher method 
@@ -52,6 +53,8 @@ public class CryptoTest
         }
         catch (Exception e) 
         {
+        	DeleteTempFile.deleteTempFiles(STORE_FILE_TO_BE_DECRYPTED);
+        	DeleteTempFile.deleteTempFiles(STORE_FILE_TO_BE_ENCRYPTED);
         	log.error(e.getMessage());
             throw new GenericException("File not valid");
         }

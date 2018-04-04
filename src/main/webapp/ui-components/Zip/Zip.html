@@ -8,12 +8,14 @@
     <script type="text/javascript" src="./../js/jquery.nicescroll.min.js"></script>
     <link rel="stylesheet" type="text/css" href="./../css/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="./css/fileuploader.css">
+    
 </head>
 <body>
+<script src="js/zip2.js"></script>
 <div class="rendering-container">
     <section class="border-lightblue">
         <div class="content-heading lightblue">
-            <h2 class="h5 white-heading">File Uploader</h2>
+            <h2 class="h5 white-heading">Protected Zip</h2>
         </div>
         <div class="drop-box-container">
             <div class="drop-zone" id="dropzone">
@@ -22,7 +24,7 @@
                         <div class="label"><label for="file">Step - 1</label></div>
                         <div class="form-element upload-files-button">
                             <label class="btn" for="file0">
-                                <input type="file" name="file[]" class="file0 TheFiles" id="file0" multiple>Upload files
+                                <input type="file" name="file" class="file0" id="file0" multiple>Upload files
                             </label>
                         </div>
                         <p>OR</p>
@@ -41,8 +43,11 @@
             <div class="third-step">
                 <div class="label"><label for="file">Step - 3</label></div>
                 <div>
-                    <input type="button" class="btn btn-danger" onclick="sendDataToServer()"
-                           style="width:120px;height: 35px;margin:auto;display:block" id="btnSubmit">
+                    <button type="button" class="btn btn-danger"
+                           style="width:120px;height: 35px;margin:auto;display:block" id="btnSubmit" value="Submit">Create Zip</button>
+                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                     <button type="button" class="btn btn-danger" 
+                           style="width:120px;height: 35px;margin:auto;display:none" id="btnDownload" value="Submit">Download Zip</button>      
                 </div>
             </div>
             </form>

@@ -124,7 +124,7 @@ public class ApplicationConstants
 	 */
 	public static final String ZIP_FILES="C:\\pcs\\temp\\zipfiles";	//Storing temporary uploading file
 	public static final String PROTECTED_ZIP="C:\\pcs\\temp\\protectedzip";	//Storing protected Zip
-
+	public static final String ZIP_NAME = "protected.zip";
 	/**
 	 * For Encrypted file
 	 */
@@ -152,7 +152,7 @@ public class ApplicationConstants
 	/**
 	 * Mailing tool templates
 	 */
-	public static final String NOTIFICATION_TEMPLATE = "<table id=\"TemplateData\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"margin:auto;width:600px;background-color:#FFFFFF;padding-top: 15px;outline:none;border-radius: 30px;\">\r\n" + 
+	public static final String NOTIFICATION_TEMPLATE = "<table id=\"TemplateData\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"margin:auto;width:600px;background-color:#f5eded;padding-top: 15px;outline:none;border-radius: 30px;\">\r\n" + 
 			"    <tr align=\"center\" style=\"margin:auto;width:100%;padding-bottom:20px;\">\r\n" + 
 			"        <td >\r\n" + 
 			"            <a href= \"http://www.pepcus.com\" target=\"_blank\" style=\"outline:none;\">\r\n" + 

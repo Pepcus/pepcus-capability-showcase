@@ -13,6 +13,8 @@ import com.pepcus.capabilityshowcase.entity.Encryption;
 import com.pepcus.capabilityshowcase.exception.BadRequestException;
 import com.pepcus.capabilityshowcase.service.encryption.CryptoTest;
 import com.pepcus.capabilityshowcase.service.encryption.EncryptionService;
+import com.pepcus.capabilityshowcase.util.CreateDirectory;
+
 import org.apache.log4j.Logger;
 /**
  * 
@@ -92,6 +94,7 @@ public class EncryptService
 	 */
 	public EncryptDecryptFile encryptFile(MultipartFile file,String key) throws IllegalStateException, IOException 
 	{
+		CreateDirectory.CreateDirectoryIfNotExist(STORE_FILE_TO_BE_ENCRYPTED);
 		CryptoTest cT=new CryptoTest();
 		
 		String filename=file.getOriginalFilename();

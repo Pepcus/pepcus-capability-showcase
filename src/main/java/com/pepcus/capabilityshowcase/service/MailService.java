@@ -1,5 +1,6 @@
 package com.pepcus.capabilityshowcase.service;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 
 import com.pepcus.capabilityshowcase.entity.MailingToolModel;
@@ -25,11 +26,11 @@ public class MailService
 			MailProcessor mail = new MailProcessor();
 			if(template.equalsIgnoreCase("Greetings")) 
 			{
-				mail.sendMail(user.getRecieversEmail(), user.getRecieversName().toUpperCase(), template, GREETINGS_TEMPLATE.replaceAll("Something Name", user.getRecieversName().toUpperCase()), null);
+				mail.sendMail(user.getRecieversEmail(),user.getRecieversName().toUpperCase(), template, GREETINGS_TEMPLATE.replaceAll("Something Name", StringUtils.capitalize(user.getRecieversName().toLowerCase())), null);
 			}
 			if(template.equalsIgnoreCase("Notification")) 
 			{
-				mail.sendMail(user.getRecieversEmail(), user.getRecieversName().toUpperCase(), template, NOTIFICATION_TEMPLATE.replaceAll("Something Name", user.getRecieversName().toUpperCase()).replaceAll("senderName", user.getSenderName().toUpperCase()).replaceAll("designation", user.getSenderDesignation().toUpperCase()), null);
+				mail.sendMail(user.getRecieversEmail(), user.getRecieversName().toUpperCase(), template, NOTIFICATION_TEMPLATE.replaceAll("Something Name", StringUtils.capitalize(user.getRecieversName().toLowerCase())).replaceAll("senderName", StringUtils.capitalize(user.getSenderName().toLowerCase())).replaceAll("designation", user.getSenderDesignation().toUpperCase()), null);
 			}
 		}
 		catch (Exception e) 

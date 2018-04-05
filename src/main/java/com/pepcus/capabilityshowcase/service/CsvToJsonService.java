@@ -14,8 +14,8 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.apache.commons.lang3.StringUtils;
-import org.simpleflatmapper.csv.CloseableCsvReader;
 import org.simpleflatmapper.csv.CsvParser;
+import org.simpleflatmapper.csv.CsvReader;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -25,7 +25,6 @@ import com.pepcus.capabilityshowcase.exception.FileNotSupportedException;
 import com.pepcus.capabilityshowcase.util.CreateDirectory;
 import com.pepcus.capabilityshowcase.util.DeleteTempFile;
 import com.pepcus.capabilityshowcase.util.ExtensionChecker;
-import com.pepcus.capabilityshowcase.util.SaveTempFiles;
 
 /**
  * 
@@ -53,14 +52,7 @@ public class CsvToJsonService
 		
 		if(ExtensionChecker.checkFile(file, "csv")) 
 		{
-			SaveTempFiles save=new SaveTempFiles();
-			
-			List<MultipartFile> files=new ArrayList<>(Arrays.asList(file));	
-			
-			save.saveZipFile(files,TEMP_CSV);
-			
-			CSVtoJSONParser();	//Creating JSON file
-			
+			CSVtoJSONParser(new String(file.getBytes()));	//Parsing CSV data into JSON file	
 			return readJson();
 		}
 		return null;
@@ -70,20 +62,18 @@ public class CsvToJsonService
 	 * Converting CSV to JSON
 	 * @throws IOException
 	 */
-	public void CSVtoJSONParser() throws IOException 
-    {
-		File csvFile=new File(TEMP_CSV+"//"+C2J+".csv");		//csv
-		
+	public void CSVtoJSONParser(String CSVData) throws IOException 
+    {	
         File jsonFile = new File(TEMP_CSV+"//"+C2J+".json");	//json
     	BufferedWriter output = new BufferedWriter(new FileWriter(jsonFile));
 	
-        CloseableCsvReader reader = CsvParser.reader(csvFile);
+        CsvReader reader = CsvParser.reader(CSVData);
 
         JsonFactory jsonFactory = new JsonFactory();
         Iterator<String[]> iterator = reader.iterator();
         String[] headers = iterator.next();
 
-        try (JsonGenerator jsonGenerator = jsonFactory.createGenerator(output)) 
+        try (JsonGenerator jsonGenerator = jsonFactory.createGenerator(output)) // System.out
         {
             jsonGenerator.writeStartArray();
     
@@ -122,7 +112,7 @@ public class CsvToJsonService
         br.close();
         
         //Checking for unsupported file
-        if(sb.toString().contains("�")) 
+        if(sb.toString().contains("�") || sb.toString().contains("")) 
         {
         	throw new FileNotSupportedException("File not correctly coded");
         }

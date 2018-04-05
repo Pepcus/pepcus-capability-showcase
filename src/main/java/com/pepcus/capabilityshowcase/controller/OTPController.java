@@ -34,16 +34,5 @@ public class OTPController
 	public ResponseEntity<User> sendMail(@RequestBody User user) 
 	{
 		return new ResponseEntity<User>(emailService.sendMail(user),HttpStatus.OK);
-	}	
-	
-	/**
-	 * Verifying OTP
-	 * @param user
-	 * @return
-	 */
-	@PostMapping(value="/verify")
-	public ResponseEntity<User> verify(@RequestBody User user) 
-	{
-		return new ResponseEntity<User>(emailService.verifyEmail(user),HttpStatus.ACCEPTED);
 	}
 }

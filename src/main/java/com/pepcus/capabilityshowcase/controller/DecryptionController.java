@@ -1,7 +1,5 @@
 package com.pepcus.capabilityshowcase.controller;
 
-import static com.pepcus.capabilityshowcase.ApplicationConstants.STORE_FILE_TO_BE_DECRYPTED;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -24,7 +22,6 @@ import org.springframework.web.multipart.MultipartFile;
 import com.pepcus.capabilityshowcase.entity.EncryptDecryptFile;
 import com.pepcus.capabilityshowcase.entity.Encryption;
 import com.pepcus.capabilityshowcase.service.DecryptService;
-import com.pepcus.capabilityshowcase.util.DeleteTempFile;
 
 /**
  * 
@@ -39,6 +36,8 @@ public class DecryptionController
 {
 	@Autowired
 	private DecryptService dS;
+	
+	private static File responseFile;
 	
 	/**
 	 * Method which decrypt an encrypted string
@@ -63,7 +62,8 @@ public class DecryptionController
 	@PostMapping(value="/file")
 	public ResponseEntity<EncryptDecryptFile> decryptFile(@RequestParam("file") MultipartFile file,@RequestParam("key")String key) throws IllegalStateException, IOException 
 	{
-		return new ResponseEntity<EncryptDecryptFile>(dS.decryptFile(file, key), HttpStatus.CREATED);
+		responseFile = dS.decryptFile(file, key);
+    	return new ResponseEntity<EncryptDecryptFile>(new EncryptDecryptFile(), HttpStatus.CREATED);
 	}
 	
 	/**
@@ -78,10 +78,8 @@ public class DecryptionController
 	{
         response.setHeader("Content-disposition","attachment; filename="+fileName); 
 
-        File my_file = new File(STORE_FILE_TO_BE_DECRYPTED+"\\D"+fileName); 
-
         OutputStream out = response.getOutputStream();
-        FileInputStream in = new FileInputStream(my_file);
+        FileInputStream in = new FileInputStream(responseFile);
         byte[] buffer = new byte[4096];
         int length;
         while ((length = in.read(buffer)) > 0){
@@ -89,7 +87,6 @@ public class DecryptionController
         }
         in.close();
         out.flush();
-        DeleteTempFile.deleteTempFiles(STORE_FILE_TO_BE_DECRYPTED);
 	}
 	
 }

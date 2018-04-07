@@ -22,9 +22,6 @@ import org.springframework.web.multipart.MultipartFile;
 import com.pepcus.capabilityshowcase.entity.EncryptDecryptFile;
 import com.pepcus.capabilityshowcase.entity.Encryption;
 import com.pepcus.capabilityshowcase.service.EncryptService;
-import com.pepcus.capabilityshowcase.util.DeleteTempFile;
-
-import static com.pepcus.capabilityshowcase.ApplicationConstants.STORE_FILE_TO_BE_ENCRYPTED;
 
 /**
  * 
@@ -39,6 +36,8 @@ public class EncryptionController
 {
 	@Autowired
 	EncryptService eS;
+	
+	private static File responseFile;
 	
 	/**
 	 * Takes a string and encrypt it
@@ -62,7 +61,8 @@ public class EncryptionController
 	@PostMapping(value="/file")
 	public ResponseEntity<EncryptDecryptFile> ef(@RequestParam("file") MultipartFile file,@RequestParam("key")String key,HttpServletRequest request, HttpServletResponse response) throws Exception 
 	{
-		return new ResponseEntity<EncryptDecryptFile>(eS.encryptFile(file, key), HttpStatus.CREATED);
+		responseFile = eS.encryptFile(file, key);
+        return new ResponseEntity<EncryptDecryptFile>(new EncryptDecryptFile(), HttpStatus.CREATED);
 	}
 	
 	/**
@@ -77,10 +77,8 @@ public class EncryptionController
 	{
         response.setHeader("Content-disposition","attachment; filename="+fileName); // Used to name the download file and its format
 
-        File my_file = new File(STORE_FILE_TO_BE_ENCRYPTED+"\\E"+fileName); // We are downloading .txt file, in the format of doc with name check - check.doc
-
         OutputStream out = response.getOutputStream();
-        FileInputStream in = new FileInputStream(my_file);
+        FileInputStream in = new FileInputStream(responseFile);
         byte[] buffer = new byte[4096];
         int length;
         while ((length = in.read(buffer)) > 0){
@@ -88,6 +86,5 @@ public class EncryptionController
         }
         in.close();
         out.flush();
-        DeleteTempFile.deleteTempFiles(STORE_FILE_TO_BE_ENCRYPTED);
 	}
 }

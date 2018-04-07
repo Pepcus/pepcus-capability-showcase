@@ -1,7 +1,6 @@
 
 package com.pepcus.capabilityshowcase.controller;
 
-import static com.pepcus.capabilityshowcase.ApplicationConstants.PROTECTED_ZIP;
 import static com.pepcus.capabilityshowcase.ApplicationConstants.ZIP_NAME;
 
 import java.io.File;
@@ -24,9 +23,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.pepcus.capabilityshowcase.entity.Zip;
 import com.pepcus.capabilityshowcase.service.ZipService;
-import com.pepcus.capabilityshowcase.util.DeleteTempFile;
 
 /**
  * 
@@ -42,6 +39,8 @@ public class ZipController
 	@Autowired
 	ZipService zS;
 	
+	private static File responseZip;
+	
 	/**
 	 * 
 	 * @param files
@@ -49,16 +48,16 @@ public class ZipController
 	 * @return
 	 */
 	@PostMapping
-	public ResponseEntity<Zip> zip(@RequestParam("key") String key,@RequestParam("file") MultipartFile[] files) 
+	public ResponseEntity<String> zip(@RequestParam("key") String key,@RequestParam("file") MultipartFile[] files) 
 	{
-		return new ResponseEntity<Zip>(zS.getZip(new ArrayList<MultipartFile>(Arrays.asList(files)), key),HttpStatus.CREATED);
+		responseZip = zS.getZip(new ArrayList<MultipartFile>(Arrays.asList(files)), key);
+		return new ResponseEntity<String>("Zip created successfully",HttpStatus.CREATED);
 	}
 	
 	/**
 	 * Download the protected zip 
 	 * @param request
 	 * @param response
-	 * @param fileName
 	 * @throws IOException
 	 */
 	@GetMapping
@@ -66,9 +65,8 @@ public class ZipController
 	{
         response.setHeader("Content-disposition","attachment; filename="+ZIP_NAME); // Used to name the download file and its format
 
-        File my_file = new File(PROTECTED_ZIP+"\\"+ZIP_NAME); 
         OutputStream out = response.getOutputStream();
-        FileInputStream in = new FileInputStream(my_file);
+        FileInputStream in = new FileInputStream(responseZip);
         byte[] buffer = new byte[4096];
         int length;
         while ((length = in.read(buffer)) > 0){
@@ -76,7 +74,5 @@ public class ZipController
         }
         in.close();
         out.flush();
-        
-        DeleteTempFile.deleteTempFiles(PROTECTED_ZIP);
 	}
 }

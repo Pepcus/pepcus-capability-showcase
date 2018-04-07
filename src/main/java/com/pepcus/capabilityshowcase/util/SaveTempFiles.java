@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.IntStream;
 
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.FilenameUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.pepcus.capabilityshowcase.exception.BadRequestException;
@@ -21,25 +23,25 @@ public class SaveTempFiles
 	/**
 	 * Taking list of files and adding them to a list
 	 * @param file
-	 * @param path
 	 * @return
 	 */
-	public ArrayList<File> saveZipFile(List<MultipartFile> file,String path)
+	public ArrayList<File> saveZipFile(List<MultipartFile> file)
 	{
 			ArrayList<File> filesToAdd = new ArrayList<>();
 			
 			IntStream.range(0, file.size()).forEach(i -> {
+				
 				String filename=file.get(i).getOriginalFilename();
-				File f=new File(path+"\\"+filename);
 				try
 				{
-					file.get(i).transferTo(f);
+					File f = File.createTempFile(FilenameUtils.removeExtension(filename), "."+FilenameUtils.getExtension(filename));
+		            FileUtils.writeByteArrayToFile(f, file.get(i).getBytes());
+					filesToAdd.add(f);	//files added
 				}
 				catch (Exception e) 
 				{
 					throw new BadRequestException("Files cannot be saved : "+ e.getMessage());
-				} 
-				filesToAdd.add(f);	//files added
+				}
 			});
 			
 			return filesToAdd;

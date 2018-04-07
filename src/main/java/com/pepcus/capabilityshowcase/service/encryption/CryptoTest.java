@@ -1,21 +1,17 @@
 package com.pepcus.capabilityshowcase.service.encryption;
 
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.FilenameUtils;
 import org.apache.log4j.Logger;
-import static com.pepcus.capabilityshowcase.ApplicationConstants.STORE_FILE_TO_BE_DECRYPTED;
-import static com.pepcus.capabilityshowcase.ApplicationConstants.STORE_FILE_TO_BE_ENCRYPTED;
 import static com.pepcus.capabilityshowcase.ApplicationConstants.CRYPTO_CIPHER;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.security.Key;
 
 import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;
 
-import com.pepcus.capabilityshowcase.entity.EncryptDecryptFile;
 import com.pepcus.capabilityshowcase.exception.GenericException;
-import com.pepcus.capabilityshowcase.util.DeleteTempFile;
 
 /**
  * Encrypting / Decrypting file using Crypto - cipher method 
@@ -31,65 +27,52 @@ public class CryptoTest
 	 * @param cipherMode
 	 * @param key
 	 * @param inputFile
-	 * @param outputFile
+	 * @param outputFileExtension
 	 * @return
 	 */
-    static String fileProcessor(int cipherMode,String key,File inputFile,File outputFile)
+    static File fileProcessor(int cipherMode,String key,byte[] inputFile,String outputFileExtension)
     {
-        try (FileOutputStream outputStream = new FileOutputStream(outputFile);FileInputStream inputStream = new FileInputStream(inputFile);)
+        try
         {
+        	File responseFile = File.createTempFile("fileResponse", outputFileExtension);
         	Key secretKey = new SecretKeySpec(key.getBytes(), CRYPTO_CIPHER);
             Cipher cipher = Cipher.getInstance(CRYPTO_CIPHER);
             cipher.init(cipherMode, secretKey);
 
-            byte[] inputBytes = new byte[(int) inputFile.length()];
-            inputStream.read(inputBytes);
-
-            byte[] outputBytes = cipher.doFinal(inputBytes);
-
-            outputStream.write(outputBytes);
-
-            return "Success";
+            byte[] outputBytes = cipher.doFinal(inputFile);
+            FileUtils.writeByteArrayToFile(responseFile, outputBytes);
+            
+            return responseFile;
         }
         catch (Exception e) 
         {
-        	DeleteTempFile.deleteTempFiles(STORE_FILE_TO_BE_DECRYPTED);
-        	DeleteTempFile.deleteTempFiles(STORE_FILE_TO_BE_ENCRYPTED);
         	log.error(e.getMessage());
             throw new GenericException("File not valid");
         }
     }
 	
-    /**
-     * Encrypting file using a key
-     * @param key
-     * @param f
-     * @return
-     */
-    public EncryptDecryptFile encryptCrypto(String key,File inputFile,String filename) 
+   /**
+    * Encrypting file using a key
+    * @param key
+    * @param inputFileBytes
+    * @param filename
+    * @return
+    */
+    public File encryptCrypto(String key,byte[] inputFileBytes,String filename) 
     {
-    	EncryptDecryptFile ed=new EncryptDecryptFile();
-    	String secretKey=MD5Encryption.enc(key);
-		File encryptedFile = new File(STORE_FILE_TO_BE_ENCRYPTED+"//E"+filename);
-		
-		ed.setMessage(CryptoTest.fileProcessor(Cipher.ENCRYPT_MODE,secretKey,inputFile,encryptedFile));
-		return ed;
+		return CryptoTest.fileProcessor(Cipher.ENCRYPT_MODE,MD5Encryption.enc(key),inputFileBytes,FilenameUtils.getExtension(filename));
     }
     
     /**
      * Decrypting file using key
      * @param key
-     * @param f
+     * @param inputFileBytes
+     * @param filename
      * @return
      */
-    public EncryptDecryptFile decryptCrypto(String key,File inputFile,String filename) 
+    public File decryptCrypto(String key,byte[] inputFileBytes,String filename) 
     {
-    	EncryptDecryptFile ed=new EncryptDecryptFile();
-    	String secretKey=MD5Encryption.enc(key);
-    	File decryptedFile = new File(STORE_FILE_TO_BE_DECRYPTED+"//D"+filename);
-		
-    	ed.setMessage(CryptoTest.fileProcessor(Cipher.DECRYPT_MODE,secretKey,inputFile,decryptedFile));
-    	return ed;
+    	return CryptoTest.fileProcessor(Cipher.DECRYPT_MODE,MD5Encryption.enc(key),inputFileBytes,FilenameUtils.getExtension(filename));
     }
 	
 }

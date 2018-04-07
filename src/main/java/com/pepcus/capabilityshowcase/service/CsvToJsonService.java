@@ -1,19 +1,13 @@
 package com.pepcus.capabilityshowcase.service;
 
-import static com.pepcus.capabilityshowcase.ApplicationConstants.TEMP_CSV;
-
-import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Iterator;
-import java.util.List;
 
-import org.apache.commons.lang3.StringUtils;
+
+import org.apache.commons.io.FileUtils;
 import org.simpleflatmapper.csv.CsvParser;
 import org.simpleflatmapper.csv.CsvReader;
 import org.springframework.stereotype.Service;
@@ -22,8 +16,6 @@ import org.springframework.web.multipart.MultipartFile;
 import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.pepcus.capabilityshowcase.exception.FileNotSupportedException;
-import com.pepcus.capabilityshowcase.util.CreateDirectory;
-import com.pepcus.capabilityshowcase.util.DeleteTempFile;
 import com.pepcus.capabilityshowcase.util.ExtensionChecker;
 
 /**
@@ -36,8 +28,7 @@ import com.pepcus.capabilityshowcase.util.ExtensionChecker;
 @Service
 public class CsvToJsonService 
 {
-	static String C2J="";	//file name
-	
+	static File jsonFile;
 	/**
 	 * Method to get file
 	 * @param file
@@ -46,10 +37,6 @@ public class CsvToJsonService
 	 */
 	public String getFile(MultipartFile file) throws IOException
 	{
-		CreateDirectory.CreateDirectoryIfNotExist(TEMP_CSV);
-		
-		C2J =StringUtils.substringBefore( file.getOriginalFilename(), ".");		//getting original file name
-		
 		if(ExtensionChecker.checkFile(file, "csv")) 
 		{
 			CSVtoJSONParser(new String(file.getBytes()));	//Parsing CSV data into JSON file	
@@ -64,7 +51,7 @@ public class CsvToJsonService
 	 */
 	public void CSVtoJSONParser(String CSVData) throws IOException 
     {	
-        File jsonFile = new File(TEMP_CSV+"//"+C2J+".json");	//json
+		jsonFile = File.createTempFile("fileResponse", "json");
     	BufferedWriter output = new BufferedWriter(new FileWriter(jsonFile));
 	
         CsvReader reader = CsvParser.reader(CSVData);
@@ -89,7 +76,7 @@ public class CsvToJsonService
                 }
                 jsonGenerator.writeEndObject();
             }
-            jsonGenerator.writeEndArray();
+            jsonGenerator.writeEndArray();;
         }
         catch(Exception e) 
         {
@@ -105,19 +92,11 @@ public class CsvToJsonService
 	 */
 	public String readJson() throws IOException 
 	{
-    	BufferedReader br = new BufferedReader(new FileReader(TEMP_CSV+"//"+C2J+".json"));
-        StringBuilder sb = new StringBuilder();
-        String line = br.readLine();	
-        sb.append(line);
-        br.close();
-        
-        //Checking for unsupported file
-        if(sb.toString().contains("�") || sb.toString().contains("")) 
+		String jsonData = FileUtils.readFileToString(jsonFile);
+        if(jsonData.contains("�") || jsonData.contains("")) 
         {
         	throw new FileNotSupportedException("File not correctly coded");
         }
-        
-        DeleteTempFile.deleteTempFiles(TEMP_CSV);
-        return sb.toString();
+        return jsonData;
 	}
 }

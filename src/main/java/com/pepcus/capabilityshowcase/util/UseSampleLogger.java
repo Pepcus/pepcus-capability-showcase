@@ -5,7 +5,7 @@ import java.io.InputStream;
 import org.apache.commons.io.IOUtils;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
-
+import static com.pepcus.capabilityshowcase.ApplicationConstants.SAMPLE_LOG;
 import com.pepcus.capabilityshowcase.exception.GenericException;
 
 /**
@@ -23,7 +23,7 @@ public class UseSampleLogger
 	{
 		try 
 		{
-	    	Resource resource = new ClassPathResource("sample.log");		    
+	    	Resource resource = new ClassPathResource(SAMPLE_LOG);		    
 			InputStream data = resource.getInputStream();
 			return IOUtils.toString(data);
 		}

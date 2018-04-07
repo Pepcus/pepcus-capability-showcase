@@ -1,19 +1,15 @@
 package com.pepcus.capabilityshowcase.service;
 
-import static com.pepcus.capabilityshowcase.ApplicationConstants.STORE_FILE_TO_BE_ENCRYPTED;
-
 import java.io.File;
 import java.io.IOException;
 
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.pepcus.capabilityshowcase.entity.EncryptDecryptFile;
 import com.pepcus.capabilityshowcase.entity.Encryption;
 import com.pepcus.capabilityshowcase.exception.BadRequestException;
 import com.pepcus.capabilityshowcase.service.encryption.CryptoTest;
 import com.pepcus.capabilityshowcase.service.encryption.EncryptionService;
-import com.pepcus.capabilityshowcase.util.CreateDirectory;
 
 import org.apache.log4j.Logger;
 /**
@@ -96,17 +92,9 @@ public class EncryptService
 	 * @throws IllegalStateException
 	 * @throws IOException
 	 */
-	public EncryptDecryptFile encryptFile(MultipartFile file,String key) throws IllegalStateException, IOException 
+	public File encryptFile(MultipartFile file,String key) throws IllegalStateException, IOException 
 	{
-		CreateDirectory.CreateDirectoryIfNotExist(STORE_FILE_TO_BE_ENCRYPTED);
-		CryptoTest cT=new CryptoTest();
-		
-		String filename=file.getOriginalFilename();
-		File f=new File(STORE_FILE_TO_BE_ENCRYPTED+"//"+filename);
-		file.transferTo(f);
-		
-		return cT.encryptCrypto(key, f,filename);
-	
+		return new CryptoTest().encryptCrypto(key, file.getBytes(),file.getOriginalFilename());
 	}
 	
 }

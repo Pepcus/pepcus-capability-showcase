@@ -115,28 +115,15 @@ public class ApplicationConstants
 			"";
 	
 	/**
-	 * For CSV to JSON controller 
-	 */
-	public static final String TEMP_CSV="C:\\pcs\\temp\\csv";		//For CSV to JSON 
-	
-	/**
 	 * For protected Zip  
 	 */
-	public static final String ZIP_FILES="C:\\pcs\\temp\\zipfiles";	//Storing temporary uploading file
-	public static final String PROTECTED_ZIP="C:\\pcs\\temp\\protectedzip";	//Storing protected Zip
 	public static final String ZIP_NAME = "protected.zip";
-	/**
-	 * For Encrypted file
-	 */
-	public static final String STORE_FILE_TO_BE_ENCRYPTED="C:\\pcs\\temp\\Encrypt";
-	public static final String STORE_FILE_TO_BE_DECRYPTED="C:\\pcs\\temp\\Decrypt";
-	//public static final String ENCRYPTED_FILE_NAME="\\file.encrypted";
-	//public static final String DECRYPTED_FILE_NAME="\\file.decrypted";
 	
 	/**
 	 * For Logger file 
 	 */
-	public static final Integer FILE_SIZE=2000000;	//2mb
+	public static final Integer FILE_SIZE = 2000000;	//2mb
+	public static final String SAMPLE_LOG = "sample.log";
 	
 	/**
 	 * Encryption/Decryption techniques

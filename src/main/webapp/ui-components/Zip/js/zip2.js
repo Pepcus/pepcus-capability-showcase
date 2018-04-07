@@ -33,7 +33,7 @@ $(document).ready(function () {
     });
     
     $("#btnDownload").click(function (event) {
-    	window.location.href = "http://localhost:8383/pepcuscapability-showcase/zip";
+    	window.location.href = "/pepcuscapability-showcase/zip";
     	$('#form-div').trigger("reset");
     	$("#btnDownload").css("display", "none");
     });

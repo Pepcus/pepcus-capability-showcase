@@ -1,21 +1,17 @@
 package com.pepcus.capabilityshowcase.service;
 
-import static com.pepcus.capabilityshowcase.ApplicationConstants.STORE_FILE_TO_BE_DECRYPTED;
-
 import java.io.File;
 import java.io.IOException;
 
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.pepcus.capabilityshowcase.entity.EncryptDecryptFile;
 import com.pepcus.capabilityshowcase.entity.Encryption;
 import com.pepcus.capabilityshowcase.exception.BadRequestException;
 import com.pepcus.capabilityshowcase.service.encryption.AESPassword;
 import com.pepcus.capabilityshowcase.service.encryption.Base64Encoding;
 import com.pepcus.capabilityshowcase.service.encryption.CryptoTest;
 import com.pepcus.capabilityshowcase.service.encryption.TrippleDES;
-import com.pepcus.capabilityshowcase.util.CreateDirectory;
 
 /**
  * 
@@ -62,14 +58,8 @@ public class DecryptService
 	 * @throws IllegalStateException
 	 * @throws IOException
 	 */
-	public EncryptDecryptFile decryptFile(MultipartFile file,String key) throws IllegalStateException, IOException 
+	public File decryptFile(MultipartFile file,String key) throws IllegalStateException, IOException 
 	{
-		CreateDirectory.CreateDirectoryIfNotExist(STORE_FILE_TO_BE_DECRYPTED);
-		CryptoTest cT=new CryptoTest();
-		String filename=file.getOriginalFilename();
-		File f=new File(STORE_FILE_TO_BE_DECRYPTED+"//"+filename);
-		file.transferTo(f);
-		
-		return cT.decryptCrypto(key, f,filename);
+		return new CryptoTest().decryptCrypto(key, file.getBytes(),file.getOriginalFilename());
 	}
 }

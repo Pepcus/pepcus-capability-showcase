@@ -1,5 +1,6 @@
 package com.pepcus.capabilityshowcase.handler;
 
+
 import org.springframework.core.MethodParameter;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
@@ -17,7 +18,6 @@ import com.pepcus.capabilityshowcase.entity.EncryptDecryptFile;
 import com.pepcus.capabilityshowcase.entity.Encryption;
 import com.pepcus.capabilityshowcase.entity.LogModel;
 import com.pepcus.capabilityshowcase.entity.User;
-import com.pepcus.capabilityshowcase.entity.Zip;
 import com.pepcus.capabilityshowcase.exception.ApiErrorResponse;
 
 /**
@@ -85,13 +85,6 @@ public class ResponseHandler implements ResponseBodyAdvice<Object>
 			apiResponse.setMessage("Log successfully created");
 			apiResponse.setLog((LogModel) body);
 		}
-		
-		if (httpRequest.getMethod().equals(HttpMethod.POST) && body instanceof Zip) 
-		{
-			apiResponse.setMessage("Zip created");
-			apiResponse.setZip((Zip) body);
-		}
-		
 		if (httpRequest.getMethod().equals(HttpMethod.POST) && body instanceof User) 
 		{
 			apiResponse.setMessage("OTP has been Sent to your email : verify it");
@@ -102,7 +95,6 @@ public class ResponseHandler implements ResponseBodyAdvice<Object>
 		{
 			return body;
 		}
-		
 		return apiResponse;
 	}
 

@@ -45,7 +45,7 @@
             },
              {
                "_name": "Log",
-               "_welcomePage": "/log.html",
+               "_welcomePage": "/index.html",
                "_parentApp": "Backend Utility",
                "_applicationUrl": "ui-components/Log",
                "_iconClass":"fa-envelope-o",

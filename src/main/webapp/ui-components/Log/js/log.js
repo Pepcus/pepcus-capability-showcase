@@ -11,7 +11,7 @@ function useSampleFile() {
     cache: false,
     timeout: 600000,
     success: function (data) {
-      console.log("success");
+      console.log("success",data);
       $("#logResult").css("display", "inline-flex");
       $("#debugData").html(data.log.debug);
       $("#infoData").html(data.log.info);
@@ -38,6 +38,7 @@ function ajaxReq(data) {
       cache: false,
       timeout: 600000,
       success: function (data) {
+    	console.log("success",data);
         $("#logResult").css("display", "inline-flex");
         $("#debugData").html(data.log.debug);
         $("#infoData").html(data.log.info);

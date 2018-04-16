@@ -1,5 +1,11 @@
 package com.pepcus.capabilityshowcase.entity;
 
+import com.pepcus.capabilityshowcase.entity.log.DebugModel;
+import com.pepcus.capabilityshowcase.entity.log.ErrorModel;
+import com.pepcus.capabilityshowcase.entity.log.InfoModel;
+import com.pepcus.capabilityshowcase.entity.log.TraceModel;
+import com.pepcus.capabilityshowcase.entity.log.WarnModel;
+
 import lombok.Data;
 
 /**
@@ -12,13 +18,13 @@ import lombok.Data;
 @Data
 public class LogModel 
 {
-	private Integer debug;
+	private DebugModel debug;
 
-	private Integer info;
+	private InfoModel info;
 
-	private Integer error;
+	private ErrorModel error;
 
-	private Integer warn;
+	private WarnModel warn;
 	
-	private Integer trace;
+	private TraceModel trace;
 }

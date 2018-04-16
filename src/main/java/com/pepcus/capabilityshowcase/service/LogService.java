@@ -4,17 +4,27 @@ import static org.apache.commons.lang3.StringUtils.substringAfter;
 import static org.apache.commons.lang3.StringUtils.substringBeforeLast;
 import static org.apache.commons.lang3.StringUtils.substringBetween;
 
+import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
-import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.pepcus.capabilityshowcase.entity.LogModel;
+import com.pepcus.capabilityshowcase.entity.log.DebugModel;
+import com.pepcus.capabilityshowcase.entity.log.ErrorModel;
+import com.pepcus.capabilityshowcase.entity.log.InfoModel;
+import com.pepcus.capabilityshowcase.entity.log.Model;
+import com.pepcus.capabilityshowcase.entity.log.TraceModel;
+import com.pepcus.capabilityshowcase.entity.log.WarnModel;
 import com.pepcus.capabilityshowcase.exception.BadRequestException;
 import com.pepcus.capabilityshowcase.util.ExtensionChecker;
 import com.pepcus.capabilityshowcase.util.SizeChecker;
@@ -30,6 +40,8 @@ import com.pepcus.capabilityshowcase.util.UseSampleLogger;
 @Service
 public class LogService 
 {
+	private List<String> completeListData;
+	
 	/**
 	 * Method to check which type of Sorting is to be done
 	 * @param file
@@ -43,7 +55,8 @@ public class LogService
 		if(allRequestParams.containsKey("useSample") && allRequestParams.get("useSample").equals("true")) 
 		{
 			UseSampleLogger sample =new UseSampleLogger();
-			return generateAll(sample.getSampleData());
+			completeListData=sample.getSampleData();
+			return generateAll("");
 		}
 		if(allRequestParams.isEmpty() || (allRequestParams.get("start").isEmpty() && allRequestParams.get("end").isEmpty())) 
 		{
@@ -109,18 +122,19 @@ public class LogService
 	}
 	
 	/**
-	 * Counting the Logs from the data
+	 * Returning the log data
 	 * @param completeData
 	 * @return
 	 */
 	private LogModel generateLogs(String completeData) 
 	{
 		LogModel logModel=new LogModel();
-        logModel.setDebug(StringUtils.countOccurrencesOf(completeData, "DEBUG"));
-        logModel.setError(StringUtils.countOccurrencesOf(completeData, "ERROR"));
-        logModel.setInfo(StringUtils.countOccurrencesOf(completeData, "INFO"));
-        logModel.setTrace(StringUtils.countOccurrencesOf(completeData, "TRACE"));
-        logModel.setWarn(StringUtils.countOccurrencesOf(completeData, "WARN"));
+		
+		logModel.setDebug(new DebugModel(generateModels("DEBUG")));
+        logModel.setError(new ErrorModel(generateModels("ERROR")));
+        logModel.setInfo(new InfoModel(generateModels("INFO")));
+        logModel.setTrace(new TraceModel(generateModels("TRACE")));
+        logModel.setWarn(new WarnModel(generateModels("WARN")));
         return logModel;
 	}
 	
@@ -172,6 +186,8 @@ public class LogService
 		{
 			if(!file.isEmpty() && ExtensionChecker.checkFile(file,"log") && SizeChecker.checkSize(file)) 
 			{
+				BufferedReader br = new BufferedReader(new InputStreamReader(file.getInputStream()));
+				completeListData = br.lines().collect(Collectors.toList());
 				byte[] bytes = file.getBytes();
 				return new String(bytes);		//returning the complete data from the given file
 			}
@@ -180,7 +196,25 @@ public class LogService
 		{
 			Logger.getLogger(LogService.class.getName()).log(Level.SEVERE, null, e);
 		}
-		throw new BadRequestException("File is not valid");
+		throw new BadRequestException("File is not valid : File should not be empty");
 	}
 	
+	/**
+	 * Method to generate detailed logs
+	 * @param log
+	 * @return
+	 */
+	private List<Model> generateModels(String log) 
+	{
+		List<Model> logs = new ArrayList<>();
+		List<String> filtered = completeListData.stream().filter(string -> string.contains(log)).collect(Collectors.toList());
+		final int[] count = {1};
+		filtered.stream().forEach(i -> {
+        	String[] b = i.split("---");
+        	if(b.length == 2) {
+        		logs.add(new Model(count[0]++, b[1].split(" : ")[0], b[1].split(" : ")[1]));
+        	}
+		});
+		return logs;
+	}
 }

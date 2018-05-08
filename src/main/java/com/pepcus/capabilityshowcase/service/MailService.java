@@ -26,11 +26,11 @@ public class MailService
 			MailProcessor mail = new MailProcessor();
 			if(template.equalsIgnoreCase("Greetings")) 
 			{
-				mail.sendMail(user.getRecieversEmail(),user.getRecieversName().toUpperCase(), template, GREETINGS_TEMPLATE.replaceAll("Something Name", StringUtils.capitalize(user.getRecieversName().toLowerCase())), null);
+				mail.sendMail(user.getRecieversEmail(),user.getRecieversName().toUpperCase(), "", GREETINGS_TEMPLATE.replaceAll("Something Name", StringUtils.capitalize(user.getRecieversName().toLowerCase())), null);
 			}
 			if(template.equalsIgnoreCase("Notification")) 
 			{
-				mail.sendMail(user.getRecieversEmail(), user.getRecieversName().toUpperCase(), template, NOTIFICATION_TEMPLATE.replaceAll("Something Name", StringUtils.capitalize(user.getRecieversName().toLowerCase())).replaceAll("senderName", StringUtils.capitalize(user.getSenderName().toLowerCase())).replaceAll("designation", user.getSenderDesignation().toUpperCase()), null);
+				mail.sendMail(user.getRecieversEmail(), user.getRecieversName().toUpperCase(), "", NOTIFICATION_TEMPLATE.replaceAll("Something Name", StringUtils.capitalize(user.getRecieversName().toLowerCase())).replaceAll("senderName", StringUtils.capitalize(user.getSenderName().toLowerCase())).replaceAll("designation", user.getSenderDesignation().toUpperCase()), null);
 			}
 		}
 		catch (Exception e) 

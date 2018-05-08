@@ -13,11 +13,11 @@ function useSampleFile() {
     success: function (data) {
       console.log("success",data);
       $("#logResult").css("display", "inline-flex");
-      $("#debugData").html(data.log.debug);
-      $("#infoData").html(data.log.info);
-      $("#errorData").html(data.log.error);
-      $("#warnData").html(data.log.warn);
-      $("#traceData").html(data.log.trace);
+      $("#debugData").html(data.log.debug.model.length);
+      $("#infoData").html(data.log.info.model.length);
+      $("#errorData").html(data.log.error.model.length);
+      $("#warnData").html(data.log.warn.model.length);
+      $("#traceData").html(data.log.trace.model.length);
       $("#btnSubmit").prop("disabled", false);
     },
     error: function (e) {
@@ -40,11 +40,11 @@ function ajaxReq(data) {
       success: function (data) {
     	console.log("success",data);
         $("#logResult").css("display", "inline-flex");
-        $("#debugData").html(data.log.debug);
-        $("#infoData").html(data.log.info);
-        $("#errorData").html(data.log.error);
-        $("#warnData").html(data.log.warn);
-        $("#traceData").html(data.log.trace);
+        $("#debugData").html(data.log.debug.model.length);
+        $("#infoData").html(data.log.info.model.length);
+        $("#errorData").html(data.log.error.model.length);
+        $("#warnData").html(data.log.warn.model.length);
+        $("#traceData").html(data.log.trace.model.length);
         $("#btnSubmit").prop("disabled", false);
       },
       error: function (e) {

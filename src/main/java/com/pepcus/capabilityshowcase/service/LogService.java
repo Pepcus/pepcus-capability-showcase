@@ -211,9 +211,13 @@ public class LogService
 		final int[] count = {1};
 		filtered.stream().forEach(i -> {
         	String[] b = i.split("---");
-        	if(b.length == 2) {
-        		logs.add(new Model(count[0]++, b[1].split(" : ")[0], b[1].split(" : ")[1]));
-        	}
+        	try {
+				if(b.length == 2) {
+					logs.add(new Model(count[0]++, b[1].split(" : ")[0], b[1].split(" : ")[1]));
+				}
+			} catch (Exception e) {
+				Logger.getLogger(LogService.class.getName()).log(Level.SEVERE, null, e);
+			}
 		});
 		return logs;
 	}

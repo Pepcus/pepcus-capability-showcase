@@ -92,6 +92,14 @@
             "_appData":"Create a protected zip"
             },
             {
+               "_name": "OAuth 2.0",
+               "_welcomePage": "/index.html",
+               "_parentApp": "Backend Utility",
+               "_applicationUrl": "ui-components/React/oauthDemoWidget/dist",
+               "_iconClass":"fa-sign-in-alt",
+            "_appData":"Authorization using OAuth 2.0"
+            },
+            {
                "_name": "Menu",
                "_welcomePage": "/ScrollNavigationDemo.html",
                "_parentApp": "Coming Soon",

@@ -184,7 +184,7 @@ position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 40%;
+    width: 65%;
     height: 50px;
     border: 1px dashed #ccc;
 }
@@ -216,7 +216,7 @@ position: absolute;
     border-style: none;
     box-shadow: none;
     border: none;
-    width:90%;
+    width:60%;
 
 }
 .first-step .input{
@@ -253,7 +253,7 @@ input{
 }
 .second-step .input{
     margin:10px;
-
+	width:60%;
 }
 .submit-btn{
     width:10%;
